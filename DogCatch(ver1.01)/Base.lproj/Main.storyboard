@@ -100,6 +100,12 @@
                                     <segue destination="PgQ-Ny-vKM" kind="presentation" identifier="moveToTutorialScreen" id="l1b-2h-vR4"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="by平山" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZL-w7-bhV">
+                                <rect key="frame" x="459" y="268" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -109,8 +115,10 @@
                             <constraint firstItem="LVX-7I-mMY" firstAttribute="centerY" secondItem="btd-dh-qN3" secondAttribute="centerY" constant="12" id="Abs-vJ-RRC"/>
                             <constraint firstAttribute="centerX" secondItem="uwt-0P-q8V" secondAttribute="centerX" id="DCG-WQ-uy0"/>
                             <constraint firstItem="uwt-0P-q8V" firstAttribute="centerY" secondItem="ar1-JX-6Hl" secondAttribute="centerY" constant="179" id="MH9-pk-LeA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jZL-w7-bhV" secondAttribute="trailing" constant="40" id="Mee-uT-DBd"/>
                             <constraint firstItem="btd-dh-qN3" firstAttribute="top" secondItem="ar1-JX-6Hl" secondAttribute="bottom" constant="30" id="Mya-Yv-sTA"/>
                             <constraint firstItem="DKK-at-EE4" firstAttribute="top" secondItem="ar1-JX-6Hl" secondAttribute="bottom" constant="30" id="Qc2-Rd-7Fy"/>
+                            <constraint firstItem="0Lo-BP-WFB" firstAttribute="top" secondItem="jZL-w7-bhV" secondAttribute="bottom" constant="31" id="X7Q-6w-x9Z"/>
                             <constraint firstItem="LVX-7I-mMY" firstAttribute="top" secondItem="ar1-JX-6Hl" secondAttribute="bottom" constant="30" id="big-To-ko2"/>
                             <constraint firstItem="btd-dh-qN3" firstAttribute="top" secondItem="1ax-0W-s5L" secondAttribute="bottom" constant="3" id="d2b-al-yAm"/>
                             <constraint firstItem="ar1-JX-6Hl" firstAttribute="leading" secondItem="tQw-Ni-Ck1" secondAttribute="leadingMargin" constant="10" id="eXP-mK-nJE"/>

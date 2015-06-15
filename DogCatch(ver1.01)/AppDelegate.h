@@ -13,5 +13,7 @@
 @property (strong, nonatomic) UIWindow *window;
 
 
+//git練習用コメント2
+
 @end
 

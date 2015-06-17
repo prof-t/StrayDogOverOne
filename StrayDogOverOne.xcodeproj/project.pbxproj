@@ -52,6 +52,7 @@
 		2AF2FDEA1AD60F0800E71856 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF2FDE91AD60F0800E71856 /* AVFoundation.framework */; };
 		2AF2FDEC1AD6209300E71856 /* DogCatch.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = 2AF2FDEB1AD6209300E71856 /* DogCatch.mobileprovision */; };
 		2AF2FDEF1ADB57E300E71856 /* TimerClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF2FDEE1ADB57E300E71856 /* TimerClass.m */; };
+		B66DB53DA80980756F3518CA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8819315EF35BDF02837D81 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,9 @@
 		2AF2FDED1ADB57E300E71856 /* TimerClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerClass.h; sourceTree = "<group>"; };
 		2AF2FDEE1ADB57E300E71856 /* TimerClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerClass.m; sourceTree = "<group>"; };
 		2AF2FDF01ADB852500E71856 /* Yasashisa.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Yasashisa.ttf; path = DogCatch_music/Yasashisa.ttf; sourceTree = "<group>"; };
+		32826A657BA732C87BD4625E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		8F8819315EF35BDF02837D81 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1D1FB1281A73EBF680B898D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 				2A3A3F461AD27F5300F09768 /* SpriteKit.framework in Frameworks */,
 				2A3A3F321AD2549900F09768 /* QuartzCore.framework in Frameworks */,
 				2A3A3F1A1AD2376600F09768 /* CoreAudio.framework in Frameworks */,
+				B66DB53DA80980756F3518CA /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +165,8 @@
 				2A3A3EED1AD2373400F09768 /* DogCatch(ver1.01) */,
 				2A3A3F0C1AD2373400F09768 /* DogCatch(ver1.01)Tests */,
 				2A3A3EEC1AD2373400F09768 /* Products */,
+				AE652EBB20362114B92F2F3F /* Pods */,
+				A83951CEF7B6A87D37132BF8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -271,6 +278,23 @@
 			path = DogCatch_music;
 			sourceTree = "<group>";
 		};
+		A83951CEF7B6A87D37132BF8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8F8819315EF35BDF02837D81 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE652EBB20362114B92F2F3F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A1D1FB1281A73EBF680B898D /* Pods.debug.xcconfig */,
+				32826A657BA732C87BD4625E /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -278,9 +302,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2A3A3F131AD2373400F09768 /* Build configuration list for PBXNativeTarget "StrayDogOverOne" */;
 			buildPhases = (
+				D44AB72FBE10D63CEE6CCF31 /* Check Pods Manifest.lock */,
 				2A3A3EE71AD2373400F09768 /* Sources */,
 				2A3A3EE81AD2373400F09768 /* Frameworks */,
 				2A3A3EE91AD2373400F09768 /* Resources */,
+				8A19181969A45E8569234C15 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -391,6 +417,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8A19181969A45E8569234C15 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D44AB72FBE10D63CEE6CCF31 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2A3A3EE71AD2373400F09768 /* Sources */ = {
@@ -530,6 +589,7 @@
 		};
 		2A3A3F141AD2373400F09768 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1D1FB1281A73EBF680B898D /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -544,6 +604,7 @@
 		};
 		2A3A3F151AD2373400F09768 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32826A657BA732C87BD4625E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

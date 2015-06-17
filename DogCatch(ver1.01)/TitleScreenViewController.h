@@ -10,6 +10,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import "GameScreenViewController.h"
 #import"TutorialScreenViewController.h"
+//#import "UIViewControllerRotateManager.h"
 
 @interface TitleScreenViewController : UIViewController
 

@@ -137,18 +137,22 @@
 //ここで回転していいかの判別をする
 - (BOOL)shouldAutorotate
 {
-    if (/* なにがしかの回転していいかの判定処理 */) {
-        return YES;
-    }
+//    if (/* なにがしかの回転していいかの判定処理 */) {
+//        return YES;
+//    }
     
     return NO;
 }
 
 //どの方向に回転していいかを返す（例ではすべての方向に回転OK）
-- (NSUInteger)supportedInterfaceOrientations
-{
-    return UIInterfaceOrientationMaskLandscapeLeft;
-}
+//- (NSUInteger)supportedInterfaceOrientations
+//{
+//    //rotateManagerは、向き変更可かどうかを管理するためのグローバルオブジェクト
+//    UIViewControllerRotateManager *rotateManager
+//    
+//    
+//    return UIInterfaceOrientationMaskLandscapeLeft;
+//}
 
 @end
 

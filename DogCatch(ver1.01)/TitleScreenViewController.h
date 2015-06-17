@@ -10,9 +10,9 @@
 #import <SpriteKit/SpriteKit.h>
 #import "GameScreenViewController.h"
 #import"TutorialScreenViewController.h"
-//#import "UIViewControllerRotateManager.h"
+#import "BaseViewController.h"
 
-@interface TitleScreenViewController : UIViewController
+@interface TitleScreenViewController : BaseViewController
 
 
 @property AVAudioPlayer *player;

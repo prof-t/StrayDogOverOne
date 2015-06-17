@@ -124,35 +124,7 @@
     }
 }
 
-//画面回転時に呼ばれるメソッド（iOS6以前のみ。7以降は使用不可）
-//-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
-//    
-//    if(toInterfaceOrientation == UIDeviceOrientationLandscapeLeft){
-//        return YES;
-//    } else {
-//        return NO;
-//    }
-//}
 
-//ここで回転していいかの判別をする
-- (BOOL)shouldAutorotate
-{
-//    if (/* なにがしかの回転していいかの判定処理 */) {
-//        return YES;
-//    }
-    
-    return NO;
-}
-
-//どの方向に回転していいかを返す（例ではすべての方向に回転OK）
-//- (NSUInteger)supportedInterfaceOrientations
-//{
-//    //rotateManagerは、向き変更可かどうかを管理するためのグローバルオブジェクト
-//    UIViewControllerRotateManager *rotateManager
-//    
-//    
-//    return UIInterfaceOrientationMaskLandscapeLeft;
-//}
 
 @end
 

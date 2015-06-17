@@ -12,8 +12,9 @@
 #import"TimerClass.h"
 #import"TitleScreenViewController.h"
 #import "ClearScreenViewController.h"
+#import "BaseViewController.h"
 
-@interface GameScreenViewController : UIViewController<UIActionSheetDelegate>
+@interface GameScreenViewController : BaseViewController<UIActionSheetDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *dogButton1;
 @property (weak, nonatomic) IBOutlet UIButton *dogButton2;

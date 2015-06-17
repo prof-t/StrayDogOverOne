@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import"TitleScreenViewController.h"
+#import "BaseViewController.h"
 
-@interface TutorialScreenViewController : UIViewController
+@interface TutorialScreenViewController : BaseViewController
 
 @property AVAudioPlayer *player;
 @property AVAudioPlayer *playerEffect;

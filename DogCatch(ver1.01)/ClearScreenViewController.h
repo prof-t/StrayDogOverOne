@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface ClearScreenViewController : UIViewController
+@interface ClearScreenViewController : BaseViewController
 {
     int _animeIdx;
     UIImageView* _imageView;

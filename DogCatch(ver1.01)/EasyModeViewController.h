@@ -12,7 +12,6 @@
 #import<AVFoundation/AVFoundation.h>
 #import"TimerClass.h"
 #import"TitleScreenViewController.h"
-#import "ClearScreenViewController.h"
 #import "BaseViewController.h"
 
 @interface EasyModeViewController : BaseViewController<UIActionSheetDelegate>

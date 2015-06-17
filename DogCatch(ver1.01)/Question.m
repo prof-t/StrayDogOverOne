@@ -37,7 +37,9 @@
         score = - 500;
     }
     
-    completion(score);
+//    completion(score);
+    
+    NSLog(@"今回の得点は%ld",(long)score);
     
     return score;
 }

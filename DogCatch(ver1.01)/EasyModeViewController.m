@@ -59,16 +59,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
-
 - (IBAction)CancelButton:(id)sender
 {
     //アラートの表示（iOS8か否かで処理が分岐する）
@@ -147,7 +137,8 @@
     [self.player play];
     
     //timer起動
-    //    TimerClass *timerTest = [TimerClass alloc];
+//    TimerClass *timerTest = [TimerClass alloc];
+//    [timerTest startTimer:60];
     [self timerStart];
     
     //labelテキストを随時変更

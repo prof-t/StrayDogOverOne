@@ -39,7 +39,6 @@
 		2A3A3F411AD2684C00F09768 /* girl4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2A3A3F3D1AD2684C00F09768 /* girl4.jpg */; };
 		2A3A3F441AD27E7F00F09768 /* TitleScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3A3F431AD27E7F00F09768 /* TitleScreenViewController.m */; };
 		2A3A3F461AD27F5300F09768 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3A3F451AD27F5300F09768 /* SpriteKit.framework */; };
-		2A3A3F491AD29D0100F09768 /* ClearScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3A3F481AD29D0100F09768 /* ClearScreenViewController.m */; };
 		2A5D142A1ADB87CF003D9BC3 /* KodomoRounded.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2AD298F11AD54FC7005D787B /* KodomoRounded.otf */; };
 		2A5D142B1ADB87DB003D9BC3 /* Yasashisa.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2AF2FDF01ADB852500E71856 /* Yasashisa.ttf */; };
 		2A777D701ADE5D1D00F9BEFA /* dogall.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A777D6F1ADE5D1D00F9BEFA /* dogall.png */; };
@@ -110,8 +109,6 @@
 		2A3A3F421AD27E7F00F09768 /* TitleScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleScreenViewController.h; sourceTree = "<group>"; };
 		2A3A3F431AD27E7F00F09768 /* TitleScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleScreenViewController.m; sourceTree = "<group>"; };
 		2A3A3F451AD27F5300F09768 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
-		2A3A3F471AD29D0100F09768 /* ClearScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClearScreenViewController.h; sourceTree = "<group>"; };
-		2A3A3F481AD29D0100F09768 /* ClearScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClearScreenViewController.m; sourceTree = "<group>"; };
 		2A777D6F1ADE5D1D00F9BEFA /* dogall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dogall.png; sourceTree = "<group>"; };
 		2A7E229A1B3105720089C2D5 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		2A7E229B1B3105720089C2D5 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
@@ -202,8 +199,6 @@
 				2AE503001B313CC700570947 /* GameInfoManager.m */,
 				2A3A3F421AD27E7F00F09768 /* TitleScreenViewController.h */,
 				2A3A3F431AD27E7F00F09768 /* TitleScreenViewController.m */,
-				2A3A3F471AD29D0100F09768 /* ClearScreenViewController.h */,
-				2A3A3F481AD29D0100F09768 /* ClearScreenViewController.m */,
 				2A0D79FA1ADC20F000448354 /* TutorialScreenViewController.h */,
 				2A0D79FB1ADC20F000448354 /* TutorialScreenViewController.m */,
 				2A3A3F331AD25F1000F09768 /* CustomButton.h */,
@@ -472,7 +467,6 @@
 				2AE502FE1B313CB100570947 /* GameInfo.m in Sources */,
 				2A7E229C1B3105720089C2D5 /* BaseViewController.m in Sources */,
 				2AE503011B313CC700570947 /* GameInfoManager.m in Sources */,
-				2A3A3F491AD29D0100F09768 /* ClearScreenViewController.m in Sources */,
 				2AF2FDEF1ADB57E300E71856 /* TimerClass.m in Sources */,
 				2A3A3EF41AD2373400F09768 /* AppDelegate.m in Sources */,
 				2A3A3F1D1AD237DF00F09768 /* Question.m in Sources */,

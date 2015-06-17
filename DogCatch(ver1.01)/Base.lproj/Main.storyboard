@@ -530,26 +530,6 @@
             </objects>
             <point key="canvasLocation" x="1378" y="881"/>
         </scene>
-        <!--Clear Screen View Controller-->
-        <scene sceneID="9wg-yy-6ly">
-            <objects>
-                <viewController id="CRp-Hh-m20" customClass="ClearScreenViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lGg-hV-rnF"/>
-                        <viewControllerLayoutGuide type="bottom" id="GkX-cN-9ML"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ZU8-eX-vPi">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gdv-1E-Ews" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="536" y="2516"/>
-        </scene>
         <!--Easy Mode View Controller-->
         <scene sceneID="3fr-zO-lLQ">
             <objects>

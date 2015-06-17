@@ -426,7 +426,7 @@
     float second = fmodf(timeCount,60);
     _timeStr = [NSString stringWithFormat:@"残り時間 %05.2f",second];
     
-    NSLog(@"timerメソッドの中。今のtimeは%f",second);
+//    NSLog(@"timerメソッドの中。今のtimeは%f",second);
     
     self.timeLabel.text = _timeStr;
     

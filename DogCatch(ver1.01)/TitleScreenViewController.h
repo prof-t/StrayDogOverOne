@@ -5,6 +5,7 @@
 //  Created by RYO on 2015/04/06.
 //  Copyright (c) 2015年 RYO. All rights reserved.
 //
+//アプリ起動時に表示されるタイトル画面のviewController
 
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>

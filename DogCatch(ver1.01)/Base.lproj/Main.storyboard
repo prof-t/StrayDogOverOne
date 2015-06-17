@@ -36,7 +36,7 @@
                                 </state>
                                 <connections>
                                     <action selector="gameStartNormal:" destination="CqQ-oD-Iui" eventType="touchUpInside" id="ZoP-GC-d9O"/>
-                                    <segue destination="mER-Xr-FoX" kind="presentation" identifier="movoToGameScreen" id="44t-b6-zHt"/>
+                                    <segue destination="mER-Xr-FoX" kind="presentation" identifier="movoToNormalGameScreen" id="44t-b6-zHt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKK-at-EE4">
@@ -67,7 +67,8 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="qkR-G2-7Zf" kind="presentation" id="xOg-MH-mDH"/>
+                                    <action selector="gameStartEasy:" destination="CqQ-oD-Iui" eventType="touchUpInside" id="nZw-TZ-fwM"/>
+                                    <segue destination="qkR-G2-7Zf" kind="presentation" identifier="moveToEasyModeScreen" id="xOg-MH-mDH"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title_ver2.png" translatesAutoresizingMaskIntoConstraints="NO" id="ar1-JX-6Hl">

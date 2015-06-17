@@ -69,7 +69,7 @@
 */
 
 
-
+//normalボタンtap時のイベント
 - (IBAction)gameStartNormal:(id)sender
 {
     NSURL *bgm2URL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"se9" ofType:@"wav"] ];
@@ -79,6 +79,16 @@
     
 }
 
+//easyボタンtap時のイベント
+- (IBAction)gameStartEasy:(id)sender {
+    
+    NSURL *bgm2URL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"se9" ofType:@"wav"] ];
+    _playerEffect = [[AVAudioPlayer alloc]initWithContentsOfURL:bgm2URL error:nil];
+    self.playerEffect.numberOfLoops = 0;
+    [self.playerEffect play];
+}
+
+//ルール説明ボタンtap時のイベント
 - (IBAction)tutorialScreen:(id)sender
 {
 
@@ -94,7 +104,7 @@
 {
     
 
-    if([segue.identifier isEqualToString:@"movoToGameScreen"]){
+    if ( ([segue.identifier isEqualToString:@"movoToNormalGameScreen"]) ||([segue.identifier isEqualToString:@"movoToEasyGameScreen"])  ) {
         
         GameScreenViewController *gvsc= (GameScreenViewController*)[segue destinationViewController];
         gvsc.questionNumber = 0;

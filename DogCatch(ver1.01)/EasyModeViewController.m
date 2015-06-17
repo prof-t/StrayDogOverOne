@@ -183,13 +183,19 @@
         _playerEffect = [[AVAudioPlayer alloc]initWithContentsOfURL:bgm1URL error:nil];
         self.playerEffect.numberOfLoops = 0;
         [self.playerEffect play];
-        nowScore = [questionClassOBJ evaluateScoreWithIsCorrect:timeCount remainTime:YES] + nowScore;
+        nowScore = [questionClassOBJ evaluateScoreWithIsCorrect:timeCount remainTime:YES completion:^(NSInteger score) {
+            
+        }] + nowScore;
         _correctOrWrong = YES;
         self.clearViewImage.image =[UIImage imageNamed:@"girl2.jpg"];
         navBar.topItem.title = @"おめでとう!!";
+        
     } else {
         NSLog(@"残念！！");
-        nowScore = [questionClassOBJ evaluateScoreWithIsCorrect:timeCount remainTime:NO] + nowScore;
+        nowScore = [questionClassOBJ evaluateScoreWithIsCorrect:timeCount remainTime:NO completion:^(NSInteger score) {
+            
+        }] + nowScore;
+        
         NSURL *bgm2URL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"d6" ofType:@"mp3"] ];
         _playerEffect = [[AVAudioPlayer alloc]initWithContentsOfURL:bgm2URL error:nil];
         self.playerEffect.numberOfLoops = 0;

@@ -20,6 +20,6 @@
  @return 評価に応じた得点を返す
  
 */
--(NSInteger)evaluateScoreWithIsCorrect:(BOOL)isCorrect remainTime:(float)remainTime;
+-(NSInteger)evaluateScoreWithIsCorrect:(BOOL)isCorrect remainTime:(float)remainTime  completion:(void (^)(NSInteger score))completion;
 
 @end

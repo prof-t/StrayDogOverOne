@@ -48,6 +48,8 @@
 		2A842A741B02FCEC00DF5E1E /* frame.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2A842A731B02FCEC00DF5E1E /* frame.gif */; };
 		2A842A771B030AD400DF5E1E /* EasyModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A842A761B030AD400DF5E1E /* EasyModeViewController.m */; };
 		2AB2491B1B0D2A4100D7CB1E /* frame_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AB2491A1B0D2A4100D7CB1E /* frame_2.png */; };
+		2AE502FE1B313CB100570947 /* GameInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE502FD1B313CB100570947 /* GameInfo.m */; };
+		2AE503011B313CC700570947 /* GameInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE503001B313CC700570947 /* GameInfoManager.m */; };
 		2AF2FDE81AD60EEE00E71856 /* カジノ4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2AF2FDE71AD60EEE00E71856 /* カジノ4.mp3 */; };
 		2AF2FDEA1AD60F0800E71856 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF2FDE91AD60F0800E71856 /* AVFoundation.framework */; };
 		2AF2FDEC1AD6209300E71856 /* DogCatch.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = 2AF2FDEB1AD6209300E71856 /* DogCatch.mobileprovision */; };
@@ -120,6 +122,10 @@
 		2A842A761B030AD400DF5E1E /* EasyModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyModeViewController.m; sourceTree = "<group>"; };
 		2AB2491A1B0D2A4100D7CB1E /* frame_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frame_2.png; sourceTree = "<group>"; };
 		2AD298F11AD54FC7005D787B /* KodomoRounded.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KodomoRounded.otf; sourceTree = "<group>"; };
+		2AE502FC1B313CB100570947 /* GameInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameInfo.h; sourceTree = "<group>"; };
+		2AE502FD1B313CB100570947 /* GameInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameInfo.m; sourceTree = "<group>"; };
+		2AE502FF1B313CC700570947 /* GameInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameInfoManager.h; sourceTree = "<group>"; };
+		2AE503001B313CC700570947 /* GameInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameInfoManager.m; sourceTree = "<group>"; };
 		2AF2FDE71AD60EEE00E71856 /* カジノ4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "カジノ4.mp3"; sourceTree = "<group>"; };
 		2AF2FDE91AD60F0800E71856 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		2AF2FDEB1AD6209300E71856 /* DogCatch.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = DogCatch.mobileprovision; sourceTree = "<group>"; };
@@ -187,11 +193,15 @@
 				2A7E229A1B3105720089C2D5 /* BaseViewController.h */,
 				2A7E229B1B3105720089C2D5 /* BaseViewController.m */,
 				2A842A751B030AD400DF5E1E /* EasyModeViewController.h */,
+				2A842A761B030AD400DF5E1E /* EasyModeViewController.m */,
 				2A3A3F2E1AD24DAA00F09768 /* GameScreenViewController.h */,
 				2A3A3F2F1AD24DAA00F09768 /* GameScreenViewController.m */,
+				2AE502FC1B313CB100570947 /* GameInfo.h */,
+				2AE502FD1B313CB100570947 /* GameInfo.m */,
+				2AE502FF1B313CC700570947 /* GameInfoManager.h */,
+				2AE503001B313CC700570947 /* GameInfoManager.m */,
 				2A3A3F421AD27E7F00F09768 /* TitleScreenViewController.h */,
 				2A3A3F431AD27E7F00F09768 /* TitleScreenViewController.m */,
-				2A842A761B030AD400DF5E1E /* EasyModeViewController.m */,
 				2A3A3F471AD29D0100F09768 /* ClearScreenViewController.h */,
 				2A3A3F481AD29D0100F09768 /* ClearScreenViewController.m */,
 				2A0D79FA1ADC20F000448354 /* TutorialScreenViewController.h */,
@@ -459,7 +469,9 @@
 				2A7E229F1B312A770089C2D5 /* ScoreModel.m in Sources */,
 				2A3A3F351AD25F1000F09768 /* CustomButton.m in Sources */,
 				2A842A771B030AD400DF5E1E /* EasyModeViewController.m in Sources */,
+				2AE502FE1B313CB100570947 /* GameInfo.m in Sources */,
 				2A7E229C1B3105720089C2D5 /* BaseViewController.m in Sources */,
+				2AE503011B313CC700570947 /* GameInfoManager.m in Sources */,
 				2A3A3F491AD29D0100F09768 /* ClearScreenViewController.m in Sources */,
 				2AF2FDEF1ADB57E300E71856 /* TimerClass.m in Sources */,
 				2A3A3EF41AD2373400F09768 /* AppDelegate.m in Sources */,

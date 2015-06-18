@@ -18,8 +18,8 @@
 
 @implementation EasyModeViewController
 {
-    int correctButtonTag;
-    BOOL questionPattern;
+    int correctButtonTag; //正解ボタンのタグ番号
+    BOOL questionPattern; //設問パターン
     
     //タイマー
     __weak NSTimer *_timer;
@@ -27,7 +27,7 @@
     float _secondsOfTimer;
     NSString *_timeStr;
     
-    int nowScore;
+    int nowScore; //現在の得点
     Question *questionClassOBJ;
     BOOL _correctOrWrong;
 }
@@ -59,6 +59,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+//キャンセルボタン押下時のイベント処理
 - (IBAction)CancelButton:(id)sender
 {
     //アラートの表示（iOS8か否かで処理が分岐する）
@@ -101,12 +102,10 @@
         //    [alert addAction:altAction];
         
         [self presentViewController:alert animated:YES completion:nil];
-        
     }
-    
-    
 }
 
+//スタートボタン押下時のイベント処理
 - (IBAction)gameStartMetod:(UIBarButtonItem*)sender
 {
     sender.enabled = NO;
@@ -116,9 +115,6 @@
     //女の子の顔画像を変更
     self.girlImage.image = [UIImage imageNamed:@"girl3.jpg"];
     
-    
-    
-    /*★☆★　動作確認用テスト★☆★*/
     //ボタンのhiddenを解除
     self.dogButton1.enabled = YES;
     self.dogButton2.enabled = YES;
@@ -147,11 +143,9 @@
     
     UINavigationBar *navBar = (UINavigationBar*)[self.view viewWithTag:10];
     navBar.topItem.title = @"犬をタッチしてつかまえてね!!";
-    
-    
-    
 }
 
+//回答ボタンを押下時のイベント処理
 - (IBAction)tapButton:(UIButton*)sender
 {
     
@@ -161,6 +155,7 @@
     [_timer invalidate];
     [self.player stop];
     
+    //ゲームクリアー画面のviewを表示させる
     self.clearView.hidden = NO;
     self.clearViewImage.hidden = NO;
     
@@ -196,14 +191,16 @@
         navBar.topItem.title = @"残念!!";
     }
     
+    //現在の総得点をNSString化してlabelに表示
     NSString *nowScoreStr = [[NSString alloc]initWithFormat:@"総得点 %d",nowScore];
     self.totalScore.text = nowScoreStr;
     
+    //ボタンが何度も押されるのを防ぐため、enabledをnoに設定
     self.dogButton1.enabled = NO;
     self.dogButton2.enabled = NO;
     self.dogButton3.enabled = NO;
     
-    
+    //スタートボタンのenabledをyesにし、次の問題に移れるようにする
     self.gameStartButton.enabled = YES;
     
     //ボタンの円半径の設定を、画面変化に対応させる

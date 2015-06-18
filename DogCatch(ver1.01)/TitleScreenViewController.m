@@ -36,18 +36,25 @@
     
     
     //音楽START！
-    if([self.player isPlaying]){
-        
-        NSLog(@"すでに再生中です");
-        
-    }else{
-        
-    NSURL *bgmURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"c6" ofType:@"mp3"] ];
-    _player = [[AVAudioPlayer alloc]initWithContentsOfURL:bgmURL error:nil];
-    self.player.numberOfLoops = -1;
-    [self.player play];
+//    if([self.player isPlaying]){
+//        
+//        NSLog(@"すでに再生中です");
+//        
+//    }else{
+//        
+//    NSURL *bgmURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"c6" ofType:@"mp3"] ];
+//    _player = [[AVAudioPlayer alloc]initWithContentsOfURL:bgmURL error:nil];
+//    self.player.numberOfLoops = -1;
+//    [self.player play];
+//    
+//    }
     
-    }
+    // 生成と再生
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"c6" ofType:@"mp3"];
+    AVAudioPlayer *player = [AudioSingleton createPlayerWithURLString:path forKey:@"タイトル画面"];
+    player.numberOfLoops = -1;
+    [player play];
+
     
     
 }

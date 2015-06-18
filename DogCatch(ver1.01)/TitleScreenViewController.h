@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <SpriteKit/SpriteKit.h>
 #import "GameScreenViewController.h"
 #import"TutorialScreenViewController.h"
 #import "BaseViewController.h"
+#import "AudioPlayerClass.h"
 
 @interface TitleScreenViewController : BaseViewController
 

@@ -80,6 +80,13 @@
     self.playerEffect.numberOfLoops = 0;
     [self.playerEffect play];
     
+    
+    //シングルトンver
+    //    NSString *path = [[NSBundle mainBundle] pathForResource:@"se9" ofType:@"wav"];
+    //    player = [AudioSingleton createPlayerWithURLString:path forKey:@"ゲームモード選択"];
+    //    player.numberOfLoops = -1;
+    //    [player play];
+    
 }
 
 //easyボタンtap時のイベント

@@ -14,8 +14,6 @@
 
 @interface TitleScreenViewController : BaseViewController
 
-
-@property AVAudioPlayer *player;
 @property AVAudioPlayer *playerEffect;
 @property AVAudioPlayer *playerEffect2;
 

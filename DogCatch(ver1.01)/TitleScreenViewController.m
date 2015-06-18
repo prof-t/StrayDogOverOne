@@ -17,6 +17,9 @@
 @end
 
 @implementation TitleScreenViewController
+{
+    AVAudioPlayer *player;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,30 +36,22 @@
 //    [[self.buttonNormal layer] setCornerRadius:5.0];
 //    [self.buttonNormal setClipsToBounds:YES];
     
-    
-    
-    //音楽START！
-//    if([self.player isPlaying]){
-//        
-//        NSLog(@"すでに再生中です");
-//        
-//    }else{
-//        
-//    NSURL *bgmURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"c6" ofType:@"mp3"] ];
-//    _player = [[AVAudioPlayer alloc]initWithContentsOfURL:bgmURL error:nil];
-//    self.player.numberOfLoops = -1;
-//    [self.player play];
-//    
-//    }
-    
-    // 生成と再生
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"c6" ofType:@"mp3"];
-    AVAudioPlayer *player = [AudioSingleton createPlayerWithURLString:path forKey:@"タイトル画面"];
-    player.numberOfLoops = -1;
-    [player play];
 
-    
-    
+    //音楽の生成と再生
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"c6" ofType:@"mp3"];
+    player = [AudioSingleton createPlayerWithURLString:path forKey:@"タイトル画面"];
+    player.numberOfLoops = -1;
+
+    if([player isPlaying]){
+        
+        //すでに再生中であれば、何もしない
+        NSLog(@"すでに再生中です");
+        
+    }else{
+
+        [player play];
+        
+    }
 }
 
 
@@ -113,7 +108,7 @@
     if([segue.identifier isEqualToString:@"moveToTutorialScreen"]){
         
         TutorialScreenViewController *tsvc= (TutorialScreenViewController*)[segue destinationViewController];
-        tsvc.player = self.player;
+        tsvc.player = player;
         
     }
 }
@@ -121,12 +116,11 @@
 
 -(void)bgmStopWithFadeOut
 {
-
-    if (self.player.volume > 0.1) {
-        self.player.volume = self.player.volume - 0.1;
+    if (player.volume > 0.1) {
+        player.volume = player.volume - 0.1;
         [self performSelector:@selector(bgmStopWithFadeOut) withObject:nil afterDelay:0.5];
     }else{
-        [self.player stop];
+        [player stop];
 
     }
 }

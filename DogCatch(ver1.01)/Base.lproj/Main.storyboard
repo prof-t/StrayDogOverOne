@@ -36,7 +36,7 @@
                                 </state>
                                 <connections>
                                     <action selector="gameStartNormal:" destination="CqQ-oD-Iui" eventType="touchUpInside" id="ZoP-GC-d9O"/>
-                                    <segue destination="mER-Xr-FoX" kind="presentation" identifier="movoToGameScreen" id="44t-b6-zHt"/>
+                                    <segue destination="mER-Xr-FoX" kind="presentation" identifier="movoToNormalGameScreen" id="44t-b6-zHt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKK-at-EE4">
@@ -67,7 +67,8 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="qkR-G2-7Zf" kind="presentation" id="xOg-MH-mDH"/>
+                                    <action selector="gameStartEasy:" destination="CqQ-oD-Iui" eventType="touchUpInside" id="nZw-TZ-fwM"/>
+                                    <segue destination="qkR-G2-7Zf" kind="presentation" identifier="moveToEasyModeScreen" id="xOg-MH-mDH"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title_ver2.png" translatesAutoresizingMaskIntoConstraints="NO" id="ar1-JX-6Hl">
@@ -528,26 +529,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Td-en-cfY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1378" y="881"/>
-        </scene>
-        <!--Clear Screen View Controller-->
-        <scene sceneID="9wg-yy-6ly">
-            <objects>
-                <viewController id="CRp-Hh-m20" customClass="ClearScreenViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lGg-hV-rnF"/>
-                        <viewControllerLayoutGuide type="bottom" id="GkX-cN-9ML"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ZU8-eX-vPi">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gdv-1E-Ews" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="536" y="2516"/>
         </scene>
         <!--Easy Mode View Controller-->
         <scene sceneID="3fr-zO-lLQ">

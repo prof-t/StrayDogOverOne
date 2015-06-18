@@ -38,9 +38,7 @@
     
 
     //音楽の生成と再生
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"c6" ofType:@"mp3"];
-    player = [AudioSingleton createPlayerWithURLString:path forKey:@"タイトル画面"];
-    player.numberOfLoops = -1;
+
 
     if([player isPlaying]){
         
@@ -49,6 +47,9 @@
         
     }else{
 
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"c6" ofType:@"mp3"];
+        player = [AudioSingleton createPlayerWithURLString:path forKey:@"タイトル画面"];
+        player.numberOfLoops = -1;
         [player play];
         
     }
@@ -106,13 +107,14 @@
 {
     
 
-    if ( ([segue.identifier isEqualToString:@"movoToNormalGameScreen"]) ||([segue.identifier isEqualToString:@"movoToEasyGameScreen"])  ) {
+    if ( ([segue.identifier isEqualToString:@"moveToNormalGameScreen"]) ||([segue.identifier isEqualToString:@"moveToEasyModeScreen"])  ) {
         
         GameScreenViewController *gvsc= (GameScreenViewController*)[segue destinationViewController];
         gvsc.questionNumber = 0;
         
         //遷移時に音楽をフェードアウトする
         [self bgmStopWithFadeOut];
+        NSLog(@"BGM STOP!");
     }
     
     if([segue.identifier isEqualToString:@"moveToTutorialScreen"]){

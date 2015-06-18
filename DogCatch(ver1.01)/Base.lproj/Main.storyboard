@@ -36,7 +36,7 @@
                                 </state>
                                 <connections>
                                     <action selector="gameStartNormal:" destination="CqQ-oD-Iui" eventType="touchUpInside" id="ZoP-GC-d9O"/>
-                                    <segue destination="mER-Xr-FoX" kind="presentation" identifier="movoToNormalGameScreen" id="44t-b6-zHt"/>
+                                    <segue destination="mER-Xr-FoX" kind="presentation" identifier="moveToNormalGameScreen" id="44t-b6-zHt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKK-at-EE4">

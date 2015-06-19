@@ -19,22 +19,25 @@
 //得点加算メソッド
 -(NSInteger)evaluateScoreWithIsCorrect:(BOOL)isCorrect remainTime:(float)remainTime  completion:(void (^)(NSInteger score))completion
 {
-    int score;
+    NSInteger score;
     
     //正解だったら残り秒数に×１００点する
     if(isCorrect == YES){
         
         score = remainTime * 10;
+        NSLog(@"remainTime=%f /score=%d",remainTime,score);
         
         //失敗だったら−300点
     } else if(isCorrect == NO){
         
         score = - 300;
+        NSLog(@"remainTime=%f /score=%d",remainTime,score);
         
         //時間切れだったら-500点
     } else if(time <= 0){
         
         score = - 500;
+        NSLog(@"remainTime=%f /score=%d",remainTime,score);
     }
     
 //    completion(score);

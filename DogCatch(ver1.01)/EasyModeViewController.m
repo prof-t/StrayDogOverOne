@@ -27,7 +27,7 @@
     float _secondsOfTimer;
     NSString *_timeStr;
     
-    int nowScore; //現在の得点
+    NSInteger nowScore; //現在の得点
     Question *questionClassOBJ;
     BOOL _correctOrWrong;
 }
@@ -169,8 +169,9 @@
         _playerEffect = [[AVAudioPlayer alloc]initWithContentsOfURL:bgm1URL error:nil];
         self.playerEffect.numberOfLoops = 0;
         [self.playerEffect play];
+        
         nowScore = [questionClassOBJ evaluateScoreWithIsCorrect:timeCount remainTime:YES completion:^(NSInteger score) {
-            
+
         }] + nowScore;
         _correctOrWrong = YES;
         self.clearViewImage.image =[UIImage imageNamed:@"girl2.jpg"];
@@ -192,7 +193,7 @@
     }
     
     //現在の総得点をNSString化してlabelに表示
-    NSString *nowScoreStr = [[NSString alloc]initWithFormat:@"総得点 %d",nowScore];
+    NSString *nowScoreStr = [[NSString alloc]initWithFormat:@"総得点 %ld",(long)nowScore];
     self.totalScore.text = nowScoreStr;
     
     //ボタンが何度も押されるのを防ぐため、enabledをnoに設定

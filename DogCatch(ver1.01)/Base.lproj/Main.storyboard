@@ -52,6 +52,9 @@
                                     <segue destination="qkR-G2-7Zf" kind="presentation" identifier="moveToEasyModeScreen" id="xOg-MH-mDH"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="title_ver2.png" translatesAutoresizingMaskIntoConstraints="NO" id="ar1-JX-6Hl">
+                                <rect key="frame" x="26" y="15" width="972" height="620"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ゲームをはじめる" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ax-0W-s5L">
                                 <rect key="frame" x="432" y="545" width="160" height="20"/>
                                 <fontDescription key="fontDescription" name="KodomoRounded" family="KodomoRounded" pointSize="20"/>
@@ -59,7 +62,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwt-0P-q8V">
-                                <rect key="frame" x="437" y="723" width="150" height="50"/>
+                                <rect key="frame" x="437" y="660" width="150" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="ルール説明">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -767,5 +770,6 @@
         <image name="dogall.png" width="981" height="218"/>
         <image name="frame_2.png" width="1043" height="735"/>
         <image name="girl1.jpg" width="823" height="823"/>
+        <image name="title_ver2.png" width="552" height="184"/>
     </resources>
 </document>

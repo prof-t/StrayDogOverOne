@@ -49,7 +49,7 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
     
     nowScore = 0;
-    questionClassOBJ = [Question alloc];
+    questionClassOBJ = [[Question alloc]init];
     
     
 }
@@ -170,7 +170,7 @@
         self.playerEffect.numberOfLoops = 0;
         [self.playerEffect play];
         
-        nowScore = [questionClassOBJ evaluateScoreWithIsCorrect:timeCount remainTime:YES completion:^(NSInteger score) {
+        nowScore = [questionClassOBJ evaluateScoreWithIsCorrect:YES remainTime:timeCount completion:^(NSInteger score) {
 
         }] + nowScore;
         _correctOrWrong = YES;
@@ -179,7 +179,7 @@
         
     } else {
         NSLog(@"残念！！");
-        nowScore = [questionClassOBJ evaluateScoreWithIsCorrect:timeCount remainTime:NO completion:^(NSInteger score) {
+        nowScore = [questionClassOBJ evaluateScoreWithIsCorrect:NO remainTime:timeCount completion:^(NSInteger score) {
             
         }] + nowScore;
         

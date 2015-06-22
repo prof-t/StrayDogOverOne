@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A01B78A1B329CAA00CEB70A /* SDAudioPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A01B7891B329CAA00CEB70A /* SDAudioPlayerManager.m */; };
 		2A0D79F51ADC07D400448354 /* title_ver2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A0D79F41ADC07D400448354 /* title_ver2.png */; };
 		2A0D79F71ADC129100448354 /* c6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A0D79F61ADC129100448354 /* c6.mp3 */; };
 		2A0D79F91ADC163A00448354 /* se9.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2A0D79F81ADC163A00448354 /* se9.wav */; };
@@ -39,7 +40,6 @@
 		2A3A3F411AD2684C00F09768 /* girl4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2A3A3F3D1AD2684C00F09768 /* girl4.jpg */; };
 		2A3A3F441AD27E7F00F09768 /* TitleScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3A3F431AD27E7F00F09768 /* TitleScreenViewController.m */; };
 		2A3A3F461AD27F5300F09768 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3A3F451AD27F5300F09768 /* SpriteKit.framework */; };
-		2A3A3F491AD29D0100F09768 /* ClearScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3A3F481AD29D0100F09768 /* ClearScreenViewController.m */; };
 		2A5D142A1ADB87CF003D9BC3 /* KodomoRounded.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2AD298F11AD54FC7005D787B /* KodomoRounded.otf */; };
 		2A5D142B1ADB87DB003D9BC3 /* Yasashisa.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2AF2FDF01ADB852500E71856 /* Yasashisa.ttf */; };
 		2A777D701ADE5D1D00F9BEFA /* dogall.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A777D6F1ADE5D1D00F9BEFA /* dogall.png */; };
@@ -66,6 +66,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A01B7881B329CAA00CEB70A /* SDAudioPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDAudioPlayerManager.h; sourceTree = "<group>"; };
+		2A01B7891B329CAA00CEB70A /* SDAudioPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDAudioPlayerManager.m; sourceTree = "<group>"; };
 		2A0D79F41ADC07D400448354 /* title_ver2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title_ver2.png; sourceTree = "<group>"; };
 		2A0D79F61ADC129100448354 /* c6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c6.mp3; sourceTree = "<group>"; };
 		2A0D79F81ADC163A00448354 /* se9.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = se9.wav; sourceTree = "<group>"; };
@@ -108,8 +110,6 @@
 		2A3A3F421AD27E7F00F09768 /* TitleScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleScreenViewController.h; sourceTree = "<group>"; };
 		2A3A3F431AD27E7F00F09768 /* TitleScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleScreenViewController.m; sourceTree = "<group>"; };
 		2A3A3F451AD27F5300F09768 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
-		2A3A3F471AD29D0100F09768 /* ClearScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClearScreenViewController.h; sourceTree = "<group>"; };
-		2A3A3F481AD29D0100F09768 /* ClearScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClearScreenViewController.m; sourceTree = "<group>"; };
 		2A777D6F1ADE5D1D00F9BEFA /* dogall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dogall.png; sourceTree = "<group>"; };
 		2A7E229A1B3105720089C2D5 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		2A7E229B1B3105720089C2D5 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
@@ -184,16 +184,16 @@
 			children = (
 				2A3A3EF21AD2373400F09768 /* AppDelegate.h */,
 				2A3A3EF31AD2373400F09768 /* AppDelegate.m */,
+				2A01B7881B329CAA00CEB70A /* SDAudioPlayerManager.h */,
+				2A01B7891B329CAA00CEB70A /* SDAudioPlayerManager.m */,
 				2A7E229A1B3105720089C2D5 /* BaseViewController.h */,
 				2A7E229B1B3105720089C2D5 /* BaseViewController.m */,
-				2A842A751B030AD400DF5E1E /* EasyModeViewController.h */,
-				2A3A3F2E1AD24DAA00F09768 /* GameScreenViewController.h */,
-				2A3A3F2F1AD24DAA00F09768 /* GameScreenViewController.m */,
 				2A3A3F421AD27E7F00F09768 /* TitleScreenViewController.h */,
 				2A3A3F431AD27E7F00F09768 /* TitleScreenViewController.m */,
+				2A842A751B030AD400DF5E1E /* EasyModeViewController.h */,
 				2A842A761B030AD400DF5E1E /* EasyModeViewController.m */,
-				2A3A3F471AD29D0100F09768 /* ClearScreenViewController.h */,
-				2A3A3F481AD29D0100F09768 /* ClearScreenViewController.m */,
+				2A3A3F2E1AD24DAA00F09768 /* GameScreenViewController.h */,
+				2A3A3F2F1AD24DAA00F09768 /* GameScreenViewController.m */,
 				2A0D79FA1ADC20F000448354 /* TutorialScreenViewController.h */,
 				2A0D79FB1ADC20F000448354 /* TutorialScreenViewController.m */,
 				2A3A3F331AD25F1000F09768 /* CustomButton.h */,
@@ -457,10 +457,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A7E229F1B312A770089C2D5 /* ScoreModel.m in Sources */,
+				2A01B78A1B329CAA00CEB70A /* SDAudioPlayerManager.m in Sources */,
 				2A3A3F351AD25F1000F09768 /* CustomButton.m in Sources */,
 				2A842A771B030AD400DF5E1E /* EasyModeViewController.m in Sources */,
 				2A7E229C1B3105720089C2D5 /* BaseViewController.m in Sources */,
-				2A3A3F491AD29D0100F09768 /* ClearScreenViewController.m in Sources */,
 				2AF2FDEF1ADB57E300E71856 /* TimerClass.m in Sources */,
 				2A3A3EF41AD2373400F09768 /* AppDelegate.m in Sources */,
 				2A3A3F1D1AD237DF00F09768 /* Question.m in Sources */,

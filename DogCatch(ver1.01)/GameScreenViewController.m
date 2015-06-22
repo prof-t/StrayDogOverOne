@@ -181,21 +181,33 @@
     //効果音、得点の増減、正解か不正解の値渡しを行う
     if(sender.tag == correctButtonTag + 1){
         NSLog(@"正解！！");
+        //正解の効果音を鳴らす
         NSURL *bgm1URL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"correct2" ofType:@"mp3"] ];
         _playerEffect = [[AVAudioPlayer alloc]initWithContentsOfURL:bgm1URL error:nil];
         self.playerEffect.numberOfLoops = 0;
         [self.playerEffect play];
-        nowScore = [questionClassOBJ evaluateScoreWithIsCorrect:timeCount remainTime:YES] + nowScore;
+        
+        //この問題での得点と、今までに得た得点を足して、総合計を算出する
+        nowScore = [questionClassOBJ evaluateScoreWithIsCorrect:timeCount remainTime:YES completion:^(NSInteger score) {
+            
+        }] + nowScore;
         _correctOrWrong = YES;
         self.clearViewImage.image =[UIImage imageNamed:@"girl2.jpg"];
         navBar.topItem.title = @"おめでとう!!";
+        
     } else {
         NSLog(@"残念！！");
-        nowScore = [questionClassOBJ evaluateScoreWithIsCorrect:timeCount remainTime:NO] + nowScore;
+        //不正解の効果音を鳴らす
         NSURL *bgm2URL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"d6" ofType:@"mp3"] ];
         _playerEffect = [[AVAudioPlayer alloc]initWithContentsOfURL:bgm2URL error:nil];
         self.playerEffect.numberOfLoops = 0;
         [self.playerEffect play];
+        
+        //この問題での得点と、今までに得た得点を足して、総合計を算出する
+        nowScore = [questionClassOBJ evaluateScoreWithIsCorrect:timeCount remainTime:NO completion:^(NSInteger score) {
+            
+        }] + nowScore;
+        
         _correctOrWrong = NO;
         self.clearViewImage.image =[UIImage imageNamed:@"girl1.jpg"];
         navBar.topItem.title = @"残念!!";
@@ -440,7 +452,7 @@
     float second = fmodf(timeCount,60);
      _timeStr = [NSString stringWithFormat:@"残り時間 %05.2f",second];
     
-        NSLog(@"timerメソッドの中。今のtimeは%f",second);
+//        NSLog(@"timerメソッドの中。今のtimeは%f",second);
     
     self.timeLabel.text = _timeStr;
     

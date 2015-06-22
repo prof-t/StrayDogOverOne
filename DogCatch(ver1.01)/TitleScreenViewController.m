@@ -17,6 +17,9 @@
 @end
 
 @implementation TitleScreenViewController
+{
+    AVAudioPlayer *player;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,23 +36,23 @@
 //    [[self.buttonNormal layer] setCornerRadius:5.0];
 //    [self.buttonNormal setClipsToBounds:YES];
     
-    
-    
-    //音楽START！
-    if([self.player isPlaying]){
+
+    //音楽の生成と再生
+
+
+    if([player isPlaying]){
         
+        //すでに再生中であれば、何もしない
         NSLog(@"すでに再生中です");
         
     }else{
+
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"c6" ofType:@"mp3"];
+        player = [AudioSingleton createPlayerWithURLString:path forKey:@"タイトル画面"];
+        player.numberOfLoops = -1;
+        [player play];
         
-    NSURL *bgmURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"c6" ofType:@"mp3"] ];
-    _player = [[AVAudioPlayer alloc]initWithContentsOfURL:bgmURL error:nil];
-    self.player.numberOfLoops = -1;
-    [self.player play];
-    
     }
-    
-    
 }
 
 
@@ -69,7 +72,7 @@
 */
 
 
-
+//normalボタンtap時のイベント
 - (IBAction)gameStartNormal:(id)sender
 {
     NSURL *bgm2URL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"se9" ofType:@"wav"] ];
@@ -77,8 +80,25 @@
     self.playerEffect.numberOfLoops = 0;
     [self.playerEffect play];
     
+    
+    //シングルトンver
+    //    NSString *path = [[NSBundle mainBundle] pathForResource:@"se9" ofType:@"wav"];
+    //    player = [AudioSingleton createPlayerWithURLString:path forKey:@"ゲームモード選択"];
+    //    player.numberOfLoops = -1;
+    //    [player play];
+    
 }
 
+//easyボタンtap時のイベント
+- (IBAction)gameStartEasy:(id)sender {
+    
+    NSURL *bgm2URL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"se9" ofType:@"wav"] ];
+    _playerEffect = [[AVAudioPlayer alloc]initWithContentsOfURL:bgm2URL error:nil];
+    self.playerEffect.numberOfLoops = 0;
+    [self.playerEffect play];
+}
+
+//ルール説明ボタンtap時のイベント
 - (IBAction)tutorialScreen:(id)sender
 {
 
@@ -94,19 +114,20 @@
 {
     
 
-    if([segue.identifier isEqualToString:@"movoToGameScreen"]){
+    if ( ([segue.identifier isEqualToString:@"moveToNormalGameScreen"]) ||([segue.identifier isEqualToString:@"moveToEasyModeScreen"])  ) {
         
         GameScreenViewController *gvsc= (GameScreenViewController*)[segue destinationViewController];
         gvsc.questionNumber = 0;
         
         //遷移時に音楽をフェードアウトする
         [self bgmStopWithFadeOut];
+        NSLog(@"BGM STOP!");
     }
     
     if([segue.identifier isEqualToString:@"moveToTutorialScreen"]){
         
         TutorialScreenViewController *tsvc= (TutorialScreenViewController*)[segue destinationViewController];
-        tsvc.player = self.player;
+        tsvc.player = player;
         
     }
 }
@@ -114,12 +135,11 @@
 
 -(void)bgmStopWithFadeOut
 {
-
-    if (self.player.volume > 0.1) {
-        self.player.volume = self.player.volume - 0.1;
+    if (player.volume > 0.1) {
+        player.volume = player.volume - 0.1;
         [self performSelector:@selector(bgmStopWithFadeOut) withObject:nil afterDelay:0.5];
     }else{
-        [self.player stop];
+        [player stop];
 
     }
 }

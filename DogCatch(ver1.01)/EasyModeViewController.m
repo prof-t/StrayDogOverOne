@@ -18,8 +18,8 @@
 
 @implementation EasyModeViewController
 {
-    int correctButtonTag;
-    BOOL questionPattern;
+    int correctButtonTag; //正解ボタンのタグ番号
+    BOOL questionPattern; //設問パターン
     
     //タイマー
     __weak NSTimer *_timer;
@@ -27,7 +27,7 @@
     float _secondsOfTimer;
     NSString *_timeStr;
     
-    int nowScore;
+    NSInteger nowScore; //現在の得点
     Question *questionClassOBJ;
     BOOL _correctOrWrong;
 }
@@ -49,7 +49,7 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
     
     nowScore = 0;
-    questionClassOBJ = [Question alloc];
+    questionClassOBJ = [[Question alloc]init];
     
     
 }
@@ -59,16 +59,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
-
+//キャンセルボタン押下時のイベント処理
 - (IBAction)CancelButton:(id)sender
 {
     //アラートの表示（iOS8か否かで処理が分岐する）
@@ -111,12 +102,10 @@
         //    [alert addAction:altAction];
         
         [self presentViewController:alert animated:YES completion:nil];
-        
     }
-    
-    
 }
 
+//スタートボタン押下時のイベント処理
 - (IBAction)gameStartMetod:(UIBarButtonItem*)sender
 {
     sender.enabled = NO;
@@ -126,9 +115,6 @@
     //女の子の顔画像を変更
     self.girlImage.image = [UIImage imageNamed:@"girl3.jpg"];
     
-    
-    
-    /*★☆★　動作確認用テスト★☆★*/
     //ボタンのhiddenを解除
     self.dogButton1.enabled = YES;
     self.dogButton2.enabled = YES;
@@ -147,7 +133,8 @@
     [self.player play];
     
     //timer起動
-    //    TimerClass *timerTest = [TimerClass alloc];
+//    TimerClass *timerTest = [TimerClass alloc];
+//    [timerTest startTimer:60];
     [self timerStart];
     
     //labelテキストを随時変更
@@ -156,11 +143,9 @@
     
     UINavigationBar *navBar = (UINavigationBar*)[self.view viewWithTag:10];
     navBar.topItem.title = @"犬をタッチしてつかまえてね!!";
-    
-    
-    
 }
 
+//回答ボタンを押下時のイベント処理
 - (IBAction)tapButton:(UIButton*)sender
 {
     
@@ -170,6 +155,7 @@
     [_timer invalidate];
     [self.player stop];
     
+    //ゲームクリアー画面のviewを表示させる
     self.clearView.hidden = NO;
     self.clearViewImage.hidden = NO;
     
@@ -183,13 +169,20 @@
         _playerEffect = [[AVAudioPlayer alloc]initWithContentsOfURL:bgm1URL error:nil];
         self.playerEffect.numberOfLoops = 0;
         [self.playerEffect play];
-        nowScore = [questionClassOBJ evaluateScoreWithIsCorrect:timeCount remainTime:YES] + nowScore;
+        
+        nowScore = [questionClassOBJ evaluateScoreWithIsCorrect:YES remainTime:timeCount completion:^(NSInteger score) {
+
+        }] + nowScore;
         _correctOrWrong = YES;
         self.clearViewImage.image =[UIImage imageNamed:@"girl2.jpg"];
         navBar.topItem.title = @"おめでとう!!";
+        
     } else {
         NSLog(@"残念！！");
-        nowScore = [questionClassOBJ evaluateScoreWithIsCorrect:timeCount remainTime:NO] + nowScore;
+        nowScore = [questionClassOBJ evaluateScoreWithIsCorrect:NO remainTime:timeCount completion:^(NSInteger score) {
+            
+        }] + nowScore;
+        
         NSURL *bgm2URL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"d6" ofType:@"mp3"] ];
         _playerEffect = [[AVAudioPlayer alloc]initWithContentsOfURL:bgm2URL error:nil];
         self.playerEffect.numberOfLoops = 0;
@@ -199,14 +192,16 @@
         navBar.topItem.title = @"残念!!";
     }
     
-    NSString *nowScoreStr = [[NSString alloc]initWithFormat:@"総得点 %d",nowScore];
+    //現在の総得点をNSString化してlabelに表示
+    NSString *nowScoreStr = [[NSString alloc]initWithFormat:@"総得点 %ld",(long)nowScore];
     self.totalScore.text = nowScoreStr;
     
+    //ボタンが何度も押されるのを防ぐため、enabledをnoに設定
     self.dogButton1.enabled = NO;
     self.dogButton2.enabled = NO;
     self.dogButton3.enabled = NO;
     
-    
+    //スタートボタンのenabledをyesにし、次の問題に移れるようにする
     self.gameStartButton.enabled = YES;
     
     //ボタンの円半径の設定を、画面変化に対応させる
@@ -420,7 +415,7 @@
     float second = fmodf(timeCount,60);
     _timeStr = [NSString stringWithFormat:@"残り時間 %05.2f",second];
     
-    NSLog(@"timerメソッドの中。今のtimeは%f",second);
+//    NSLog(@"timerメソッドの中。今のtimeは%f",second);
     
     self.timeLabel.text = _timeStr;
     

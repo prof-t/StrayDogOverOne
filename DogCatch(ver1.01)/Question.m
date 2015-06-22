@@ -17,9 +17,9 @@
 
 #pragma mark - public methods
 //得点加算メソッド
--(NSInteger)evaluateScoreWithIsCorrect:(BOOL)isCorrect remainTime:(float)remainTime
+-(NSInteger)evaluateScoreWithIsCorrect:(BOOL)isCorrect remainTime:(float)remainTime  completion:(void (^)(NSInteger score))completion
 {
-    int score;
+    NSInteger score;
     
     //正解だったら残り秒数に×１００点する
     if(isCorrect == YES){
@@ -36,6 +36,10 @@
         
         score = - 500;
     }
+    
+//    completion(score);
+    
+    NSLog(@"今回の得点は%ld",(long)score);
     
     return score;
 }

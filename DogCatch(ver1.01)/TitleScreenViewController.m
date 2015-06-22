@@ -107,8 +107,8 @@
     
     if([segue.identifier isEqualToString:@"moveToTutorialScreen"]){
         
-        TutorialScreenViewController *tsvc= (TutorialScreenViewController*)[segue destinationViewController];
-        tsvc.player = player;
+//        TutorialScreenViewController *tsvc= (TutorialScreenViewController*)[segue destinationViewController];
+//        tsvc.player = player;
         
     }
 }

@@ -20,6 +20,7 @@
 {
     int pageNumber;
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -46,31 +47,16 @@
 
 - (IBAction)titleScreen:(id)sender
 {
-    NSURL *bgm3URL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"decision23" ofType:@"mp3"] ];
-    _playerEffect2 = [[AVAudioPlayer alloc]initWithContentsOfURL:bgm3URL error:nil];
-    self.playerEffect2.numberOfLoops = 0;
-    [self.playerEffect2 play];
+    [AudioSingleton playAudioWithKey:@"ルール説明ボタン"];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-
-//遷移時に数値を渡す
+//遷移時の処理
 -(void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
 {
-    
     if([segue.identifier isEqualToString:@"returnTitleScreen"]){
         
-        //遷移時に音楽をフェードアウトする
-        [self.player stop];
+        //遷移時に音楽をストップする
+        [AudioSingleton stopAudioWithKey:@"タイトル画面"];
     }
 }
 
@@ -108,15 +94,4 @@
     }
 }
 
--(void)bgmStopWithFadeOut
-{
-    
-    if (self.player.volume > 0.1) {
-        self.player.volume = self.player.volume - 0.1;
-        [self performSelector:@selector(bgmStopWithFadeOut) withObject:nil afterDelay:1.0];
-    }else{
-        [self.player stop];
-        
-    }
-}
 @end

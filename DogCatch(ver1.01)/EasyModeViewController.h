@@ -13,6 +13,7 @@
 #import"TimerClass.h"
 #import"TitleScreenViewController.h"
 #import "BaseViewController.h"
+#import "SDAudioPlayerManager.h"
 
 @interface EasyModeViewController : BaseViewController<UIActionSheetDelegate>
 
@@ -24,8 +25,6 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *gameCancelButton;
 
 @property int questionNumber;
-@property AVAudioPlayer *player;
-@property AVAudioPlayer *playerEffect;
 
 @property (weak, nonatomic) IBOutlet UIImageView *girlImage;
 @property (weak, nonatomic) IBOutlet UILabel *questionColorLabel;

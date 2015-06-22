@@ -30,6 +30,8 @@
     NSInteger nowScore; //現在の得点
     Question *questionClassOBJ;
     BOOL _correctOrWrong;
+    
+    AVAudioPlayer *player;
 }
 
 
@@ -77,17 +79,20 @@
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"ゲームをやめますか？" message:@"" preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertController *__weak weakAlert = alert;
+        
+        //「ゲームをやめる」のをやめる際の処理
         UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"やめない" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
             [weakAlert dismissViewControllerAnimated:YES completion:nil];
         }];
         [alert addAction:defaultAction];
         
+        //「ゲームをやめる」際の処理
         UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"やめる" style:UIAlertActionStyleCancel handler:^(UIAlertAction* action){
             
             [_timer invalidate];//Timerを止める
             TitleScreenViewController *titleVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"TitleScreen"];//title画面に遷移する
             [self presentViewController:titleVC animated:YES completion:nil];//YESならModal,Noなら何もなし
-            [_player stop];//音楽も止める
+            [player stop];//音楽も止める
             [weakAlert dismissViewControllerAnimated:YES completion:nil];
             
         }];
@@ -127,10 +132,8 @@
     [self decidedQuestion:questionPattern label1:self.questionColorLabel label2:self.questionActionLabel];
     
     //音楽START！
-    NSURL *bgmURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"カジノ4" ofType:@"mp3"] ];
-    _player = [[AVAudioPlayer alloc]initWithContentsOfURL:bgmURL error:nil];
-    self.player.numberOfLoops = -1;
-    [self.player play];
+    [AudioSingleton createPlayerWithFileName:@"カジノ4.mp3" forKey:@"ゲーム中"];
+    [AudioSingleton playAudioWithKey:@"ゲーム中"];
     
     //timer起動
 //    TimerClass *timerTest = [TimerClass alloc];
@@ -152,8 +155,9 @@
     NSLog(@"押したボタンのタグは%d",(int)sender.tag);
     NSLog(@"正解ボタンのタグは%d",correctButtonTag);
     
+    //タイマーと音楽のストップ
     [_timer invalidate];
-    [self.player stop];
+    [AudioSingleton stopAudioWithKey:@"ゲーム中"];
     
     //ゲームクリアー画面のviewを表示させる
     self.clearView.hidden = NO;
@@ -164,11 +168,9 @@
     
     //効果音、得点の増減、正解か不正解の値渡しを行う
     if(sender.tag == correctButtonTag + 1){
-        NSLog(@"正解！！");
-        NSURL *bgm1URL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"correct2" ofType:@"mp3"] ];
-        _playerEffect = [[AVAudioPlayer alloc]initWithContentsOfURL:bgm1URL error:nil];
-        self.playerEffect.numberOfLoops = 0;
-        [self.playerEffect play];
+
+        [AudioSingleton createPlayerWithFileName:@"correct2.mp3" forKey:@"正解"];
+        [AudioSingleton playAudioWithKey:@"正解"];
         
         nowScore = [questionClassOBJ evaluateScoreWithIsCorrect:YES remainTime:timeCount completion:^(NSInteger score) {
 
@@ -183,10 +185,8 @@
             
         }] + nowScore;
         
-        NSURL *bgm2URL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"d6" ofType:@"mp3"] ];
-        _playerEffect = [[AVAudioPlayer alloc]initWithContentsOfURL:bgm2URL error:nil];
-        self.playerEffect.numberOfLoops = 0;
-        [self.playerEffect play];
+        [AudioSingleton createPlayerWithFileName:@"d6.mp3" forKey:@"失敗"];
+        [AudioSingleton playAudioWithKey:@"失敗"];
         _correctOrWrong = NO;
         self.clearViewImage.image =[UIImage imageNamed:@"girl1.jpg"];
         navBar.topItem.title = @"残念!!";

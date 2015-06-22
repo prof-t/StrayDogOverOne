@@ -119,8 +119,8 @@
     
     if (player.volume > 0.1) {
         player.volume = player.volume - 0.1;
-        [self performSelector:@selector(fadeOutAudioWithKey:) withObject:nil afterDelay:0.5];
-        NSLog(@"ボリューム下げてるよ");
+//        [self performSelector:@selector(fadeOutAudioWithKey:) withObject:nil afterDelay:0.5];
+        [player stop];
     }else{
         [player stop];
     }

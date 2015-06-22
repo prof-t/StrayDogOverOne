@@ -45,8 +45,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+//ボタンのイベント処理
 - (IBAction)titleScreen:(id)sender
 {
+    //効果音を鳴らす
     [AudioSingleton playAudioWithKey:@"ルール説明ボタン"];
 }
 

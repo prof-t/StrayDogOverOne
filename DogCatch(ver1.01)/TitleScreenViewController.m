@@ -38,7 +38,7 @@
     
 
     //音楽の生成と再生
-    [AudioSingleton createPlayerWithFileName:@"c6.mp3" forKey:@"タイトル画面"];
+    player = [AudioSingleton createPlayerWithFileName:@"c6.mp3" forKey:@"タイトル画面"];
     //    player.numberOfLoops = -1;
     [AudioSingleton playAudioWithKey:@"タイトル画面"];
 }
@@ -74,20 +74,19 @@
 //easyボタンtap時のイベント
 - (IBAction)gameStartEasy:(id)sender {
     
-    NSURL *bgm2URL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"se9" ofType:@"wav"] ];
-    _playerEffect = [[AVAudioPlayer alloc]initWithContentsOfURL:bgm2URL error:nil];
-    self.playerEffect.numberOfLoops = 0;
-    [self.playerEffect play];
+    //効果音再生
+    [AudioSingleton createPlayerWithFileName:@"se9.wav" forKey:@"ゲームモード選択"];
+    //    player.numberOfLoops = -1;
+    [AudioSingleton playAudioWithKey:@"ゲームモード選択"];
 }
 
 //ルール説明ボタンtap時のイベント
 - (IBAction)tutorialScreen:(id)sender
 {
-
-    NSURL *bgm3URL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"decision23" ofType:@"mp3"] ];
-    _playerEffect2 = [[AVAudioPlayer alloc]initWithContentsOfURL:bgm3URL error:nil];
-    self.playerEffect2.numberOfLoops = 0;
-    [self.playerEffect2 play];
+    //効果音再生
+    [AudioSingleton createPlayerWithFileName:@"decision23.mp3" forKey:@"ルール説明ボタン"];
+    //    player.numberOfLoops = -1;
+    [AudioSingleton playAudioWithKey:@"ルール説明ボタン"];
 
 }
 
@@ -102,8 +101,8 @@
         gvsc.questionNumber = 0;
         
         //遷移時に音楽をフェードアウトする
-        [self bgmStopWithFadeOut];
-        NSLog(@"BGM STOP!");
+        [AudioSingleton fadeOutAudioWithKey:@"タイトル画面"];
+//        [self bgmStopWithFadeOut];
     }
     
     if([segue.identifier isEqualToString:@"moveToTutorialScreen"]){
@@ -115,16 +114,18 @@
 }
 
 
--(void)bgmStopWithFadeOut
-{
-    if (player.volume > 0.1) {
-        player.volume = player.volume - 0.1;
-        [self performSelector:@selector(bgmStopWithFadeOut) withObject:nil afterDelay:0.5];
-    }else{
-        [player stop];
-
-    }
-}
+//-(void)bgmStopWithFadeOut
+//{
+//    if (player.volume > 0.1) {
+//        player.volume = player.volume - 0.1;
+//        NSLog(@"ボリューム下げてるよ");
+//        [self performSelector:@selector(bgmStopWithFadeOut) withObject:nil afterDelay:0.5];
+//
+//    }else{
+//        [player stop];
+//
+//    }
+//}
 
 
 

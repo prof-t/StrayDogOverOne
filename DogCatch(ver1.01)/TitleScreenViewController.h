@@ -11,7 +11,7 @@
 #import "GameScreenViewController.h"
 #import"TutorialScreenViewController.h"
 #import "BaseViewController.h"
-#import "AudioPlayerClass.h"
+#import "SDAudioPlayerManager.h"
 
 @interface TitleScreenViewController : BaseViewController
 

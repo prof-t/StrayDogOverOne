@@ -6,16 +6,16 @@
 //  Copyright (c) 2015年 RYO. All rights reserved.
 //
 
-#import "AudioPlayerClass.h"
+#import "SDAudioPlayerManager.h"
 
-@interface AudioPlayerClass()
+@interface SDAudioPlayerManager()
 
 // サウンドオブジェクトのコンテナを用意（AVAudioPlayerのインスタンスを保持するため）
 @property (nonatomic, strong)NSMutableDictionary *players;
 
 @end
 
-@implementation AudioPlayerClass
+@implementation SDAudioPlayerManager
 
 #pragma mark - Public Methods
 
@@ -99,6 +99,18 @@
         _players = [@{} mutableCopy];
     }
     return _players;
+}
+
+-(BOOL)playAudioWithKey:(NSString *)key{
+    
+    AVAudioPlayer *player = [self playerWithKey:key];
+    return [player play];
+}
+
+
+-(void)stopAudioWithKey:(NSString *)key{
+    AVAudioPlayer *player = [self playerWithKey:key];
+    [player stop];
 }
 
 @end

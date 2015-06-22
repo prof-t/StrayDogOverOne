@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A01B78A1B329CAA00CEB70A /* AudioPlayerClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A01B7891B329CAA00CEB70A /* AudioPlayerClass.m */; };
+		2A01B78A1B329CAA00CEB70A /* SDAudioPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A01B7891B329CAA00CEB70A /* SDAudioPlayerManager.m */; };
 		2A0D79F51ADC07D400448354 /* title_ver2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A0D79F41ADC07D400448354 /* title_ver2.png */; };
 		2A0D79F71ADC129100448354 /* c6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A0D79F61ADC129100448354 /* c6.mp3 */; };
 		2A0D79F91ADC163A00448354 /* se9.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2A0D79F81ADC163A00448354 /* se9.wav */; };
@@ -66,8 +66,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2A01B7881B329CAA00CEB70A /* AudioPlayerClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioPlayerClass.h; sourceTree = "<group>"; };
-		2A01B7891B329CAA00CEB70A /* AudioPlayerClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerClass.m; sourceTree = "<group>"; };
+		2A01B7881B329CAA00CEB70A /* SDAudioPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDAudioPlayerManager.h; sourceTree = "<group>"; };
+		2A01B7891B329CAA00CEB70A /* SDAudioPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDAudioPlayerManager.m; sourceTree = "<group>"; };
 		2A0D79F41ADC07D400448354 /* title_ver2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title_ver2.png; sourceTree = "<group>"; };
 		2A0D79F61ADC129100448354 /* c6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c6.mp3; sourceTree = "<group>"; };
 		2A0D79F81ADC163A00448354 /* se9.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = se9.wav; sourceTree = "<group>"; };
@@ -184,8 +184,8 @@
 			children = (
 				2A3A3EF21AD2373400F09768 /* AppDelegate.h */,
 				2A3A3EF31AD2373400F09768 /* AppDelegate.m */,
-				2A01B7881B329CAA00CEB70A /* AudioPlayerClass.h */,
-				2A01B7891B329CAA00CEB70A /* AudioPlayerClass.m */,
+				2A01B7881B329CAA00CEB70A /* SDAudioPlayerManager.h */,
+				2A01B7891B329CAA00CEB70A /* SDAudioPlayerManager.m */,
 				2A7E229A1B3105720089C2D5 /* BaseViewController.h */,
 				2A7E229B1B3105720089C2D5 /* BaseViewController.m */,
 				2A3A3F421AD27E7F00F09768 /* TitleScreenViewController.h */,
@@ -457,7 +457,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A7E229F1B312A770089C2D5 /* ScoreModel.m in Sources */,
-				2A01B78A1B329CAA00CEB70A /* AudioPlayerClass.m in Sources */,
+				2A01B78A1B329CAA00CEB70A /* SDAudioPlayerManager.m in Sources */,
 				2A3A3F351AD25F1000F09768 /* CustomButton.m in Sources */,
 				2A842A771B030AD400DF5E1E /* EasyModeViewController.m in Sources */,
 				2A7E229C1B3105720089C2D5 /* BaseViewController.m in Sources */,

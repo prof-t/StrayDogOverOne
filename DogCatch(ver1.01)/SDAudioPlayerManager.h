@@ -10,12 +10,12 @@
 #import <Foundation/Foundation.h>
 #import<AVFoundation/AVFoundation.h>
 
-#define AudioSingleton [AudioPlayerClass sharedInstance]
+#define AudioSingleton [SDAudioPlayerManager sharedInstance]
 
 /**
  シングルトンのサンプルクラス
  */
-@interface AudioPlayerClass : NSObject
+@interface SDAudioPlayerManager : NSObject
 
 /**
  シングルトンのインスタンスを取得する
@@ -60,22 +60,31 @@
  サウンドオブジェクトの取得
  @param key サウンドオブジェクトの名前
  @return keyに一致するサウンドオブジェクトを返す。なければnilを返す。
- @note 任意
  */
 - (AVAudioPlayer *)playerWithKey:(NSString *)key;
 
 /**
  サウンドオブジェクトの破棄
  @param key サウンドオブジェクトの名前
- @note 任意
  */
 - (void)deletePlayerWithKey:(NSString *)key;
 
 /**
  全サウンドオブジェクトの破棄
- @note 任意
  */
 - (void)deleteAllPlayer;
+
+/**
+ サウンドオブジェクトの再生
+ @param key サウンドオブジェクトの名前
+ */
+-(BOOL)playAudioWithKey:(NSString *)key;
+
+/**
+ サウンドオブジェクトの停止
+ @param key サウンドオブジェクトの名前
+ */
+-(void)stopAudioWithKey:(NSString *)key;
 
 
 @end

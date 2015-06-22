@@ -5,6 +5,7 @@
 //  Created by RYO on 2015/06/18.
 //  Copyright (c) 2015年 RYO. All rights reserved.
 //
+//AudioPlayerのインスタンスを作成し、保持するクラス
 
 #import <Foundation/Foundation.h>
 #import<AVFoundation/AVFoundation.h>
@@ -45,6 +46,15 @@
  @note 任意
  */
 - (AVAudioPlayer *)createPlayerWithURLString:(NSString *)urlString forKey:(NSString *)key;
+
+/**
+ サウンドオブジェクトの生成(ファイル名)
+ @param fileName resource（main bundle）にある任意のファイル名(拡張子付き)
+ @param key サウンドオブジェクトの名前。nilを設定するとコンテナに保持しない。同じ名前の場合は上書きする。
+ @return サウンドオブジェクトを生成して返す
+ */
+- (AVAudioPlayer *)createPlayerWithFileName:(NSString *)fileName forKey:(NSString *)key;
+
 
 /**
  サウンドオブジェクトの取得

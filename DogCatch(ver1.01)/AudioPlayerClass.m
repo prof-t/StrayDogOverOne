@@ -10,7 +10,7 @@
 
 @interface AudioPlayerClass()
 
-// サウンドオブジェクトのコンテナ
+// サウンドオブジェクトのコンテナを用意（AVAudioPlayerのインスタンスを保持するため）
 @property (nonatomic, strong)NSMutableDictionary *players;
 
 @end
@@ -48,6 +48,12 @@
     return [self createPlayerWithURL:url forKey:key];
 }
 
+- (AVAudioPlayer *)createPlayerWithFileName:(NSString *)fileName forKey:(NSString *)key
+{
+    NSString *pathString = [[NSBundle mainBundle] pathForResource:fileName ofType:nil];
+    return [self createPlayerWithURLString:pathString forKey:key];
+}
+
 - (AVAudioPlayer *)playerWithKey:(NSString *)key
 {
     if (!key) {
@@ -80,7 +86,6 @@
             [player stop];
         }
     }
-    
     [self.players removeAllObjects];
 }
 
@@ -90,6 +95,7 @@
 - (NSMutableDictionary *)players
 {
     if (!_players) {
+        //初期化
         _players = [@{} mutableCopy];
     }
     return _players;

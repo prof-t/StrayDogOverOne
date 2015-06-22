@@ -41,6 +41,13 @@
     player = [AudioSingleton createPlayerWithFileName:@"c6.mp3" forKey:@"タイトル画面"];
     //    player.numberOfLoops = -1;
     [AudioSingleton playAudioWithKey:@"タイトル画面"];
+    
+    //以降の画面で必要な音楽データを、あらかじめコンテナに格納
+    [AudioSingleton createPlayerWithFileName:@"カジノ4.mp3" forKey:@"ゲーム中"];
+    [AudioSingleton createPlayerWithFileName:@"correct2.mp3" forKey:@"正解"];
+    [AudioSingleton createPlayerWithFileName:@"d6.mp3" forKey:@"失敗"];
+    [AudioSingleton createPlayerWithFileName:@"se9.wav" forKey:@"ゲームモード選択"];
+    [AudioSingleton createPlayerWithFileName:@"decision23.mp3" forKey:@"ルール説明ボタン"];
 }
 
 
@@ -63,20 +70,13 @@
 //normalボタンtap時のイベント
 - (IBAction)gameStartNormal:(id)sender
 {
-
     //効果音再生
-    [AudioSingleton createPlayerWithFileName:@"se9.wav" forKey:@"ゲームモード選択"];
-    //    player.numberOfLoops = -1;
     [AudioSingleton playAudioWithKey:@"ゲームモード選択"];
-    
 }
 
 //easyボタンtap時のイベント
 - (IBAction)gameStartEasy:(id)sender {
-    
     //効果音再生
-    [AudioSingleton createPlayerWithFileName:@"se9.wav" forKey:@"ゲームモード選択"];
-    //    player.numberOfLoops = -1;
     [AudioSingleton playAudioWithKey:@"ゲームモード選択"];
 }
 
@@ -84,10 +84,7 @@
 - (IBAction)tutorialScreen:(id)sender
 {
     //効果音再生
-    [AudioSingleton createPlayerWithFileName:@"decision23.mp3" forKey:@"ルール説明ボタン"];
-    //    player.numberOfLoops = -1;
     [AudioSingleton playAudioWithKey:@"ルール説明ボタン"];
-
 }
 
 //遷移時に数値を渡す

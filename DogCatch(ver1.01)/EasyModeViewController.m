@@ -30,8 +30,6 @@
     NSInteger nowScore; //現在の得点
     Question *questionClassOBJ;
     BOOL _correctOrWrong;
-    
-    AVAudioPlayer *player;
 }
 
 
@@ -92,7 +90,7 @@
             [_timer invalidate];//Timerを止める
             TitleScreenViewController *titleVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"TitleScreen"];//title画面に遷移する
             [self presentViewController:titleVC animated:YES completion:nil];//YESならModal,Noなら何もなし
-            [player stop];//音楽も止める
+            [AudioSingleton stopAudioWithKey:@"ゲーム中"];//音楽も止める
             [weakAlert dismissViewControllerAnimated:YES completion:nil];
             
         }];
@@ -132,7 +130,6 @@
     [self decidedQuestion:questionPattern label1:self.questionColorLabel label2:self.questionActionLabel];
     
     //音楽START！
-    [AudioSingleton createPlayerWithFileName:@"カジノ4.mp3" forKey:@"ゲーム中"];
     [AudioSingleton playAudioWithKey:@"ゲーム中"];
     
     //timer起動
@@ -169,9 +166,7 @@
     //効果音、得点の増減、正解か不正解の値渡しを行う
     if(sender.tag == correctButtonTag + 1){
 
-        [AudioSingleton createPlayerWithFileName:@"correct2.mp3" forKey:@"正解"];
         [AudioSingleton playAudioWithKey:@"正解"];
-        
         nowScore = [questionClassOBJ evaluateScoreWithIsCorrect:YES remainTime:timeCount completion:^(NSInteger score) {
 
         }] + nowScore;
@@ -184,8 +179,7 @@
         nowScore = [questionClassOBJ evaluateScoreWithIsCorrect:NO remainTime:timeCount completion:^(NSInteger score) {
             
         }] + nowScore;
-        
-        [AudioSingleton createPlayerWithFileName:@"d6.mp3" forKey:@"失敗"];
+
         [AudioSingleton playAudioWithKey:@"失敗"];
         _correctOrWrong = NO;
         self.clearViewImage.image =[UIImage imageNamed:@"girl1.jpg"];

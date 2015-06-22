@@ -38,21 +38,9 @@
     
 
     //音楽の生成と再生
-
-
-    if([player isPlaying]){
-        
-        //すでに再生中であれば、何もしない
-        NSLog(@"すでに再生中です");
-        
-    }else{
-
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"c6" ofType:@"mp3"];
-        player = [AudioSingleton createPlayerWithURLString:path forKey:@"タイトル画面"];
-        player.numberOfLoops = -1;
-        [player play];
-        
-    }
+    [AudioSingleton createPlayerWithFileName:@"c6.mp3" forKey:@"タイトル画面"];
+    //    player.numberOfLoops = -1;
+    [AudioSingleton playAudioWithKey:@"タイトル画面"];
 }
 
 
@@ -75,17 +63,11 @@
 //normalボタンtap時のイベント
 - (IBAction)gameStartNormal:(id)sender
 {
-    NSURL *bgm2URL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"se9" ofType:@"wav"] ];
-    _playerEffect = [[AVAudioPlayer alloc]initWithContentsOfURL:bgm2URL error:nil];
-    self.playerEffect.numberOfLoops = 0;
-    [self.playerEffect play];
-    
-    
-    //シングルトンver
-    //    NSString *path = [[NSBundle mainBundle] pathForResource:@"se9" ofType:@"wav"];
-    //    player = [AudioSingleton createPlayerWithURLString:path forKey:@"ゲームモード選択"];
+
+    //効果音再生
+    [AudioSingleton createPlayerWithFileName:@"se9.wav" forKey:@"ゲームモード選択"];
     //    player.numberOfLoops = -1;
-    //    [player play];
+    [AudioSingleton playAudioWithKey:@"ゲームモード選択"];
     
 }
 

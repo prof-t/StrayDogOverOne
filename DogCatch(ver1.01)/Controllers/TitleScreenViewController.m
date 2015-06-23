@@ -9,6 +9,8 @@
 #import "TitleScreenViewController.h"
 
 @interface TitleScreenViewController ()
+
+//ボタン
 @property (nonatomic,weak) IBOutlet UIButton *buttonNormal;
 @property (nonatomic,weak) IBOutlet UIButton *buttonEasy;
 @property (nonatomic,weak) IBOutlet UIButton *buttonHard;

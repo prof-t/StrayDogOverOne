@@ -17,7 +17,10 @@
 
 @interface NormalScreenViewController : BaseViewController<UIActionSheetDelegate>
 
+// 第何問目なのかを表す値を保持する
 @property (nonatomic,assign) NSInteger questionNumber;
+
+// ゲームの残り時間を表す数字の文字列
 @property (nonatomic,copy) NSString* timeStr;
 
 @end

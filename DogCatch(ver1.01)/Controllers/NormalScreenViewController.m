@@ -10,21 +10,35 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface NormalScreenViewController ()
+
+// クイズの回答後に表示されるViewとImageView
 @property (nonatomic,weak) IBOutlet UIView *clearView;
 @property (nonatomic,weak) IBOutlet UIImageView *clearViewImage;
 
+// 回答ボタン
 @property (nonatomic,weak) IBOutlet UIButton *dogButton1;
 @property (nonatomic,weak) IBOutlet UIButton *dogButton2;
 @property (nonatomic,weak) IBOutlet UIButton *dogButton3;
 @property (nonatomic,weak) IBOutlet UIButton *dogButton4;
 @property (nonatomic,weak) IBOutlet UIButton *dogButton5;
+
+// ゲームスタートボタン
 @property (nonatomic,weak) IBOutlet UIBarButtonItem *gameStartButton;
+
+// ゲームキャンセル（中断）ボタン
 @property (nonatomic,weak) IBOutlet UIBarButtonItem *gameCancelButton;
 
+// 女の子のImageView
 @property (nonatomic,weak) IBOutlet UIImageView *girlImage;
+
+// 問題文を表示するLabel
 @property (nonatomic,weak) IBOutlet UILabel *questionColorLabel;
 @property (nonatomic,weak) IBOutlet UILabel *questionActionLabel;
+
+// 残り時間を表示するLabel
 @property (nonatomic,weak) IBOutlet UILabel *timeLabel;
+
+// scoreの累計を表示するLabel
 @property (nonatomic,weak) IBOutlet UILabel *totalScore;
 @property (nonatomic,weak) NSTimer *timer;
 

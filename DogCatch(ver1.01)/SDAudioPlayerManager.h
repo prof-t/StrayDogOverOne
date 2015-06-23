@@ -86,5 +86,11 @@
  */
 -(void)stopAudioWithKey:(NSString *)key;
 
+/**
+ サウンドオブジェクトの音量をフェイドアウトさせて消す
+ @param key サウンドオブジェクトの名前
+ */
+-(void)fadeOutAudioWithKey:(NSString *)key;
+
 
 @end

@@ -9,11 +9,8 @@
 #import <UIKit/UIKit.h>
 #import"TitleScreenViewController.h"
 #import "BaseViewController.h"
+#import "SDAudioPlayerManager.h"
 
 @interface TutorialScreenViewController : BaseViewController
-
-@property AVAudioPlayer *player;
-@property AVAudioPlayer *playerEffect;
-@property AVAudioPlayer *playerEffect2;
 
 @end

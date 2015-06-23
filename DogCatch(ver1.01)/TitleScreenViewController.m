@@ -38,21 +38,16 @@
     
 
     //音楽の生成と再生
-
-
-    if([player isPlaying]){
-        
-        //すでに再生中であれば、何もしない
-        NSLog(@"すでに再生中です");
-        
-    }else{
-
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"c6" ofType:@"mp3"];
-        player = [AudioSingleton createPlayerWithURLString:path forKey:@"タイトル画面"];
-        player.numberOfLoops = -1;
-        [player play];
-        
-    }
+    player = [AudioSingleton createPlayerWithFileName:@"c6.mp3" forKey:@"タイトル画面"];
+    //    player.numberOfLoops = -1;
+    [AudioSingleton playAudioWithKey:@"タイトル画面"];
+    
+    //以降の画面で必要な音楽データを、あらかじめコンテナに格納
+    [AudioSingleton createPlayerWithFileName:@"カジノ4.mp3" forKey:@"ゲーム中"];
+    [AudioSingleton createPlayerWithFileName:@"correct2.mp3" forKey:@"正解"];
+    [AudioSingleton createPlayerWithFileName:@"d6.mp3" forKey:@"失敗"];
+    [AudioSingleton createPlayerWithFileName:@"se9.wav" forKey:@"ゲームモード選択"];
+    [AudioSingleton createPlayerWithFileName:@"decision23.mp3" forKey:@"ルール説明ボタン"];
 }
 
 
@@ -75,94 +70,39 @@
 //normalボタンtap時のイベント
 - (IBAction)gameStartNormal:(id)sender
 {
-    NSURL *bgm2URL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"se9" ofType:@"wav"] ];
-    _playerEffect = [[AVAudioPlayer alloc]initWithContentsOfURL:bgm2URL error:nil];
-    self.playerEffect.numberOfLoops = 0;
-    [self.playerEffect play];
-    
-    
-    //シングルトンver
-    //    NSString *path = [[NSBundle mainBundle] pathForResource:@"se9" ofType:@"wav"];
-    //    player = [AudioSingleton createPlayerWithURLString:path forKey:@"ゲームモード選択"];
-    //    player.numberOfLoops = -1;
-    //    [player play];
-    
+    //効果音再生
+    [AudioSingleton playAudioWithKey:@"ゲームモード選択"];
 }
 
 //easyボタンtap時のイベント
 - (IBAction)gameStartEasy:(id)sender {
-    
-    NSURL *bgm2URL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"se9" ofType:@"wav"] ];
-    _playerEffect = [[AVAudioPlayer alloc]initWithContentsOfURL:bgm2URL error:nil];
-    self.playerEffect.numberOfLoops = 0;
-    [self.playerEffect play];
+    //効果音再生
+    [AudioSingleton playAudioWithKey:@"ゲームモード選択"];
 }
 
 //ルール説明ボタンtap時のイベント
 - (IBAction)tutorialScreen:(id)sender
 {
-
-    NSURL *bgm3URL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"decision23" ofType:@"mp3"] ];
-    _playerEffect2 = [[AVAudioPlayer alloc]initWithContentsOfURL:bgm3URL error:nil];
-    self.playerEffect2.numberOfLoops = 0;
-    [self.playerEffect2 play];
-
+    //効果音再生
+    [AudioSingleton playAudioWithKey:@"ルール説明ボタン"];
 }
 
-//遷移時に数値を渡す
+//遷移時の処理
 -(void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
 {
-    
-
     if ( ([segue.identifier isEqualToString:@"moveToNormalGameScreen"]) ||([segue.identifier isEqualToString:@"moveToEasyModeScreen"])  ) {
         
         GameScreenViewController *gvsc= (GameScreenViewController*)[segue destinationViewController];
         gvsc.questionNumber = 0;
         
         //遷移時に音楽をフェードアウトする
-        [self bgmStopWithFadeOut];
-        NSLog(@"BGM STOP!");
+        [AudioSingleton fadeOutAudioWithKey:@"タイトル画面"];
     }
     
+    //TutorialScreenViewControllerに遷移する際の処理
     if([segue.identifier isEqualToString:@"moveToTutorialScreen"]){
         
-        TutorialScreenViewController *tsvc= (TutorialScreenViewController*)[segue destinationViewController];
-        tsvc.player = player;
-        
     }
 }
-
-
--(void)bgmStopWithFadeOut
-{
-    if (player.volume > 0.1) {
-        player.volume = player.volume - 0.1;
-        [self performSelector:@selector(bgmStopWithFadeOut) withObject:nil afterDelay:0.5];
-    }else{
-        [player stop];
-
-    }
-}
-
-
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

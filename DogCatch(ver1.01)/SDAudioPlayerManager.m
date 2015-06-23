@@ -113,4 +113,17 @@
     [player stop];
 }
 
+-(void)fadeOutAudioWithKey:(NSString *)key
+{
+    AVAudioPlayer *player = [self playerWithKey:key];
+    
+    if (player.volume > 0.1) {
+        player.volume = player.volume - 0.1;
+        [self performSelector:@selector(fadeOutAudioWithKey:) withObject:key afterDelay:0.5];
+
+    }else{
+        [player stop];
+    }
+}
+
 @end

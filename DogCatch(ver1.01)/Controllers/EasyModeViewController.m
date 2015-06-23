@@ -20,7 +20,7 @@
 {
     int correctButtonTag; //正解ボタンのタグ番号
     BOOL questionPattern; //設問パターン
-    
+     
     //タイマー
     __weak NSTimer *_timer;
     float timeCount;

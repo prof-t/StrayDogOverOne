@@ -24,7 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *gameStartButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *gameCancelButton;
 
-@property int questionNumber;
+@property (nonatomic,assign) NSInteger *questionNumber;
 
 @property (weak, nonatomic) IBOutlet UIImageView *girlImage;
 @property (weak, nonatomic) IBOutlet UILabel *questionColorLabel;

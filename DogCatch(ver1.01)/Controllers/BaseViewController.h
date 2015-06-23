@@ -11,4 +11,11 @@
 
 @interface BaseViewController : UIViewController
 
+
+/**
+背景画像をセットする
+key
+*/
+-(void)setBackGroudImageName:(NSString *)imageName;
+
 @end

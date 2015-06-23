@@ -46,4 +46,14 @@
     return UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;
 }
 
+-(void)setBackGroudImageName:(NSString *)imageName{
+    
+        UIGraphicsBeginImageContext(self.view.frame.size);
+        [[UIImage imageNamed:imageName] drawInRect:self.view.bounds];
+        UIImage *backgroundImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
+
+}
+
 @end

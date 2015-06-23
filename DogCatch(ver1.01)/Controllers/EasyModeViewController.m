@@ -47,7 +47,6 @@
     nowScore = 0;
     questionClassOBJ = [[Question alloc]init];
     
-    
 }
 
 - (void)didReceiveMemoryWarning {

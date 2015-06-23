@@ -17,6 +17,8 @@
 
 @implementation SDAudioPlayerManager
 
+
+
 #pragma mark - Public Methods
 
 + (instancetype)sharedInstance {
@@ -89,24 +91,11 @@
     [self.players removeAllObjects];
 }
 
-#pragma mark - Private Methods
-
-// playerコンテナの取得
-- (NSMutableDictionary *)players
-{
-    if (!_players) {
-        //初期化
-        _players = [@{} mutableCopy];
-    }
-    return _players;
-}
-
 -(BOOL)playAudioWithKey:(NSString *)key{
     
     AVAudioPlayer *player = [self playerWithKey:key];
     return [player play];
 }
-
 
 -(void)stopAudioWithKey:(NSString *)key{
     AVAudioPlayer *player = [self playerWithKey:key];
@@ -120,10 +109,24 @@
     if (player.volume > 0.1) {
         player.volume = player.volume - 0.1;
         [self performSelector:@selector(fadeOutAudioWithKey:) withObject:key afterDelay:0.5];
-
+        
     }else{
         [player stop];
     }
 }
+
+#pragma mark - Private Methods
+
+// playerコンテナの取得
+- (NSMutableDictionary *)players
+{
+    if (!_players) {
+        //初期化
+        _players = [@{} mutableCopy];
+    }
+    return _players;
+}
+
+
 
 @end

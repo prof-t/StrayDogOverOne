@@ -25,7 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *gameStartButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *gameCancelButton;
 
-@property int questionNumber;
+@property NSInteger questionNumber;
 
 @property (weak, nonatomic) IBOutlet UIImageView *girlImage;
 @property (weak, nonatomic) IBOutlet UILabel *questionColorLabel;
@@ -34,7 +34,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalScore;
 
 @property (nonatomic,copy) NSString* timeStr;
-
--(void)setButtonActionAndColor:(NSString*)action color:(NSString*)colorStr tag:(int)tag;
 
 @end

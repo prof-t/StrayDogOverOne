@@ -60,15 +60,12 @@
     //アラートの表示（iOS8か否かで処理が分岐する）
 //    if( [[UIDevice currentDevice].systemVersion floatValue] < 8) {
     if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
-
-        NSLog(@"iOS7.1以前のバージョンですね");
     
     UIActionSheet *as = [[UIActionSheet alloc]initWithTitle:@"ゲームを終了しますか？" delegate:self cancelButtonTitle:@"ゲームを終了しない" destructiveButtonTitle:@"ゲームを終了してタイトル画面に戻る" otherButtonTitles:nil];
     [as showInView:self.view];
     
     } else {
 
-        NSLog(@"iOS7.1以降のバージョンですね");
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"ゲームをやめますか？" message:@"" preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertController *__weak weakAlert = alert;
@@ -310,22 +307,18 @@
     
     
     //⑥不正解ボタンのアクションと色を設定する
-    for(int i=1;i<=2;i++){
+    for(NSInteger i=1;i<=2;i++){
         
-        int wrongAction = arc4random() % [allAction count];
+        NSInteger wrongAction = arc4random() % [allAction count];
         NSString* wrongActionStr = [allAction objectAtIndex:wrongAction];
         
-        int wrongColor = arc4random() % [allColor count];
+        NSInteger wrongColor = arc4random() % [allColor count];
         NSString* wrongColorStr = [allColor objectAtIndex:wrongColor];
         
-        NSLog(@"wrongAction %d",wrongAction);
-        //    NSLog(@"correctColor %d",correctColor);
-        
         //⑥−1　不正解ボタンを1〜３のどれにするかを決める
-        int wrongButtonTag = arc4random() % [allTag count];
-        int wrongButtonTagNumber = [[allTag objectAtIndex:wrongButtonTag]intValue];
-        //    NSLog(@"correctButtonTag %d",correctButtonTag);
-        
+        NSInteger wrongButtonTag = arc4random() % [allTag count];
+        NSInteger wrongButtonTagNumber = [[allTag objectAtIndex:wrongButtonTag]intValue];
+
         //⑥−2　不正解ボタンのアクションと色を設定し、更に設問ラベル用に変数に格納しておく（周回によってどれにいれるか決める）
         [self setButtonActionAndColor:wrongActionStr color:wrongColorStr tag:wrongButtonTagNumber];
         
@@ -343,9 +336,6 @@
         //⑥−4　説明文表示用に、NSMutableArrayに順番に要素を格納しておく
         [arrayForQuestionLabel addObject:wrongActionStr];
         [arrayForQuestionLabel addObject:wrongColorStr];
-        
-        NSLog(@"不正解ボタンの色：%@　アクション：%@　tag：%d",wrongColorStr,wrongActionStr,wrongButtonTagNumber);
-        
     }
     
     //arrayの中身を試しに取り出してみよう
@@ -357,7 +347,6 @@
     
     
     //⑦設問文の表示（パターンによって処理が分岐する）
-    
     NSMutableString *labelText1 =[[NSMutableString alloc]initWithString:@"わたしのワンちゃんは…\n　"];
     NSMutableString *labelText2 = [[NSMutableString alloc]initWithString:@"くびわ の いろ は…\n　"];
     
@@ -387,12 +376,7 @@
         [labelText2 appendString:@"いろだったの…"];
         [label2 setText:labelText2];
         
-        
-    } else {
-        NSLog(@"ランダムメソッドが何かおかしいよ");
     }
-    
-    
 }
 
 -(void)timer:(NSTimer*)timer
@@ -401,8 +385,6 @@
     timeCount = timeCount - 0.01f;
     float second = fmodf(timeCount,60);
     _timeStr = [NSString stringWithFormat:@"残り時間 %05.2f",second];
-    
-//    NSLog(@"timerメソッドの中。今のtimeは%f",second);
     
     self.timeLabel.text = _timeStr;
     

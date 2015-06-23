@@ -18,13 +18,13 @@
 
 @implementation EasyModeViewController
 {
-    int correctButtonTag; //正解ボタンのタグ番号
+    NSInteger correctButtonTag; //正解ボタンのタグ番号
     BOOL questionPattern; //設問パターン
      
     //タイマー
     __weak NSTimer *_timer;
-    float timeCount;
-    float _secondsOfTimer;
+    CGFloat timeCount;
+    CGFloat _secondsOfTimer;
     NSString *_timeStr;
     
     NSInteger nowScore; //現在の得点
@@ -119,7 +119,7 @@
     self.dogButton3.enabled = YES;
     
     //今回の設問パターン（YES/NO）を決定
-    questionPattern = [self questionPattern:self.questionNumber];
+    questionPattern = [self questionPattern:(int)self.questionNumber];
     
     //設問パターンをもとに、正解ボタンと失敗ボタンを生成し、同時に設問文の表示を行う
     [self decidedQuestion:questionPattern label1:self.questionColorLabel label2:self.questionActionLabel];
@@ -202,9 +202,9 @@
 
 
 //ハズレボタンの色とアクションを設定
--(void)setButtonActionAndColor:(NSString*)action color:(NSString*)colorStr tag:(int)tag
+-(void)setButtonActionAndColor:(NSString*)action color:(NSString*)colorStr tag:(NSInteger)tag
 {
-    UIButton *button = (UIButton*)[self.view viewWithTag:tag];
+    UIButton *button = (UIButton*)[self.view viewWithTag:(int)tag];
     
     if([action isEqualToString:@"ハスキー"]){
         [button setBackgroundImage:[UIImage imageNamed:@"hasky.png"] forState:UIControlStateNormal];
@@ -236,14 +236,12 @@
 }
 
 /* ★☆★設問パターンをランダムに決めるメソッド★☆★ */
--(BOOL)questionPattern:(int)questionNumber
+-(BOOL)questionPattern:(NSInteger)questionNumber
 {
     BOOL pattern = arc4random()% 2;
-    NSLog(@"今回の設問パターンは%d",pattern);
-    
+
     //問題数のカウントを＋１しておく
     self.questionNumber = self.questionNumber + 1;
-    NSLog(@"questionNumberは%d",questionNumber);
     
     return pattern;
 }
@@ -283,16 +281,16 @@
     
     
     //①まず、今回の正解のアクションと色をランダムに決める
-    int correctAction = arc4random() % 5;
+    NSInteger correctAction = arc4random() % 5;
     NSString* correctActionStr = [allAction objectAtIndex:correctAction];
     
-    int correctColor = arc4random() % 5;
+    NSInteger correctColor = arc4random() % 5;
     NSString* correctColorStr = [allColor objectAtIndex:correctColor];
     
     
     //②正解ボタンをボタン1〜３のどれにするかをランダムに決める
     correctButtonTag = arc4random() % 3;
-    int correctButtonTagNumber = [[allTag objectAtIndex:correctButtonTag]intValue];
+    NSInteger correctButtonTagNumber = [[allTag objectAtIndex:correctButtonTag]intValue];
     
     
     //③正解ボタンのアクションと色を設定する

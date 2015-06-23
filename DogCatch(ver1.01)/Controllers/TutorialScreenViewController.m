@@ -18,7 +18,7 @@
 
 @implementation TutorialScreenViewController
 {
-    int pageNumber;
+    NSInteger pageNumber;
 }
 
 - (void)viewDidLoad {

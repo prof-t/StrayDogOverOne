@@ -34,6 +34,4 @@
 
 @property (nonatomic,copy) NSString* timeStr;
 
--(void)setButtonActionAndColor:(NSString*)action color:(NSString*)colorStr tag:(int)tag;
-
 @end

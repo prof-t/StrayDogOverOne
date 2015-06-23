@@ -40,7 +40,7 @@
     return YES;
 }
 
-//どの方向に回転していいかを返す（例ではすべての方向に回転OK）
+//どの方向に回転していいかを返す
 - (NSUInteger)supportedInterfaceOrientations
 {
     return UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;

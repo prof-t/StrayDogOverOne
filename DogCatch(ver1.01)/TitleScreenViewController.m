@@ -87,11 +87,9 @@
     [AudioSingleton playAudioWithKey:@"ルール説明ボタン"];
 }
 
-//遷移時に数値を渡す
+//遷移時の処理
 -(void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
 {
-    
-
     if ( ([segue.identifier isEqualToString:@"moveToNormalGameScreen"]) ||([segue.identifier isEqualToString:@"moveToEasyModeScreen"])  ) {
         
         GameScreenViewController *gvsc= (GameScreenViewController*)[segue destinationViewController];
@@ -102,10 +100,8 @@
 //        [self bgmStopWithFadeOut];
     }
     
+    //TutorialScreenViewControllerに遷移する際の処理
     if([segue.identifier isEqualToString:@"moveToTutorialScreen"]){
-        
-//        TutorialScreenViewController *tsvc= (TutorialScreenViewController*)[segue destinationViewController];
-//        tsvc.player = player;
         
     }
 }
@@ -127,22 +123,3 @@
 
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

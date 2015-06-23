@@ -76,7 +76,7 @@
 }
 */
 
-- (IBAction)CancelButton:(id)sender
+- (IBAction)pushedCancelButton:(UIBarButtonItem*)button
 {
     //アラートの表示（iOS8か否かで処理が分岐する）
     if( [[UIDevice currentDevice].systemVersion floatValue] >= 8) {
@@ -123,9 +123,9 @@
     
 }
 
-- (IBAction)gameStartMetod:(UIBarButtonItem*)sender
+- (IBAction)pushedStartButton:(UIBarButtonItem*)button
 {
-    sender.enabled = NO;
+    button.enabled = NO;
     self.clearView.hidden =YES;
     self.clearView.hidden =YES;
     
@@ -163,7 +163,7 @@
     navBar.topItem.title = @"犬をタッチしてつかまえてね!!";
 }
 
-- (IBAction)tapButton:(UIButton*)sender
+- (IBAction)pushedAnswerButton:(UIButton*)button
 {
     
     [_timer invalidate];
@@ -176,7 +176,7 @@
 
     
     //効果音、得点の増減、正解か不正解の値渡しを行う
-    if(sender.tag == correctButtonTag + 1){
+    if(button.tag == correctButtonTag + 1){
         NSLog(@"正解！！");
         //正解の効果音を鳴らす
         [AudioSingleton playAudioWithKey:@"正解"];

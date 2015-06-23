@@ -63,21 +63,15 @@
 */
 
 
-//normalボタンtap時のイベント
-- (IBAction)gameStartNormal:(id)sender
+//ゲームスタートボタンtap時のイベント
+- (IBAction)pushedGameStartButton:(UIButton*)button
 {
     //効果音再生
     [AudioSingleton playAudioWithKey:@"ゲームモード選択"];
 }
 
-//easyボタンtap時のイベント
-- (IBAction)gameStartEasy:(id)sender {
-    //効果音再生
-    [AudioSingleton playAudioWithKey:@"ゲームモード選択"];
-}
-
 //ルール説明ボタンtap時のイベント
-- (IBAction)tutorialScreen:(id)sender
+- (IBAction)pushedTutorialButton:(UIButton*)button
 {
     //効果音再生
     [AudioSingleton playAudioWithKey:@"ルール説明ボタン"];

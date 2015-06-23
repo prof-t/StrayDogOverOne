@@ -68,7 +68,7 @@
 }
 
 //キャンセルボタン押下時のイベント処理
-- (IBAction)CancelButton:(id)sender
+- (IBAction)pushedCancelButton:(UIBarButtonItem*)button
 {
     //アラートの表示（iOS8か否かで処理が分岐する）
 //    if( [[UIDevice currentDevice].systemVersion floatValue] < 8) {
@@ -114,9 +114,9 @@
 }
 
 //スタートボタン押下時のイベント処理
-- (IBAction)gameStartMetod:(UIBarButtonItem*)sender
+- (IBAction)pushedStartButton:(UIBarButtonItem*)button
 {
-    sender.enabled = NO;
+    button.enabled = NO;
     self.clearView.hidden =YES;
     self.clearView.hidden =YES;
     
@@ -151,12 +151,8 @@
 }
 
 //回答ボタンを押下時のイベント処理
-- (IBAction)tapButton:(UIButton*)sender
+- (IBAction)pushedAnswerButton:(UIButton*)button
 {
-    
-    NSLog(@"押したボタンのタグは%d",(int)sender.tag);
-    NSLog(@"正解ボタンのタグは%d",correctButtonTag);
-    
     //タイマーと音楽のストップ
     [_timer invalidate];
     [AudioSingleton stopAudioWithKey:@"ゲーム中"];
@@ -169,7 +165,7 @@
     
     
     //効果音、得点の増減、正解か不正解の値渡しを行う
-    if(sender.tag == correctButtonTag + 1){
+    if(button.tag == correctButtonTag + 1){
 
         [AudioSingleton playAudioWithKey:@"正解"];
         nowScore = [questionClassOBJ evaluateScoreWithIsCorrect:YES remainTime:timeCount completion:^(NSInteger score) {

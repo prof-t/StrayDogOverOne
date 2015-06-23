@@ -30,7 +30,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="gameStartNormal:" destination="CqQ-oD-Iui" eventType="touchUpInside" id="ZoP-GC-d9O"/>
+                                    <action selector="pushedGameStartButton:" destination="CqQ-oD-Iui" eventType="touchUpInside" id="I6E-IT-NGH"/>
                                     <segue destination="mER-Xr-FoX" kind="presentation" identifier="moveToNormalGameScreen" id="44t-b6-zHt"/>
                                 </connections>
                             </button>
@@ -40,6 +40,9 @@
                                 <state key="normal" title="hard">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pushedGameStartButton:" destination="CqQ-oD-Iui" eventType="touchUpInside" id="2JO-0a-DMP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVX-7I-mMY">
                                 <rect key="frame" x="297" y="591" width="100" height="50"/>
@@ -48,7 +51,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="gameStartEasy:" destination="CqQ-oD-Iui" eventType="touchUpInside" id="nZw-TZ-fwM"/>
+                                    <action selector="pushedGameStartButton:" destination="CqQ-oD-Iui" eventType="touchUpInside" id="IQg-e1-B64"/>
                                     <segue destination="qkR-G2-7Zf" kind="presentation" identifier="moveToEasyModeScreen" id="xOg-MH-mDH"/>
                                 </connections>
                             </button>
@@ -68,7 +71,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="tutorialScreen:" destination="CqQ-oD-Iui" eventType="touchUpInside" id="PqY-NC-jX0"/>
+                                    <action selector="pushedTutorialButton:" destination="CqQ-oD-Iui" eventType="touchUpInside" id="8go-Lx-k25"/>
                                     <segue destination="PgQ-Ny-vKM" kind="presentation" identifier="moveToTutorialScreen" id="l1b-2h-vR4"/>
                                 </connections>
                             </button>
@@ -149,7 +152,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="tapButton:" destination="mER-Xr-FoX" eventType="touchUpInside" id="XXv-t4-i1z"/>
+                                            <action selector="pushedAnswerButton:" destination="mER-Xr-FoX" eventType="touchUpInside" id="dzt-Fp-gh5"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oog-Pc-E17" customClass="CustomButton">
@@ -170,7 +173,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="tapButton:" destination="mER-Xr-FoX" eventType="touchUpInside" id="Dpv-AH-QfI"/>
+                                            <action selector="pushedAnswerButton:" destination="mER-Xr-FoX" eventType="touchUpInside" id="MMC-fb-Zse"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06a-gn-7Ho" customClass="CustomButton">
@@ -191,7 +194,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="tapButton:" destination="mER-Xr-FoX" eventType="touchUpInside" id="5sd-8N-0yn"/>
+                                            <action selector="pushedAnswerButton:" destination="mER-Xr-FoX" eventType="touchUpInside" id="y3g-Wd-wlG"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsu-lZ-5i0" customClass="CustomButton">
@@ -212,7 +215,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="tapButton:" destination="mER-Xr-FoX" eventType="touchUpInside" id="CUo-ec-dda"/>
+                                            <action selector="pushedAnswerButton:" destination="mER-Xr-FoX" eventType="touchUpInside" id="M14-9b-WhP"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03i-aK-PHq" customClass="CustomButton">
@@ -230,7 +233,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="tapButton:" destination="mER-Xr-FoX" eventType="touchUpInside" id="cI1-8S-on6"/>
+                                            <action selector="pushedAnswerButton:" destination="mER-Xr-FoX" eventType="touchUpInside" id="6XV-Og-CQS"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="girl1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="LHQ-Rg-XV4">
@@ -283,13 +286,13 @@
                                         <barButtonItem key="leftBarButtonItem" title="START" id="bg0-Fk-2ac">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <connections>
-                                                <action selector="gameStartMetod:" destination="mER-Xr-FoX" id="j1o-YX-tYG"/>
+                                                <action selector="pushedStartButton:" destination="mER-Xr-FoX" id="XPW-jY-7vf"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="CANCEL" id="E3S-Ai-lVk">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <connections>
-                                                <action selector="CancelButton:" destination="mER-Xr-FoX" id="AFI-ti-EXk"/>
+                                                <action selector="pushedCancelButton:" destination="mER-Xr-FoX" id="Prt-uY-ZOF"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -553,7 +556,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="tapButton:" destination="qkR-G2-7Zf" eventType="touchUpInside" id="Q68-dK-u9W"/>
+                                            <action selector="pushedAnswerButton:" destination="qkR-G2-7Zf" eventType="touchUpInside" id="gLV-2e-fM4"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bkr-FX-rrX" customClass="CustomButton">
@@ -577,7 +580,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="tapButton:" destination="qkR-G2-7Zf" eventType="touchUpInside" id="EVs-Xc-Cpl"/>
+                                            <action selector="pushedAnswerButton:" destination="qkR-G2-7Zf" eventType="touchUpInside" id="Nnu-XH-GOp"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFn-pT-pB4" customClass="CustomButton">
@@ -599,7 +602,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="tapButton:" destination="qkR-G2-7Zf" eventType="touchUpInside" id="w4C-pi-gPy"/>
+                                            <action selector="pushedAnswerButton:" destination="qkR-G2-7Zf" eventType="touchUpInside" id="bs4-fY-juW"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="girl1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="xOg-vl-WWW">
@@ -714,13 +717,13 @@
                                         <barButtonItem key="leftBarButtonItem" title="START" id="UeG-0i-JkV">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <connections>
-                                                <action selector="gameStartMetod:" destination="qkR-G2-7Zf" id="3gA-ry-QsO"/>
+                                                <action selector="pushedStartButton:" destination="qkR-G2-7Zf" id="c2G-OG-Uko"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="CANCEL" id="6kc-T1-JUc">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <connections>
-                                                <action selector="CancelButton:" destination="qkR-G2-7Zf" id="Lqf-cb-Gml"/>
+                                                <action selector="pushedCancelButton:" destination="qkR-G2-7Zf" id="YLI-cm-oky"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>

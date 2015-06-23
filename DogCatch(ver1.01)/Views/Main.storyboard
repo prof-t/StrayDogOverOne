@@ -344,7 +344,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="titleScreen:" destination="PgQ-Ny-vKM" eventType="touchUpInside" id="plH-tu-EHg"/>
+                                    <action selector="pushedTitleButton:" destination="PgQ-Ny-vKM" eventType="touchUpInside" id="mFK-td-Fm8"/>
                                     <segue destination="CqQ-oD-Iui" kind="presentation" identifier="returnTitleScreen" id="M8b-Wb-Orb"/>
                                 </connections>
                             </button>
@@ -410,7 +410,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="nextTutorial:" destination="PgQ-Ny-vKM" eventType="touchUpInside" id="f2F-HW-9hz"/>
+                                    <action selector="pushedNextTutorialButton:" destination="PgQ-Ny-vKM" eventType="touchUpInside" id="ZP8-Sr-VhU"/>
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaQ-zw-3Da">

@@ -42,7 +42,7 @@
 }
 
 //ボタンのイベント処理
-- (IBAction)titleScreen:(id)sender
+- (IBAction)pushedTitleButton:(UIButton*)button
 {
     //効果音を鳴らす
     [AudioSingleton playAudioWithKey:@"ルール説明ボタン"];
@@ -58,7 +58,7 @@
     }
 }
 
-- (IBAction)nextTutorial:(id)sender
+- (IBAction)pushedNextTutorialButton:(UIButton*)button
 {
     if(pageNumber == 1){
         

@@ -20,7 +20,7 @@
 
 @implementation NormalScreenViewController
 {
-    int correctButtonTag;
+    NSInteger correctButtonTag;
     BOOL questionPattern;
     
     //タイマー
@@ -29,7 +29,7 @@
     float _secondsOfTimer;
     NSString *_timeStr;
     
-    int nowScore;
+    NSInteger nowScore;
     Question *questionClassOBJ;
     BOOL _correctOrWrong;
 }
@@ -155,16 +155,10 @@
     
     UINavigationBar *navBar = (UINavigationBar*)[self.view viewWithTag:10];
     navBar.topItem.title = @"犬をタッチしてつかまえてね!!";
-    
-    
-    
 }
 
 - (IBAction)tapButton:(UIButton*)sender
 {
-    
-    NSLog(@"押したボタンのタグは%d",(int)sender.tag);
-    NSLog(@"正解ボタンのタグは%d",correctButtonTag);
     
     [_timer invalidate];
     [AudioSingleton stopAudioWithKey:@"ゲーム中"];
@@ -225,7 +219,7 @@
 
 
 //ハズレボタンの色とアクションを設定
--(void)setButtonActionAndColor:(NSString*)action color:(NSString*)colorStr tag:(int)tag
+-(void)setButtonActionAndColor:(NSString*)action color:(NSString*)colorStr tag:(NSInteger)tag
 {
     UIButton *button = (UIButton*)[self.view viewWithTag:tag];
     
@@ -259,7 +253,7 @@
 }
 
 /* ★☆★設問パターンをランダムに決めるメソッド★☆★ */
--(BOOL)questionPattern:(int)questionNumber
+-(BOOL)questionPattern:(NSInteger)questionNumber
 {
     BOOL pattern = arc4random()% 2;
     NSLog(@"今回の設問パターンは%d",pattern);
@@ -310,16 +304,16 @@
     
     
     //①まず、今回の正解のアクションと色をランダムに決める
-    int correctAction = arc4random() % 5;
+    NSInteger correctAction = arc4random() % 5;
     NSString* correctActionStr = [allAction objectAtIndex:correctAction];
     
-    int correctColor = arc4random() % 5;
+    NSInteger correctColor = arc4random() % 5;
     NSString* correctColorStr = [allColor objectAtIndex:correctColor];
     
     
     //②正解ボタンをボタン1〜5のどれにするかをランダムに決める
     correctButtonTag = arc4random() % 5;
-    int correctButtonTagNumber = [[allTag objectAtIndex:correctButtonTag]intValue];
+    NSInteger correctButtonTagNumber = [[allTag objectAtIndex:correctButtonTag]intValue];
     
     
     //③正解ボタンのアクションと色を設定する
@@ -339,20 +333,20 @@
     
     
     //⑥不正解ボタンのアクションと色を設定する
-    for(int i=1;i<=4;i++){
+    for(NSInteger i=1;i<=4;i++){
         
-        int wrongAction = arc4random() % [allAction count];
+        NSInteger wrongAction = arc4random() % [allAction count];
         NSString* wrongActionStr = [allAction objectAtIndex:wrongAction];
         
-        int wrongColor = arc4random() % [allColor count];
+        NSInteger wrongColor = arc4random() % [allColor count];
         NSString* wrongColorStr = [allColor objectAtIndex:wrongColor];
         
         NSLog(@"wrongAction %d",wrongAction);
         //    NSLog(@"correctColor %d",correctColor);
         
         //⑥−1　不正解ボタンを1〜5のどれにするかを決める
-        int wrongButtonTag = arc4random() % [allTag count];
-        int wrongButtonTagNumber = [[allTag objectAtIndex:wrongButtonTag]intValue];
+        NSInteger wrongButtonTag = arc4random() % [allTag count];
+        NSInteger wrongButtonTagNumber = [[allTag objectAtIndex:wrongButtonTag]intValue];
         //    NSLog(@"correctButtonTag %d",correctButtonTag);
         
         //⑥−2　不正解ボタンのアクションと色を設定し、更に設問ラベル用に変数に格納しておく（周回によってどれにいれるか決める）
@@ -427,13 +421,10 @@
         [labelText2 appendString:wrongColorLabel2];
         [labelText2 appendString:@"色だったの…"];
         [label2 setText:labelText2];
-        
-        
+
     } else {
         NSLog(@"ランダムメソッドが何かおかしいよ");
     }
-    
-    
 }
 
 -(void)timer:(NSTimer*)timer

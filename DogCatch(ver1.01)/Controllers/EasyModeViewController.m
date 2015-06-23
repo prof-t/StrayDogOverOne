@@ -14,6 +14,21 @@
 @property (weak, nonatomic) IBOutlet UIView *clearView;
 @property (weak, nonatomic) IBOutlet UIImageView *clearViewImage;
 
+@property (weak, nonatomic) IBOutlet UIButton *dogButton1;
+@property (weak, nonatomic) IBOutlet UIButton *dogButton2;
+@property (weak, nonatomic) IBOutlet UIButton *dogButton3;
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *gameStartButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *gameCancelButton;
+
+
+
+@property (weak, nonatomic) IBOutlet UIImageView *girlImage;
+@property (weak, nonatomic) IBOutlet UILabel *questionColorLabel;
+@property (weak, nonatomic) IBOutlet UILabel *questionActionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalScore;
+
 @end
 
 @implementation EasyModeViewController

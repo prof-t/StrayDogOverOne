@@ -17,22 +17,7 @@
 
 @interface NormalScreenViewController : BaseViewController<UIActionSheetDelegate>
 
-@property (weak, nonatomic) IBOutlet UIButton *dogButton1;
-@property (weak, nonatomic) IBOutlet UIButton *dogButton2;
-@property (weak, nonatomic) IBOutlet UIButton *dogButton3;
-@property (weak, nonatomic) IBOutlet UIButton *dogButton4;
-@property (weak, nonatomic) IBOutlet UIButton *dogButton5;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *gameStartButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *gameCancelButton;
-
 @property NSInteger questionNumber;
-
-@property (weak, nonatomic) IBOutlet UIImageView *girlImage;
-@property (weak, nonatomic) IBOutlet UILabel *questionColorLabel;
-@property (weak, nonatomic) IBOutlet UILabel *questionActionLabel;
-@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *totalScore;
-
 @property (nonatomic,copy) NSString* timeStr;
 
 @end

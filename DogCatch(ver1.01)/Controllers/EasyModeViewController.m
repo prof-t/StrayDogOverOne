@@ -11,23 +11,21 @@
 
 @interface EasyModeViewController ()
 
-@property (weak, nonatomic) IBOutlet UIView *clearView;
-@property (weak, nonatomic) IBOutlet UIImageView *clearViewImage;
+@property (nonatomic,weak) IBOutlet UIView *clearView;
+@property (nonatomic,weak) IBOutlet UIImageView *clearViewImage;
 
-@property (weak, nonatomic) IBOutlet UIButton *dogButton1;
-@property (weak, nonatomic) IBOutlet UIButton *dogButton2;
-@property (weak, nonatomic) IBOutlet UIButton *dogButton3;
+@property (nonatomic,weak) IBOutlet UIButton *dogButton1;
+@property (nonatomic,weak) IBOutlet UIButton *dogButton2;
+@property (nonatomic,weak) IBOutlet UIButton *dogButton3;
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *gameStartButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *gameCancelButton;
+@property (nonatomic,weak) IBOutlet UIBarButtonItem *gameStartButton;
+@property (nonatomic,weak) IBOutlet UIBarButtonItem *gameCancelButton;
 
-
-
-@property (weak, nonatomic) IBOutlet UIImageView *girlImage;
-@property (weak, nonatomic) IBOutlet UILabel *questionColorLabel;
-@property (weak, nonatomic) IBOutlet UILabel *questionActionLabel;
-@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *totalScore;
+@property (nonatomic,weak) IBOutlet UIImageView *girlImage;
+@property (nonatomic,weak) IBOutlet UILabel *questionColorLabel;
+@property (nonatomic,weak) IBOutlet UILabel *questionActionLabel;
+@property (nonatomic,weak) IBOutlet UILabel *timeLabel;
+@property (nonatomic,weak) IBOutlet UILabel *totalScore;
 
 @end
 

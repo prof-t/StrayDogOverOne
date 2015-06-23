@@ -9,10 +9,10 @@
 #import "TitleScreenViewController.h"
 
 @interface TitleScreenViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *buttonNormal;
-@property (weak, nonatomic) IBOutlet UIButton *buttonEasy;
-@property (weak, nonatomic) IBOutlet UIButton *buttonHard;
-@property (weak, nonatomic) IBOutlet UIButton *buttonTutorial;
+@property (nonatomic,weak) IBOutlet UIButton *buttonNormal;
+@property (nonatomic,weak) IBOutlet UIButton *buttonEasy;
+@property (nonatomic,weak) IBOutlet UIButton *buttonHard;
+@property (nonatomic,weak) IBOutlet UIButton *buttonTutorial;
 
 @end
 

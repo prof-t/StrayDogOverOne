@@ -9,10 +9,10 @@
 #import "TutorialScreenViewController.h"
 
 @interface TutorialScreenViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *page1;
-@property (weak, nonatomic) IBOutlet UILabel *page2;
-@property (weak, nonatomic) IBOutlet UILabel *page3;
-@property (weak, nonatomic) IBOutlet UIImageView *dogall;
+@property (nonatomic,weak) IBOutlet UILabel *page1;
+@property (nonatomic,weak) IBOutlet UILabel *page2;
+@property (nonatomic,weak) IBOutlet UILabel *page3;
+@property (nonatomic,weak) IBOutlet UIImageView *dogall;
 
 @end
 

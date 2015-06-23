@@ -13,7 +13,7 @@
 @interface CustomButton : UIButton
 
 @property (nonatomic, assign) int cornerRadius;
-@property(nonatomic , assign) int borderWidth;
-@property(nonatomic , assign) UIColor* borderColor;
+@property (nonatomic, assign) int borderWidth;
+@property (nonatomic, assign) UIColor* borderColor;
 
 @end

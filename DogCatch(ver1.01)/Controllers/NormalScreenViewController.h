@@ -17,7 +17,7 @@
 
 @interface NormalScreenViewController : BaseViewController<UIActionSheetDelegate>
 
-@property NSInteger questionNumber;
+@property (nonatomic,assign) NSInteger questionNumber;
 @property (nonatomic,copy) NSString* timeStr;
 
 @end

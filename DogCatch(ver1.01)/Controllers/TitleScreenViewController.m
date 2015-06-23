@@ -26,11 +26,7 @@
     // Do any additional setup after loading the view.
     
     //iPhone/iPadの画面サイズに合わせて背景画像を拡大・縮小する
-    UIGraphicsBeginImageContext(self.view.frame.size);
-    [[UIImage imageNamed:@"back1.jpg"] drawInRect:self.view.bounds];
-    UIImage *backgroundImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
+    [self setBackGroudImageName:@"back1.jpg"];
     
     //角丸設定
 //    [[self.buttonNormal layer] setCornerRadius:5.0];

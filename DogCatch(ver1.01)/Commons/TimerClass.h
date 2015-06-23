@@ -8,7 +8,7 @@
 //タイマーを起動し、クイズの残り時間（（単位:秒 小数点2桁まで有効））を計測するクラス
 
 #import <Foundation/Foundation.h>
-#import"GameScreenViewController.h"
+#import"NormalScreenViewController.h"
 
 @interface TimerClass : NSObject
 

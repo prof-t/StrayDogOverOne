@@ -6,10 +6,10 @@
 //  Copyright (c) 2015年 RYO. All rights reserved.
 //
 
-#import "GameScreenViewController.h"
+#import "NormalScreenViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface GameScreenViewController ()
+@interface NormalScreenViewController ()
 @property (weak, nonatomic) IBOutlet UIView *clearView;
 @property (weak, nonatomic) IBOutlet UIImageView *clearViewImage;
 
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation GameScreenViewController
+@implementation NormalScreenViewController
 {
     int correctButtonTag;
     BOOL questionPattern;

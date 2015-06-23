@@ -8,7 +8,7 @@
 //　awakeFromNibメソッドにより、InterfaceBuilderで配置したボタンが生成される際に、任意の設定を適用させるクラス
 
 #import <UIKit/UIKit.h>
-#import "GameScreenViewController.h"
+#import "NormalScreenViewController.h"
 
 @interface CustomButton : UIButton
 

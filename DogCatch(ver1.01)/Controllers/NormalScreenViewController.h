@@ -15,7 +15,7 @@
 #import "BaseViewController.h"
 #import "SDAudioPlayerManager.h"
 
-@interface GameScreenViewController : BaseViewController<UIActionSheetDelegate>
+@interface NormalScreenViewController : BaseViewController<UIActionSheetDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *dogButton1;
 @property (weak, nonatomic) IBOutlet UIButton *dogButton2;

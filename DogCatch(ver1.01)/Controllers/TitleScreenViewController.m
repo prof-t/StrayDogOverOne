@@ -92,7 +92,7 @@
 {
     if ( ([segue.identifier isEqualToString:@"moveToNormalGameScreen"]) ||([segue.identifier isEqualToString:@"moveToEasyModeScreen"])  ) {
         
-        GameScreenViewController *gvsc= (GameScreenViewController*)[segue destinationViewController];
+        NormalScreenViewController *gvsc= (NormalScreenViewController*)[segue destinationViewController];
         gvsc.questionNumber = 0;
         
         //遷移時に音楽をフェードアウトする

@@ -8,7 +8,7 @@
 //アプリ起動時に表示されるタイトル画面のviewController
 
 #import <UIKit/UIKit.h>
-#import "GameScreenViewController.h"
+#import "NormalScreenViewController.h"
 #import"TutorialScreenViewController.h"
 #import "BaseViewController.h"
 #import "SDAudioPlayerManager.h"

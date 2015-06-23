@@ -88,10 +88,10 @@
             </objects>
             <point key="canvasLocation" x="214" y="881"/>
         </scene>
-        <!--Game Screen View Controller-->
+        <!--Normal Screen View Controller-->
         <scene sceneID="NiO-XV-I8u">
             <objects>
-                <viewController id="mER-Xr-FoX" customClass="GameScreenViewController" sceneMemberID="viewController">
+                <viewController id="mER-Xr-FoX" customClass="NormalScreenViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="80d-ah-Wax"/>
                         <viewControllerLayoutGuide type="bottom" id="B9a-3f-dEC"/>

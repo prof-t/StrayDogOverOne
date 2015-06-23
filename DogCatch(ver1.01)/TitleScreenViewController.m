@@ -97,7 +97,6 @@
         
         //遷移時に音楽をフェードアウトする
         [AudioSingleton fadeOutAudioWithKey:@"タイトル画面"];
-//        [self bgmStopWithFadeOut];
     }
     
     //TutorialScreenViewControllerに遷移する際の処理
@@ -105,21 +104,5 @@
         
     }
 }
-
-
-//-(void)bgmStopWithFadeOut
-//{
-//    if (player.volume > 0.1) {
-//        player.volume = player.volume - 0.1;
-//        NSLog(@"ボリューム下げてるよ");
-//        [self performSelector:@selector(bgmStopWithFadeOut) withObject:nil afterDelay:0.5];
-//
-//    }else{
-//        [player stop];
-//
-//    }
-//}
-
-
 
 @end

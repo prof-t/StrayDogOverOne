@@ -14,6 +14,18 @@
 
 @implementation BaseViewController
 
+#pragma mark - Public Methods
+-(void)setBackGroudImageName:(NSString *)imageName{
+    
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:imageName] drawInRect:self.view.bounds];
+    UIImage *backgroundImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
+    
+}
+
+#pragma mark - Private Methods
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -44,16 +56,6 @@
 - (NSUInteger)supportedInterfaceOrientations
 {
     return UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;
-}
-
--(void)setBackGroudImageName:(NSString *)imageName{
-    
-        UIGraphicsBeginImageContext(self.view.frame.size);
-        [[UIImage imageNamed:imageName] drawInRect:self.view.bounds];
-        UIImage *backgroundImage = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
-
 }
 
 @end

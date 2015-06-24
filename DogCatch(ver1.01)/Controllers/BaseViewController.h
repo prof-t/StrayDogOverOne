@@ -14,7 +14,7 @@
 
 /**
 背景画像をセットする
-key
+ @param key 背景画像のファイル名
 */
 -(void)setBackGroudImageName:(NSString *)imageName;
 

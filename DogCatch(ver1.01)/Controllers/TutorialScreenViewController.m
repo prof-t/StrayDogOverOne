@@ -21,6 +21,9 @@
     NSInteger pageNumber;
 }
 
+#pragma mark - Public Methods
+#pragma mark - Private Methods
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

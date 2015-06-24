@@ -59,6 +59,8 @@
 
 @synthesize timeStr;
 
+#pragma mark - Public Methods
+#pragma mark - Private Methods
 
 //初期化
 - (void)viewDidLoad {

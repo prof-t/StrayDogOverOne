@@ -50,6 +50,7 @@
 		2ACC45DD1B38F73A0064E416 /* KodomoRounded.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2ACC45DC1B38F73A0064E416 /* KodomoRounded.otf */; };
 		2ACC45E01B38F81B0064E416 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ACC45DF1B38F81B0064E416 /* Main.storyboard */; };
 		2AD222DA1B3A801D0098BAE0 /* SDPreloadingAudioFiles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AD222D91B3A801D0098BAE0 /* SDPreloadingAudioFiles.plist */; };
+		2AD222DD1B3A86E30098BAE0 /* PlistLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD222DC1B3A86E30098BAE0 /* PlistLoad.m */; };
 		2AF2C6F81B3A44180046BAD3 /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF2C6F71B3A44180046BAD3 /* AlertView.m */; };
 		2AF2FDEA1AD60F0800E71856 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF2FDE91AD60F0800E71856 /* AVFoundation.framework */; };
 		B66DB53DA80980756F3518CA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8819315EF35BDF02837D81 /* libPods.a */; };
@@ -124,6 +125,8 @@
 		2ACC45DC1B38F73A0064E416 /* KodomoRounded.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KodomoRounded.otf; sourceTree = "<group>"; };
 		2ACC45DF1B38F81B0064E416 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2AD222D91B3A801D0098BAE0 /* SDPreloadingAudioFiles.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SDPreloadingAudioFiles.plist; sourceTree = "<group>"; };
+		2AD222DB1B3A86E30098BAE0 /* PlistLoad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlistLoad.h; sourceTree = "<group>"; };
+		2AD222DC1B3A86E30098BAE0 /* PlistLoad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistLoad.m; sourceTree = "<group>"; };
 		2AF2C6F61B3A44180046BAD3 /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
 		2AF2C6F71B3A44180046BAD3 /* AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
 		2AF2FDE91AD60F0800E71856 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -323,6 +326,8 @@
 			children = (
 				2ACC459E1B38F5100064E416 /* Question.h */,
 				2ACC459F1B38F5100064E416 /* Question.m */,
+				2AD222DB1B3A86E30098BAE0 /* PlistLoad.h */,
+				2AD222DC1B3A86E30098BAE0 /* PlistLoad.m */,
 			);
 			name = Manager;
 			sourceTree = "<group>";
@@ -601,6 +606,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AD222DD1B3A86E30098BAE0 /* PlistLoad.m in Sources */,
 				2ACC459C1B38F4720064E416 /* ScoreModel.m in Sources */,
 				2AF2C6F81B3A44180046BAD3 /* AlertView.m in Sources */,
 				2ACC45981B38F35A0064E416 /* CustomButton.m in Sources */,

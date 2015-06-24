@@ -196,7 +196,7 @@
         [AudioSingleton playAudioWithKey:@"正解"];
         
         //この問題での得点と、今までに得た得点を足して、総合計を算出する
-        nowScore = [questionClassOBJ evaluateScoreWithIsCorrect:timeCount remainTime:YES completion:^(NSInteger score) {
+        nowScore = [questionClassOBJ evaluateScoreWithIsCorrect:YES remainTime:timeCount completion:^(NSInteger score) {
             
         }] + nowScore;
         _correctOrWrong = YES;
@@ -209,7 +209,7 @@
         [AudioSingleton playAudioWithKey:@"失敗"];
         
         //この問題での得点と、今までに得た得点を足して、総合計を算出する
-        nowScore = [questionClassOBJ evaluateScoreWithIsCorrect:timeCount remainTime:NO completion:^(NSInteger score) {
+        nowScore = [questionClassOBJ evaluateScoreWithIsCorrect:NO remainTime:timeCount completion:^(NSInteger score) {
             
         }] + nowScore;
         

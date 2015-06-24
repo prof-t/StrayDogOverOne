@@ -49,6 +49,7 @@
 		2ACC45DA1B38F6B40064E416 /* カジノ4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2ACC45C31B38F6B40064E416 /* カジノ4.mp3 */; };
 		2ACC45DD1B38F73A0064E416 /* KodomoRounded.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2ACC45DC1B38F73A0064E416 /* KodomoRounded.otf */; };
 		2ACC45E01B38F81B0064E416 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ACC45DF1B38F81B0064E416 /* Main.storyboard */; };
+		2AD222DA1B3A801D0098BAE0 /* SDPreloadingAudioFiles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AD222D91B3A801D0098BAE0 /* SDPreloadingAudioFiles.plist */; };
 		2AF2C6F81B3A44180046BAD3 /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF2C6F71B3A44180046BAD3 /* AlertView.m */; };
 		2AF2FDEA1AD60F0800E71856 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF2FDE91AD60F0800E71856 /* AVFoundation.framework */; };
 		B66DB53DA80980756F3518CA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8819315EF35BDF02837D81 /* libPods.a */; };
@@ -122,6 +123,7 @@
 		2ACC45C31B38F6B40064E416 /* カジノ4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "カジノ4.mp3"; sourceTree = "<group>"; };
 		2ACC45DC1B38F73A0064E416 /* KodomoRounded.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KodomoRounded.otf; sourceTree = "<group>"; };
 		2ACC45DF1B38F81B0064E416 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		2AD222D91B3A801D0098BAE0 /* SDPreloadingAudioFiles.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SDPreloadingAudioFiles.plist; sourceTree = "<group>"; };
 		2AF2C6F61B3A44180046BAD3 /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
 		2AF2C6F71B3A44180046BAD3 /* AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
 		2AF2FDE91AD60F0800E71856 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -256,6 +258,7 @@
 				2ACC45DB1B38F73A0064E416 /* DogCatch_font */,
 				2ACC45AB1B38F6B40064E416 /* DogCatch_image */,
 				2ACC45BC1B38F6B40064E416 /* DogCatch_music */,
+				2AD222D91B3A801D0098BAE0 /* SDPreloadingAudioFiles.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				2ACC45CC1B38F6B40064E416 /* girl3.jpg in Resources */,
 				2ACC45CB1B38F6B40064E416 /* girl2.jpg in Resources */,
 				2ACC45CF1B38F6B40064E416 /* koly.png in Resources */,
+				2AD222DA1B3A801D0098BAE0 /* SDPreloadingAudioFiles.plist in Resources */,
 				2ACC45C51B38F6B40064E416 /* balloon_down.png in Resources */,
 				2ACC45D61B38F6B40064E416 /* d6.mp3 in Resources */,
 				2ACC45C61B38F6B40064E416 /* balloon_up.png in Resources */,

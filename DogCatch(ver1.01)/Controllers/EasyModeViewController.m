@@ -154,7 +154,6 @@
     [self timerStart];
     
     //labelテキストを随時変更
-    NSLog(@"%@",timeStr);
     self.timeLabel.text = timeStr;
     
     UINavigationBar *navBar = (UINavigationBar*)[self.view viewWithTag:10];
@@ -187,7 +186,6 @@
         navBar.topItem.title = @"おめでとう!!";
         
     } else {
-        NSLog(@"残念！！");
         nowScore = [questionClassOBJ evaluateScoreWithIsCorrect:NO remainTime:timeCount completion:^(NSInteger score) {
             
         }] + nowScore;
@@ -234,7 +232,6 @@
     } else if([action isEqualToString:@"しば犬"]){
         [button setBackgroundImage:[UIImage imageNamed:@"shiba.png"] forState:UIControlStateNormal];
     } else {
-        NSLog(@"画像の設定にミスあり");
     }
     
     

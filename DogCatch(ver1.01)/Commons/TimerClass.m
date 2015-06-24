@@ -30,8 +30,6 @@
     //現在の残り時間を、単位：秒（小数点以下２桁まで有効）でNSStringに格納する
     _timeStr = [NSString stringWithFormat:@"%02d:%05.2f",minute,second];
     
-//    NSLog(@"timerメソッドの中にいます。今のtimeは%@",_timeStr);
-    
     return _timeStr;
 }
 

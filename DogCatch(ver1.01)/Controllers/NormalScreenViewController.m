@@ -95,7 +95,6 @@
     //アラートの表示（iOS8か否かで処理が分岐する）
     if( [[UIDevice currentDevice].systemVersion floatValue] >= 8) {
         
-        NSLog(@"iOS8ですね");
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"ゲームを終了しますか？" message:@"This is message." preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertController *__weak weakAlert = alert;
@@ -127,8 +126,6 @@
         
         
     } else {
-        
-        NSLog(@"iOS8以外ですね");
         
         UIActionSheet *as = [[UIActionSheet alloc]initWithTitle:@"ゲームを終了しますか？" delegate:self cancelButtonTitle:@"ゲームを終了しない" destructiveButtonTitle:@"ゲームを終了してタイトル画面に戻る" otherButtonTitles:nil];
         [as showInView:self.view];
@@ -170,7 +167,6 @@
     [self timerStart];
     
     //labelテキストを随時変更
-    NSLog(@"%@",timeStr);
     self.timeLabel.text = timeStr;
     
     UINavigationBar *navBar = (UINavigationBar*)[self.view viewWithTag:10];
@@ -191,7 +187,6 @@
     
     //効果音、得点の増減、正解か不正解の値渡しを行う
     if(button.tag == correctButtonTag + 1){
-        NSLog(@"正解！！");
         //正解の効果音を鳴らす
         [AudioSingleton playAudioWithKey:@"正解"];
         
@@ -204,7 +199,6 @@
         navBar.topItem.title = @"おめでとう!!";
         
     } else {
-        NSLog(@"残念！！");
         //不正解の効果音を鳴らす
         [AudioSingleton playAudioWithKey:@"失敗"];
         
@@ -254,7 +248,6 @@
     } else if([action isEqualToString:@"しば犬"]){
         [button setBackgroundImage:[UIImage imageNamed:@"shiba.png"] forState:UIControlStateNormal];
     } else {
-        NSLog(@"画像の設定にミスあり");
     }
     
     
@@ -276,11 +269,9 @@
 -(BOOL)questionPattern:(NSInteger)questionNumber
 {
     BOOL pattern = arc4random()% 2;
-    NSLog(@"今回の設問パターンは%d",pattern);
-    
+
     //問題数のカウントを＋１しておく
     self.questionNumber = self.questionNumber + 1;
-    NSLog(@"questionNumberは%zd",questionNumber);
     
     return pattern;
 }
@@ -363,7 +354,6 @@
         //⑥−1　不正解ボタンを1〜5のどれにするかを決める
         NSInteger wrongButtonTag = arc4random() % [allTag count];
         NSInteger wrongButtonTagNumber = [[allTag objectAtIndex:wrongButtonTag]intValue];
-        //    NSLog(@"correctButtonTag %d",correctButtonTag);
         
         //⑥−2　不正解ボタンのアクションと色を設定し、更に設問ラベル用に変数に格納しておく（周回によってどれにいれるか決める）
         [self setButtonActionAndColor:wrongActionStr color:wrongColorStr tag:wrongButtonTagNumber];
@@ -436,7 +426,6 @@
         [label2 setText:labelText2];
 
     } else {
-        NSLog(@"ランダムメソッドが何かおかしいよ");
     }
 }
 
@@ -446,8 +435,6 @@
     timeCount = timeCount - 0.01f;
     float second = fmodf(timeCount,60);
      _timeStr = [NSString stringWithFormat:@"残り時間 %05.2f",second];
-    
-//        NSLog(@"timerメソッドの中。今のtimeは%f",second);
     
     self.timeLabel.text = _timeStr;
     

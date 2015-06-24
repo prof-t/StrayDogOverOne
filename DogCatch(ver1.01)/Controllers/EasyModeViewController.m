@@ -58,6 +58,8 @@
 //Questionクラスのインスタンス
 @property (nonatomic,strong) Question *questionClassOBJ;
 
+@property (nonatomic,weak) AVAudioPlayer *player;
+
 @end
 
 @implementation EasyModeViewController
@@ -151,7 +153,9 @@
     [self decidedQuestion:self.isCompletelyMatchingPattern label1:self.questionColorLabel label2:self.questionActionLabel];
     
     //音楽START！
-    [AudioSingleton playAudioWithKey:@"ゲーム中"];
+    self.player = [AudioSingleton playerWithKey:@"ゲーム中"];
+    self.player.numberOfLoops = -1;
+    [self.player play];
     
     //timer起動
 //    TimerClass *timerTest = [TimerClass alloc];
@@ -340,7 +344,7 @@
 
 -(void)timerStart
 {
-    self.timeCount = 10;
+    self.timeCount = 60;
     if(![self.timer isValid]){
         self.timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(timer:) userInfo:nil repeats:YES];
     }
@@ -349,7 +353,6 @@
 //残り時間０以下でゲームを終了させる
 -(void)stopTimerForTimeOut:(CGFloat)count
 {
-    NSLog(@"countは%f",count);
     if (count <= 0) {
         [self.timer invalidate];
         [self clearGame:nil];
@@ -404,8 +407,6 @@
     //ボタンの円半径の設定を、画面変化に対応させる
     //        sender.layer.cornerRadius = (self.view.bounds.size.width / 2) * 1.0f;
     //            sender.layer.masksToBounds = YES;
-    
-
 }
 
 @end

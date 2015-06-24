@@ -26,22 +26,6 @@
         
         //SDAudioPlayerManagerで音声ファイルをロード
         [[SDAudioPlayerManager sharedInstance] createPlayerWithFileName:fileName forKey:key];
-        
-        NSLog(@"---------------");
-        NSLog(@"fileName : %@",fileName);
-        NSLog(@"key : %@",key);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 @end

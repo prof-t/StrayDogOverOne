@@ -218,7 +218,7 @@
         navBar.topItem.title = @"残念!!";
     }
     
-    NSString *nowScoreStr = [[NSString alloc]initWithFormat:@"総得点 %d",nowScore];
+    NSString *nowScoreStr = [[NSString alloc]initWithFormat:@"総得点 %zd",nowScore];
     self.totalScore.text = nowScoreStr;
     
     self.dogButton1.enabled = NO;
@@ -280,7 +280,7 @@
     
     //問題数のカウントを＋１しておく
     self.questionNumber = self.questionNumber + 1;
-    NSLog(@"questionNumberは%d",questionNumber);
+    NSLog(@"questionNumberは%zd",questionNumber);
     
     return pattern;
 }
@@ -338,7 +338,6 @@
     
     //③正解ボタンのアクションと色を設定する
     [self setButtonActionAndColor:correctActionStr color:correctColorStr tag:correctButtonTagNumber];
-    NSLog(@"正解ボタンの色：%@　アクション：%@　tag：%d",correctColorStr,correctActionStr,correctButtonTagNumber);
     
     //④正解ボタンのアクションと色は、もう使わないのでarrayから削除する
     [allAction removeObjectAtIndex:correctAction];
@@ -360,9 +359,6 @@
         
         NSInteger wrongColor = arc4random() % [allColor count];
         NSString* wrongColorStr = [allColor objectAtIndex:wrongColor];
-        
-        NSLog(@"wrongAction %d",wrongAction);
-        //    NSLog(@"correctColor %d",correctColor);
         
         //⑥−1　不正解ボタンを1〜5のどれにするかを決める
         NSInteger wrongButtonTag = arc4random() % [allTag count];
@@ -390,9 +386,6 @@
         //⑥−4　説明文表示用に、NSMutableArrayに順番に要素を格納しておく
         [arrayForQuestionLabel addObject:wrongActionStr];
         [arrayForQuestionLabel addObject:wrongColorStr];
-        
-        NSLog(@"不正解ボタンの色：%@　アクション：%@　tag：%d",wrongColorStr,wrongActionStr,wrongButtonTagNumber);
-        
     }
     
     //arrayの中身を試しに取り出してみよう

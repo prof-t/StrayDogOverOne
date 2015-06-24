@@ -312,7 +312,6 @@
     
     //③正解ボタンのアクションと色を設定する
     [self setButtonActionAndColor:correctActionStr color:correctColorStr tag:correctButtonTagNumber];
-    NSLog(@"正解ボタンの色：%@　アクション：%@　tag：%d",correctColorStr,correctActionStr,correctButtonTagNumber);
     
     //④正解ボタンのアクションと色は、もう使わないのでarrayから削除する
     [allAction removeObjectAtIndex:correctAction];

@@ -14,6 +14,7 @@
 // クイズの回答後に表示されるViewとImageView
 @property (nonatomic,weak) IBOutlet UIView *clearView;
 @property (nonatomic,weak) IBOutlet UIImageView *clearViewImage;
+@property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
 
 // 回答ボタン
 @property (nonatomic,weak) IBOutlet UIButton *dogButton1;
@@ -160,8 +161,7 @@
     //labelテキストを随時変更
     self.timeLabel.text = self.timeStr;
     
-    UINavigationBar *navBar = (UINavigationBar*)[self.view viewWithTag:10];
-    navBar.topItem.title = @"犬をタッチしてつかまえてね!!";
+    self.navBar.topItem.title = @"犬をタッチしてつかまえてね!!";
 }
 
 //回答ボタンを押下時のイベント処理
@@ -174,10 +174,7 @@
     //ゲームクリアー画面のviewを表示させる
     self.clearView.hidden = NO;
     self.clearViewImage.hidden = NO;
-    
-    UINavigationBar *navBar = (UINavigationBar*)[self.view viewWithTag:10];
-    
-    
+
     //効果音、得点の増減、正解か不正解の値渡しを行う
     if(button.tag == self.correctButtonTag + 1){
 
@@ -187,7 +184,7 @@
         }] + self.currentScore;
         self.isCorrect = YES;
         self.clearViewImage.image =[UIImage imageNamed:@"girl2.jpg"];
-        navBar.topItem.title = @"おめでとう!!";
+        self.navBar.topItem.title = @"おめでとう!!";
         
     } else {
         self.currentScore = [self.questionClassOBJ evaluateScoreWithIsCorrect:NO remainTime:self.timeCount completion:^(NSInteger score) {
@@ -197,7 +194,7 @@
         [AudioSingleton playAudioWithKey:@"失敗"];
         self.isCorrect = NO;
         self.clearViewImage.image =[UIImage imageNamed:@"girl1.jpg"];
-        navBar.topItem.title = @"残念!!";
+        self.navBar.topItem.title = @"残念!!";
     }
     
     //現在の総得点をNSString化してlabelに表示

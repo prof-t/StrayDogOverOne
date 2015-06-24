@@ -314,6 +314,7 @@
                         <outlet property="gameCancelButton" destination="E3S-Ai-lVk" id="fV0-Rh-lXu"/>
                         <outlet property="gameStartButton" destination="bg0-Fk-2ac" id="QBc-AB-GK4"/>
                         <outlet property="girlImage" destination="LHQ-Rg-XV4" id="AP6-66-dXe"/>
+                        <outlet property="navBar" destination="McT-FZ-7hQ" id="Czn-4k-eP3"/>
                         <outlet property="questionActionLabel" destination="lnC-a9-bmP" id="jlJ-9k-Bdd"/>
                         <outlet property="questionColorLabel" destination="icy-5B-Mb4" id="0mx-6F-jNL"/>
                         <outlet property="timeLabel" destination="aWP-Jd-Aj1" id="ZRa-iz-4lm"/>
@@ -756,6 +757,7 @@
                         <outlet property="gameCancelButton" destination="6kc-T1-JUc" id="iUl-R6-C6l"/>
                         <outlet property="gameStartButton" destination="UeG-0i-JkV" id="4X0-xz-2d3"/>
                         <outlet property="girlImage" destination="xOg-vl-WWW" id="RgB-gs-V1q"/>
+                        <outlet property="navBar" destination="ekr-QY-tR4" id="lE0-Rf-4XN"/>
                         <outlet property="questionActionLabel" destination="ze8-MR-VtJ" id="Tdd-DE-bNw"/>
                         <outlet property="questionColorLabel" destination="y1h-C9-Kf6" id="U1A-sE-VXM"/>
                         <outlet property="timeLabel" destination="kUe-ry-Y8L" id="LdC-Ed-mXq"/>

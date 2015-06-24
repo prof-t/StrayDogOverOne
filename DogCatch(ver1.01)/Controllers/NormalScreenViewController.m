@@ -52,7 +52,6 @@
     //タイマー
 //    __weak NSTimer *_timer;
     float timeCount;
-    float _secondsOfTimer;
     
     NSInteger nowScore;
     Question *questionClassOBJ;

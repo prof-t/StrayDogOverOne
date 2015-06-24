@@ -22,4 +22,9 @@
 */
 -(NSInteger)evaluateScoreWithIsCorrect:(BOOL)isCorrect remainTime:(float)remainTime  completion:(void (^)(NSInteger score))completion;
 
+/**
+ 問題の出題パターンを決定する
+ */
+-(BOOL)decisionQuestionPattern;
+
 @end

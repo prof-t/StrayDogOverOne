@@ -13,7 +13,6 @@
     //タイマー
     __weak NSTimer *_timer;
 //    float timeCount;
-    float _secondsOfTimer;
     NSString *_timeStr;
     CGFloat timeInterval;
 }

@@ -9,11 +9,6 @@
 #import "Question.h"
 
 @implementation Question
-{
-    NSNumber *button1RandomDogColor,*button2RandomDogColor,*button3RandomDogColor,*button4RandomDogColor,*button5RandomDogColor;
-    NSNumber *button1RandomDogAction,*button2RandomDogAction,*button3RandomDogAction,*button4RandomDogAction,*button5RandomDogAction;
-    
-}
 
 #pragma mark - public methods
 //得点加算メソッド
@@ -42,4 +37,10 @@
     return score;
 }
 
+/* ★☆★設問パターンをランダムに決めるメソッド★☆★ */
+-(BOOL)decisionQuestionPattern
+{
+    BOOL pattern = arc4random()% 2;
+    return pattern;
+}
 @end

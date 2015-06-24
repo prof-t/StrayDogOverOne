@@ -12,9 +12,13 @@
 
 @interface CustomButton : UIButton
 
-
+//角丸の半径
 @property (nonatomic, assign) int cornerRadius;
+
+//枠線の幅
 @property (nonatomic, assign) int borderWidth;
+
+//枠線の色
 @property (nonatomic, assign) UIColor* borderColor;
 
 @end

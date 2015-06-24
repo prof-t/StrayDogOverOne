@@ -9,9 +9,13 @@
 #import "TutorialScreenViewController.h"
 
 @interface TutorialScreenViewController ()
+
+//説明画面の各ページとして使用するUILabel
 @property (nonatomic,weak) IBOutlet UILabel *page1;
 @property (nonatomic,weak) IBOutlet UILabel *page2;
 @property (nonatomic,weak) IBOutlet UILabel *page3;
+
+//説明画面内で使用するImageView
 @property (nonatomic,weak) IBOutlet UIImageView *dogall;
 
 @end

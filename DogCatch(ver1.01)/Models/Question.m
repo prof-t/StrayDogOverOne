@@ -16,23 +16,19 @@
 {
     NSInteger score;
     
-    //正解だったら残り秒数に×１００点する
-    if(isCorrect == YES){
-        
-        score = remainTime * 10;
-        
-        //失敗だったら−300点
-    } else if(isCorrect == NO){
-        
-        score = - 300;
-        
-        //時間切れだったら-500点
-    } else if(time <= 0){
-        
+    //時間切れだったら-500点
+    if (remainTime <= 0){
         score = - 500;
+        return score;
     }
     
-//    completion(score);
+    //正解だったら残り秒数に×１００点する
+    if(isCorrect == YES){
+        score = remainTime * 10;
+    } else {
+        //失敗だったら−300点
+        score = - 300;
+    }
     
     return score;
 }

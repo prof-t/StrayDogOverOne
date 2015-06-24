@@ -108,7 +108,7 @@
         //「ゲームをやめる」際の処理
         UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"やめる" style:UIAlertActionStyleCancel handler:^(UIAlertAction* action){
             
-            [_timer invalidate];//Timerを止める
+            [self.timer invalidate];//Timerを止める
             TitleScreenViewController *titleVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"TitleScreen"];//title画面に遷移する
             [self presentViewController:titleVC animated:YES completion:nil];//YESならModal,Noなら何もなし
             [AudioSingleton stopAudioWithKey:@"ゲーム中"];//音楽も止める
@@ -139,7 +139,7 @@
     //女の子の顔画像を変更
     self.girlImage.image = [UIImage imageNamed:@"girl3.jpg"];
     
-    //ボタンのhiddenを解除
+    //ボタンのenabledを解除
     self.dogButton1.enabled = YES;
     self.dogButton2.enabled = YES;
     self.dogButton3.enabled = YES;
@@ -167,52 +167,7 @@
 //回答ボタンを押下時のイベント処理
 - (IBAction)pushedAnswerButton:(UIButton*)button
 {
-    //タイマーと音楽のストップ
-    [_timer invalidate];
-    [AudioSingleton stopAudioWithKey:@"ゲーム中"];
-    
-    //ゲームクリアー画面のviewを表示させる
-    self.clearView.hidden = NO;
-    self.clearViewImage.hidden = NO;
-
-    //効果音、得点の増減、正解か不正解の値渡しを行う
-    if(button.tag == self.correctButtonTag + 1){
-
-        [AudioSingleton playAudioWithKey:@"正解"];
-        self.currentScore = [self.questionClassOBJ evaluateScoreWithIsCorrect:YES remainTime:self.timeCount completion:^(NSInteger score) {
-
-        }] + self.currentScore;
-        self.isCorrect = YES;
-        self.clearViewImage.image =[UIImage imageNamed:@"girl2.jpg"];
-        self.navBar.topItem.title = @"おめでとう!!";
-        
-    } else {
-        self.currentScore = [self.questionClassOBJ evaluateScoreWithIsCorrect:NO remainTime:self.timeCount completion:^(NSInteger score) {
-            
-        }] + self.currentScore;
-
-        [AudioSingleton playAudioWithKey:@"失敗"];
-        self.isCorrect = NO;
-        self.clearViewImage.image =[UIImage imageNamed:@"girl1.jpg"];
-        self.navBar.topItem.title = @"残念!!";
-    }
-    
-    //現在の総得点をNSString化してlabelに表示
-    NSString *nowScoreStr = [[NSString alloc]initWithFormat:@"総得点 %zd",self.currentScore];
-    self.totalScore.text = nowScoreStr;
-    
-    //ボタンが何度も押されるのを防ぐため、enabledをnoに設定
-    self.dogButton1.enabled = NO;
-    self.dogButton2.enabled = NO;
-    self.dogButton3.enabled = NO;
-    
-    //スタートボタンのenabledをyesにし、次の問題に移れるようにする
-    self.gameStartButton.enabled = YES;
-    
-    //ボタンの円半径の設定を、画面変化に対応させる
-    //        sender.layer.cornerRadius = (self.view.bounds.size.width / 2) * 1.0f;
-    //            sender.layer.masksToBounds = YES;
-    
+    [self clearGame:button];
 }
 
 
@@ -379,13 +334,78 @@
     self.timeStr = [NSString stringWithFormat:@"残り時間 %05.2f",second];
     
     self.timeLabel.text = self.timeStr;
+    
+    [self stopTimerForTimeOut:self.timeCount];
 }
 
 -(void)timerStart
 {
-    self.timeCount = 60;
-    if(![_timer isValid]){
-        _timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(timer:) userInfo:nil repeats:YES];
+    self.timeCount = 10;
+    if(![self.timer isValid]){
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(timer:) userInfo:nil repeats:YES];
     }
 }
+
+//残り時間０以下でゲームを終了させる
+-(void)stopTimerForTimeOut:(CGFloat)count
+{
+    NSLog(@"countは%f",count);
+    if (count <= 0) {
+        [self.timer invalidate];
+        [self clearGame:nil];
+    }
+}
+
+//ゲーム終了時の処理
+-(void)clearGame:(UIButton*)button
+{
+    //タイマーと音楽のストップ
+    [self.timer invalidate];
+    [AudioSingleton stopAudioWithKey:@"ゲーム中"];
+    
+    //ゲームクリアー画面のviewを表示させる
+    self.clearView.hidden = NO;
+    self.clearViewImage.hidden = NO;
+    
+    //効果音、得点の増減、正解か不正解の値渡しを行う
+    if(button.tag == self.correctButtonTag + 1){
+        
+        [AudioSingleton playAudioWithKey:@"正解"];
+        self.currentScore = [self.questionClassOBJ evaluateScoreWithIsCorrect:YES remainTime:self.timeCount completion:^(NSInteger score) {
+            
+        }] + self.currentScore;
+        self.isCorrect = YES;
+        self.clearViewImage.image =[UIImage imageNamed:@"girl2.jpg"];
+        self.navBar.topItem.title = @"おめでとう!!";
+        
+    } else {
+        self.currentScore = [self.questionClassOBJ evaluateScoreWithIsCorrect:NO remainTime:self.timeCount completion:^(NSInteger score) {
+            
+        }] + self.currentScore;
+        
+        [AudioSingleton playAudioWithKey:@"失敗"];
+        self.isCorrect = NO;
+        self.clearViewImage.image =[UIImage imageNamed:@"girl1.jpg"];
+        self.navBar.topItem.title = @"残念!!";
+    }
+    
+    //現在の総得点をNSString化してlabelに表示
+    NSString *nowScoreStr = [[NSString alloc]initWithFormat:@"総得点 %zd",self.currentScore];
+    self.totalScore.text = nowScoreStr;
+    
+    //ボタンが何度も押されるのを防ぐため、enabledをnoに設定
+    self.dogButton1.enabled = NO;
+    self.dogButton2.enabled = NO;
+    self.dogButton3.enabled = NO;
+    
+    //スタートボタンのenabledをyesにし、次の問題に移れるようにする
+    self.gameStartButton.enabled = YES;
+    
+    //ボタンの円半径の設定を、画面変化に対応させる
+    //        sender.layer.cornerRadius = (self.view.bounds.size.width / 2) * 1.0f;
+    //            sender.layer.masksToBounds = YES;
+    
+
+}
+
 @end

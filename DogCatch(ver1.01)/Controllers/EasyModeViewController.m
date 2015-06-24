@@ -314,7 +314,6 @@
         [labelText2 appendString:@"いろだったの…"];
         [label2 setText:labelText2];
         
-        
         //⑦−2　設問パターンがNOの場合
     } else if(pattern == NO){
         
@@ -327,7 +326,6 @@
         [labelText2 appendString:wrongColorLabel];
         [labelText2 appendString:@"いろだったの…"];
         [label2 setText:labelText2];
-        
     }
 }
 

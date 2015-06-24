@@ -49,15 +49,11 @@
     __weak NSTimer *_timer;
     CGFloat timeCount;
     CGFloat _secondsOfTimer;
-    NSString *_timeStr;
     
     NSInteger nowScore; //現在の得点
     Question *questionClassOBJ;
     BOOL _correctOrWrong;
 }
-
-
-@synthesize timeStr;
 
 #pragma mark - Public Methods
 #pragma mark - Private Methods
@@ -156,7 +152,7 @@
     [self timerStart];
     
     //labelテキストを随時変更
-    self.timeLabel.text = timeStr;
+    self.timeLabel.text = self.timeStr;
     
     UINavigationBar *navBar = (UINavigationBar*)[self.view viewWithTag:10];
     navBar.topItem.title = @"犬をタッチしてつかまえてね!!";

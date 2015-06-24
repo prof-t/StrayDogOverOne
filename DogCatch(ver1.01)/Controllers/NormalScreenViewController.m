@@ -41,23 +41,30 @@
 
 // scoreの累計を表示するLabel
 @property (nonatomic,weak) IBOutlet UILabel *totalScore;
-@property (nonatomic,weak) NSTimer *timer;
 
+//現在の得点
+@property (nonatomic,assign) NSInteger currentScore;
+
+//問題に正解したか？
+@property (nonatomic,assign) BOOL isCorrect;
+
+//正解ボタンのタグ番号
+@property (nonatomic,assign) NSInteger correctButtonTag;
+
+//設問パターンは、完全一致パターンですか？
+@property (nonatomic,assign) BOOL isCompletelyMatchingPattern;
+
+//タイマー
+@property (nonatomic,weak) NSTimer *timer;
+@property (nonatomic,assign) CGFloat timeCount;
+
+//Questionクラスのインスタンス
+@property (nonatomic,strong) Question *questionClassOBJ;
+
+@property (nonatomic,weak) AVAudioPlayer *player;
 @end
 
 @implementation NormalScreenViewController
-{
-    NSInteger correctButtonTag;
-    BOOL questionPattern;
-    
-    //タイマー
-//    __weak NSTimer *_timer;
-    float timeCount;
-    
-    NSInteger nowScore;
-    Question *questionClassOBJ;
-    BOOL _correctOrWrong;
-}
 
 #pragma mark - Public Methods
 #pragma mark - Private Methods
@@ -70,8 +77,8 @@
     //iPhone/iPadの画面サイズに合わせて背景画像を拡大・縮小する
     [self setBackGroudImageName:@"back1.jpg"];
     
-    nowScore = 0;
-    questionClassOBJ = [Question alloc];
+    self.currentScore = 0;
+    self.questionClassOBJ = [Question alloc];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -142,10 +149,7 @@
     //女の子の顔画像を変更
     self.girlImage.image = [UIImage imageNamed:@"girl3.jpg"];
     
-    
-    
-    /*★☆★　動作確認用テスト★☆★*/
-    //ボタンのhiddenを解除
+    //ボタンのenabledを解除
     self.dogButton1.enabled = YES;
     self.dogButton2.enabled = YES;
     self.dogButton3.enabled = YES;
@@ -153,13 +157,15 @@
     self.dogButton5.enabled = YES;
     
     //今回の設問パターン（YES/NO）を決定
-    questionPattern = [self questionPattern:self.questionNumber];
+    self.isCompletelyMatchingPattern = [self.questionClassOBJ decisionQuestionPattern];
     
     //設問パターンをもとに、正解ボタンと失敗ボタンを生成し、同時に設問文の表示を行う
-    [self decidedQuestion:questionPattern label1:self.questionColorLabel label2:self.questionActionLabel];
+    [self decidedQuestion:self.isCompletelyMatchingPattern label1:self.questionColorLabel label2:self.questionActionLabel];
     
-    //音楽START！
-    [AudioSingleton playAudioWithKey:@"ゲーム中"];
+    //音楽START！（ループは無限）
+    self.player = [AudioSingleton playerWithKey:@"ゲーム中"];
+    self.player.numberOfLoops = -1;
+    [self.player play];
     
     //timer起動
 //    TimerClass *timerTest = [TimerClass alloc];
@@ -171,6 +177,7 @@
     self.navBar.topItem.title = @"犬をタッチしてつかまえてね!!";
 }
 
+//回答ボタンを押下時のイベント処理
 - (IBAction)pushedAnswerButton:(UIButton*)button
 {
     
@@ -181,15 +188,15 @@
     self.clearViewImage.hidden = NO;
     
     //効果音、得点の増減、正解か不正解の値渡しを行う
-    if(button.tag == correctButtonTag + 1){
+    if(button.tag == self.correctButtonTag + 1){
         //正解の効果音を鳴らす
         [AudioSingleton playAudioWithKey:@"正解"];
         
         //この問題での得点と、今までに得た得点を足して、総合計を算出する
-        nowScore = [questionClassOBJ evaluateScoreWithIsCorrect:YES remainTime:timeCount completion:^(NSInteger score) {
+        self.currentScore = [self.questionClassOBJ evaluateScoreWithIsCorrect:YES remainTime:self.timeCount completion:^(NSInteger score) {
             
-        }] + nowScore;
-        _correctOrWrong = YES;
+        }] + self.currentScore;
+        self.isCorrect = YES;
         self.clearViewImage.image =[UIImage imageNamed:@"girl2.jpg"];
         self.navBar.topItem.title = @"おめでとう!!";
         
@@ -198,16 +205,16 @@
         [AudioSingleton playAudioWithKey:@"失敗"];
         
         //この問題での得点と、今までに得た得点を足して、総合計を算出する
-        nowScore = [questionClassOBJ evaluateScoreWithIsCorrect:NO remainTime:timeCount completion:^(NSInteger score) {
+        self.currentScore = [self.questionClassOBJ evaluateScoreWithIsCorrect:NO remainTime:self.timeCount completion:^(NSInteger score) {
             
-        }] + nowScore;
+        }] + self.currentScore;
         
-        _correctOrWrong = NO;
+        self.isCorrect = NO;
         self.clearViewImage.image =[UIImage imageNamed:@"girl1.jpg"];
         self.navBar.topItem.title = @"残念!!";
     }
     
-    NSString *nowScoreStr = [[NSString alloc]initWithFormat:@"総得点 %zd",nowScore];
+    NSString *nowScoreStr = [[NSString alloc]initWithFormat:@"総得点 %zd",self.currentScore];
     self.totalScore.text = nowScoreStr;
     
     self.dogButton1.enabled = NO;
@@ -318,8 +325,8 @@
     
     
     //②正解ボタンをボタン1〜5のどれにするかをランダムに決める
-    correctButtonTag = arc4random() % 5;
-    NSInteger correctButtonTagNumber = [[allTag objectAtIndex:correctButtonTag]intValue];
+    self.correctButtonTag = arc4random() % 5;
+    NSInteger correctButtonTagNumber = [[allTag objectAtIndex:self.correctButtonTag]intValue];
     
     
     //③正解ボタンのアクションと色を設定する
@@ -328,7 +335,7 @@
     //④正解ボタンのアクションと色は、もう使わないのでarrayから削除する
     [allAction removeObjectAtIndex:correctAction];
     [allColor removeObjectAtIndex:correctColor];
-    [allTag removeObjectAtIndex:correctButtonTag];
+    [allTag removeObjectAtIndex:self.correctButtonTag];
     
     
     //⑤後の説明文表示に使うので、新たにNSMutableArrayを作成する（要素の０は「正しいアクション」要素の１は「正しい色」となる）
@@ -427,8 +434,8 @@
 -(void)timer:(NSTimer*)timer
 {
     
-    timeCount = timeCount - 0.01f;
-    float second = fmodf(timeCount,60);
+    self.timeCount = self.timeCount - 0.01f;
+    float second = fmodf(self.timeCount,60);
      self.timeStr = [NSString stringWithFormat:@"残り時間 %05.2f",second];
     
     self.timeLabel.text = self.timeStr;
@@ -436,7 +443,7 @@
 
 -(void)timerStart
 {
-    timeCount = 60;
+    self.timeCount = 60;
     if(![_timer isValid]){
         self.timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(timer:) userInfo:nil repeats:YES];
     }

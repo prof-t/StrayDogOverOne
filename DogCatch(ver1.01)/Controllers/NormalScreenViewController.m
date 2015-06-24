@@ -433,20 +433,9 @@
     
     timeCount = timeCount - 0.01f;
     float second = fmodf(timeCount,60);
-     _timeStr = [NSString stringWithFormat:@"残り時間 %05.2f",second];
+     self.timeStr = [NSString stringWithFormat:@"残り時間 %05.2f",second];
     
-    self.timeLabel.text = _timeStr;
-    
-    //    UILabel *time =(UILabel*)[self.view viewWithTag:TIME];
-    //    time.text =[[NSString alloc]initWithFormat:@"%@",timeStr];
-    //
-    //    if(timeCount >20){
-    //        UIImageView *miss = (UIImageView*)[self.view viewWithTag:MISS];
-    //        miss.image = [UIImage imageNamed:@"失敗.png"];
-    //        score =  score - 500;
-    //        [timer invalidate];
-    //    }
-    
+    self.timeLabel.text = self.timeStr;
 }
 
 -(void)timerStart

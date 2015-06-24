@@ -210,7 +210,6 @@
     //        sender.layer.cornerRadius = (self.view.bounds.size.width / 2) * 1.0f;
     //            sender.layer.masksToBounds = YES;
     
-    
 }
 
 
@@ -281,12 +280,10 @@
     NSNumber* tag2 = @2;
     NSNumber* tag3 = @3;
 
-    
     NSMutableArray *allTag = [NSMutableArray array];
     [allTag addObject:tag1];
     [allTag addObject:tag2];
     [allTag addObject:tag3];
-
     
     NSString* wrongActionLabel;
     NSString* wrongColorLabel;
@@ -303,7 +300,6 @@
     //②正解ボタンをボタン1〜３のどれにするかをランダムに決める
     correctButtonTag = arc4random() % 3;
     NSInteger correctButtonTagNumber = [[allTag objectAtIndex:correctButtonTag]intValue];
-    
     
     //③正解ボタンのアクションと色を設定する
     [self setButtonActionAndColor:correctActionStr color:correctColorStr tag:correctButtonTagNumber];
@@ -352,14 +348,6 @@
         [arrayForQuestionLabel addObject:wrongColorStr];
     }
     
-    //arrayの中身を試しに取り出してみよう
-    //    int j=0;
-    //    for (NSString *str in arrayForQuestionLabel) {
-    //        NSLog(@"%d %@",j, str);
-    //        j++;
-    //    }
-    
-    
     //⑦設問文の表示（パターンによって処理が分岐する）
     NSMutableString *labelText1 =[[NSMutableString alloc]initWithString:@"わたしのワンちゃんは…\n　"];
     NSMutableString *labelText2 = [[NSMutableString alloc]initWithString:@"くびわ の いろ は…\n　"];
@@ -381,7 +369,6 @@
         
         //不正解ボタンから、まずランダムで1つ選ぶ。その1つが不正解アクションになる。
         //残りの１つを不正解色にする
-        
         [labelText1 appendString:wrongActionLabel];
         [labelText1 appendString:@"…？"];
         [label1 setText:labelText1];
@@ -395,23 +382,11 @@
 
 -(void)timer:(NSTimer*)timer
 {
-    
     timeCount = timeCount - 0.01f;
     float second = fmodf(timeCount,60);
-    _timeStr = [NSString stringWithFormat:@"残り時間 %05.2f",second];
+    self.timeStr = [NSString stringWithFormat:@"残り時間 %05.2f",second];
     
-    self.timeLabel.text = _timeStr;
-    
-    //    UILabel *time =(UILabel*)[self.view viewWithTag:TIME];
-    //    time.text =[[NSString alloc]initWithFormat:@"%@",timeStr];
-    //
-    //    if(timeCount >20){
-    //        UIImageView *miss = (UIImageView*)[self.view viewWithTag:MISS];
-    //        miss.image = [UIImage imageNamed:@"失敗.png"];
-    //        score =  score - 500;
-    //        [timer invalidate];
-    //    }
-    
+    self.timeLabel.text = self.timeStr;
 }
 
 -(void)timerStart

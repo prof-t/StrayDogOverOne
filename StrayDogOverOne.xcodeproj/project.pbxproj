@@ -49,6 +49,7 @@
 		2ACC45DA1B38F6B40064E416 /* カジノ4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2ACC45C31B38F6B40064E416 /* カジノ4.mp3 */; };
 		2ACC45DD1B38F73A0064E416 /* KodomoRounded.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2ACC45DC1B38F73A0064E416 /* KodomoRounded.otf */; };
 		2ACC45E01B38F81B0064E416 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ACC45DF1B38F81B0064E416 /* Main.storyboard */; };
+		2AF2C6F81B3A44180046BAD3 /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF2C6F71B3A44180046BAD3 /* AlertView.m */; };
 		2AF2FDEA1AD60F0800E71856 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF2FDE91AD60F0800E71856 /* AVFoundation.framework */; };
 		B66DB53DA80980756F3518CA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8819315EF35BDF02837D81 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -121,6 +122,8 @@
 		2ACC45C31B38F6B40064E416 /* カジノ4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "カジノ4.mp3"; sourceTree = "<group>"; };
 		2ACC45DC1B38F73A0064E416 /* KodomoRounded.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KodomoRounded.otf; sourceTree = "<group>"; };
 		2ACC45DF1B38F81B0064E416 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		2AF2C6F61B3A44180046BAD3 /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
+		2AF2C6F71B3A44180046BAD3 /* AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
 		2AF2FDE91AD60F0800E71856 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		32826A657BA732C87BD4625E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8F8819315EF35BDF02837D81 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -260,6 +263,7 @@
 		2ACC45821B38F0330064E416 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2AF2C6F51B3A43920046BAD3 /* AlertView */,
 				2ACC45E11B38F8610064E416 /* CustomView */,
 				2ACC45DE1B38F80D0064E416 /* StoryBoard */,
 			);
@@ -405,6 +409,15 @@
 				2ACC45971B38F35A0064E416 /* CustomButton.m */,
 			);
 			name = CustomView;
+			sourceTree = "<group>";
+		};
+		2AF2C6F51B3A43920046BAD3 /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				2AF2C6F61B3A44180046BAD3 /* AlertView.h */,
+				2AF2C6F71B3A44180046BAD3 /* AlertView.m */,
+			);
+			name = AlertView;
 			sourceTree = "<group>";
 		};
 		A83951CEF7B6A87D37132BF8 /* Frameworks */ = {
@@ -585,6 +598,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2ACC459C1B38F4720064E416 /* ScoreModel.m in Sources */,
+				2AF2C6F81B3A44180046BAD3 /* AlertView.m in Sources */,
 				2ACC45981B38F35A0064E416 /* CustomButton.m in Sources */,
 				2ACC45AA1B38F5F70064E416 /* SDAudioPlayerManager.m in Sources */,
 				2ACC458E1B38F2F20064E416 /* EasyModeViewController.m in Sources */,

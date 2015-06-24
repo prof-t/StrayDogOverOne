@@ -112,15 +112,15 @@
             
         }];
         [alert addAction:cancelAction];
-        
-        //    UIAlertAction *altAction = [UIAlertAction actionWithTitle:@"ルール説明を見る" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action){
-        
-        //ルール説明のmodalを表示する
-        
-        //        [weakAlert dismissViewControllerAnimated:YES completion:nil];
-        //    }];
-        //    [alert addAction:altAction];
-        
+//
+//        //    UIAlertAction *altAction = [UIAlertAction actionWithTitle:@"ルール説明を見る" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action){
+//        
+//        //ルール説明のmodalを表示する
+//        
+//        //        [weakAlert dismissViewControllerAnimated:YES completion:nil];
+//        //    }];
+//        //    [alert addAction:altAction];
+    
         [self presentViewController:alert animated:YES completion:nil];
         
         

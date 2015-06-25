@@ -59,9 +59,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
 {
     if([segue.identifier isEqualToString:@"returnTitleScreen"]){
-        
-        //遷移時に音楽をストップする
-        [AudioSingleton stopAudioWithKey:@"タイトル画面"];
+
     }
 }
 

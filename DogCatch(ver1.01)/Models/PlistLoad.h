@@ -12,6 +12,6 @@
 
 @interface PlistLoad : NSObject
 
-+(void)loadPlist;
++(void)loadAudioFilePlist;
 
 @end

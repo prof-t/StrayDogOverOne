@@ -19,7 +19,7 @@
     // Override point for customization after application launch.
     
     //audioデータ（plist）の読み込み
-    [PlistLoad loadPlist];
+    [PlistLoad loadAudioFilePlist];
     
     return YES;
 }

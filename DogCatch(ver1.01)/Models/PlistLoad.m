@@ -11,7 +11,7 @@
 
 @implementation PlistLoad
 
-+ (void)loadPlist
++ (void)loadAudioFilePlist
 {
     //plistをロードする
     NSString *path = [[NSBundle mainBundle] pathForResource:@"SDPreloadingAudioFiles" ofType:@"plist"];

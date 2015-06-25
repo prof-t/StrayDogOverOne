@@ -19,9 +19,6 @@
 @end
 
 @implementation TitleScreenViewController
-{
-    AVAudioPlayer *player;
-}
 
 #pragma mark - Public Methods
 #pragma mark - Private Methods
@@ -37,27 +34,14 @@
 //    [[self.buttonNormal layer] setCornerRadius:5.0];
 //    [self.buttonNormal setClipsToBounds:YES];
 
-    //音楽の生成と再生(ループは無限)
+    //音楽の生成と再生
     [AudioSingleton playAudioWithKey:@"タイトル画面"];
-
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 
 //ゲームスタートボタンtap時のイベント
 - (IBAction)pushedGameStartButton:(UIButton*)button

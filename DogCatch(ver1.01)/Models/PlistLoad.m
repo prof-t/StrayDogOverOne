@@ -7,7 +7,7 @@
 //
 
 #import "PlistLoad.h"
-
+#import "SDAudioPlayerManager.h"
 
 @implementation PlistLoad
 

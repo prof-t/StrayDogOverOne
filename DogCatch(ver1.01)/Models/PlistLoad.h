@@ -8,10 +8,12 @@
 // 音楽ファイルデータを登録した.plistを取り扱うクラス
 
 #import <Foundation/Foundation.h>
-#import "SDAudioPlayerManager.h"
 
 @interface PlistLoad : NSObject
 
+/**
+ plistからAudioFileを読み込み、SDAudioManagerを生成するメソッド
+ */
 +(void)loadAudioFilePlist;
 
 @end

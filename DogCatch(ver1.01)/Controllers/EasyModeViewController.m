@@ -58,8 +58,6 @@
 //Questionクラスのインスタンス
 @property (nonatomic,strong) Question *questionClassOBJ;
 
-@property (nonatomic,weak) AVAudioPlayer *player;
-
 @end
 
 @implementation EasyModeViewController

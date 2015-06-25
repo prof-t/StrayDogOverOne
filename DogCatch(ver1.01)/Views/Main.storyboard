@@ -344,7 +344,7 @@
                                     <constraint firstAttribute="width" constant="296" id="bu2-Mo-rlo"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="タイトル画面に戻る">
+                                <state key="normal" title="前の画面に戻る">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>

@@ -68,16 +68,25 @@
 #pragma mark - Private Methods
 
 //初期化
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    
+    if (self) {
+        
+        self.currentScore = 0;
+        self.questionClassOBJ = [[Question alloc]init];
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     //iPhone/iPadの画面サイズに合わせて背景画像を拡大・縮小する
     [self setBackGroudImageName:@"back1.jpg"];
-    
-    self.currentScore = 0;
-    self.questionClassOBJ = [[Question alloc]init];
-    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -55,6 +55,14 @@
  */
 - (AVAudioPlayer *)createPlayerWithFileName:(NSString *)fileName forKey:(NSString *)key;
 
+/**
+サウンドオブジェクトの生成(ファイル名)
+@param fileName resource（main bundle）にある任意のファイル名(拡張子付き)
+@param key サウンドオブジェクトの名前。nilを設定するとコンテナに保持しない。同じ名前の場合は上書きする。
+@param loop ループ回数の指定
+@return サウンドオブジェクトを生成して返す
+*/
+- (AVAudioPlayer *)createPlayerWithFileName:(NSString *)fileName forKey:(NSString *)key loop:(NSInteger)loop;
 
 /**
  サウンドオブジェクトの取得

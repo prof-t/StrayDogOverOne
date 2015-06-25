@@ -56,6 +56,13 @@
     return [self createPlayerWithURLString:pathString forKey:key];
 }
 
+- (AVAudioPlayer *)createPlayerWithFileName:(NSString *)fileName forKey:(NSString *)key loop:(NSInteger)loop
+{
+   AVAudioPlayer *player = [self createPlayerWithFileName:fileName forKey:key];
+    player.numberOfLoops = loop;
+    return player;
+}
+
 - (AVAudioPlayer *)playerWithKey:(NSString *)key
 {
     if (!key) {

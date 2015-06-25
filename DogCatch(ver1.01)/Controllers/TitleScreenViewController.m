@@ -38,9 +38,8 @@
 //    [self.buttonNormal setClipsToBounds:YES];
 
     //音楽の生成と再生(ループは無限)
-    player = [AudioSingleton playerWithKey:@"タイトル画面"];
-    player.numberOfLoops = -1;
-    [player play];
+    [AudioSingleton playAudioWithKey:@"タイトル画面"];
+
 }
 
 

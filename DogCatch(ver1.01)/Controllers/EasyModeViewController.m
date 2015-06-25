@@ -161,10 +161,8 @@
     //設問パターンをもとに、正解ボタンと失敗ボタンを生成し、同時に設問文の表示を行う
     [self decidedQuestion:self.isCompletelyMatchingPattern label1:self.questionColorLabel label2:self.questionActionLabel];
     
-    //音楽START！（ループは無限）
-    self.player = [AudioSingleton playerWithKey:@"ゲーム中"];
-    self.player.numberOfLoops = -1;
-    [self.player play];
+    //音楽START！
+    [AudioSingleton playAudioWithKey:@"ゲーム中"];
     
     //timer起動
 //    TimerClass *timerTest = [TimerClass alloc];

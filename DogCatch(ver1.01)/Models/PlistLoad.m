@@ -23,12 +23,12 @@
         NSString *fileName = audioInfo[@"fileName"];
         //key名
         NSString *key = audioInfo[@"key"];
-        
         //ループ設定
         NSNumber *loop = audioInfo[@"loop"];
         
         //SDAudioPlayerManagerで音声ファイルをロード
-        [[SDAudioPlayerManager sharedInstance] createPlayerWithFileName:fileName forKey:key loop:(NSInteger)loop];
+        [[SDAudioPlayerManager sharedInstance] createPlayerWithFileName:fileName
+                                                                 forKey:key loop:[loop intValue]];
     }
 }
 @end

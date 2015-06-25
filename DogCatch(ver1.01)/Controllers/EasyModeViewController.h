@@ -13,7 +13,6 @@
 #import"TimerClass.h"
 #import"TitleScreenViewController.h"
 #import "BaseViewController.h"
-#import "SDAudioPlayerManager.h"
 
 @interface EasyModeViewController : BaseViewController<UIActionSheetDelegate>
 

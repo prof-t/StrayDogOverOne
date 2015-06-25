@@ -49,6 +49,8 @@
 		2ACC45DA1B38F6B40064E416 /* カジノ4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2ACC45C31B38F6B40064E416 /* カジノ4.mp3 */; };
 		2ACC45DD1B38F73A0064E416 /* KodomoRounded.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2ACC45DC1B38F73A0064E416 /* KodomoRounded.otf */; };
 		2ACC45E01B38F81B0064E416 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ACC45DF1B38F81B0064E416 /* Main.storyboard */; };
+		2AD222DA1B3A801D0098BAE0 /* SDPreloadingAudioFiles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AD222D91B3A801D0098BAE0 /* SDPreloadingAudioFiles.plist */; };
+		2AD222DD1B3A86E30098BAE0 /* PlistLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD222DC1B3A86E30098BAE0 /* PlistLoad.m */; };
 		2AF2C6F81B3A44180046BAD3 /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF2C6F71B3A44180046BAD3 /* AlertView.m */; };
 		2AF2FDEA1AD60F0800E71856 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF2FDE91AD60F0800E71856 /* AVFoundation.framework */; };
 		B66DB53DA80980756F3518CA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8819315EF35BDF02837D81 /* libPods.a */; };
@@ -77,6 +79,7 @@
 		2A3A3F0F1AD2373400F09768 /* DogCatch_ver1_01_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogCatch_ver1_01_Tests.m; sourceTree = "<group>"; };
 		2A3A3F191AD2376600F09768 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		2A3A3F311AD2549900F09768 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2A93202E1B3B99FD005039C7 /* StrayDogOverOne-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StrayDogOverOne-Prefix.pch"; sourceTree = "<group>"; };
 		2ACC45831B38F0700064E416 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		2ACC45841B38F0700064E416 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		2ACC45871B38F23A0064E416 /* TitleScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleScreenViewController.h; sourceTree = "<group>"; };
@@ -122,6 +125,9 @@
 		2ACC45C31B38F6B40064E416 /* カジノ4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "カジノ4.mp3"; sourceTree = "<group>"; };
 		2ACC45DC1B38F73A0064E416 /* KodomoRounded.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KodomoRounded.otf; sourceTree = "<group>"; };
 		2ACC45DF1B38F81B0064E416 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		2AD222D91B3A801D0098BAE0 /* SDPreloadingAudioFiles.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SDPreloadingAudioFiles.plist; sourceTree = "<group>"; };
+		2AD222DB1B3A86E30098BAE0 /* PlistLoad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlistLoad.h; path = ../Models/PlistLoad.h; sourceTree = "<group>"; };
+		2AD222DC1B3A86E30098BAE0 /* PlistLoad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlistLoad.m; path = ../Models/PlistLoad.m; sourceTree = "<group>"; };
 		2AF2C6F61B3A44180046BAD3 /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
 		2AF2C6F71B3A44180046BAD3 /* AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
 		2AF2FDE91AD60F0800E71856 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -197,6 +203,7 @@
 			children = (
 				2A3A3EEF1AD2373400F09768 /* Info.plist */,
 				2A3A3EF01AD2373400F09768 /* main.m */,
+				2A93202E1B3B99FD005039C7 /* StrayDogOverOne-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -218,9 +225,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		2A93202D1B3B955C005039C7 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				2AD222DB1B3A86E30098BAE0 /* PlistLoad.h */,
+				2AD222DC1B3A86E30098BAE0 /* PlistLoad.m */,
+			);
+			name = config;
+			sourceTree = "<group>";
+		};
 		2ACC457E1B38EFE10064E416 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				2A93202D1B3B955C005039C7 /* config */,
 				2ACC45A41B38F5690064E416 /* Categories */,
 				2ACC45A31B38F5590064E416 /* Utility */,
 				2ACC45A11B38F5230064E416 /* Singleton */,
@@ -256,6 +273,7 @@
 				2ACC45DB1B38F73A0064E416 /* DogCatch_font */,
 				2ACC45AB1B38F6B40064E416 /* DogCatch_image */,
 				2ACC45BC1B38F6B40064E416 /* DogCatch_music */,
+				2AD222D91B3A801D0098BAE0 /* SDPreloadingAudioFiles.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -535,6 +553,7 @@
 				2ACC45CC1B38F6B40064E416 /* girl3.jpg in Resources */,
 				2ACC45CB1B38F6B40064E416 /* girl2.jpg in Resources */,
 				2ACC45CF1B38F6B40064E416 /* koly.png in Resources */,
+				2AD222DA1B3A801D0098BAE0 /* SDPreloadingAudioFiles.plist in Resources */,
 				2ACC45C51B38F6B40064E416 /* balloon_down.png in Resources */,
 				2ACC45D61B38F6B40064E416 /* d6.mp3 in Resources */,
 				2ACC45C61B38F6B40064E416 /* balloon_up.png in Resources */,
@@ -597,6 +616,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AD222DD1B3A86E30098BAE0 /* PlistLoad.m in Sources */,
 				2ACC459C1B38F4720064E416 /* ScoreModel.m in Sources */,
 				2AF2C6F81B3A44180046BAD3 /* AlertView.m in Sources */,
 				2ACC45981B38F35A0064E416 /* CustomButton.m in Sources */,
@@ -728,6 +748,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREFIX_HEADER = "DogCatch(ver1.01)/$(PRODUCT_NAME)-Prefix.pch";
 				INFOPLIST_FILE = "DogCatch(ver1.01)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -744,6 +765,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				GCC_PREFIX_HEADER = "DogCatch(ver1.01)/$(PRODUCT_NAME)-Prefix.pch";
 				INFOPLIST_FILE = "DogCatch(ver1.01)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

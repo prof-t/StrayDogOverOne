@@ -17,6 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //audioデータ（plist）の読み込み
+    [PlistLoad loadAudioFilePlist];
+    
     return YES;
 }
 

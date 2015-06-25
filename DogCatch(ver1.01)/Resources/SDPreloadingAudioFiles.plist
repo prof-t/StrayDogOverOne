@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>loop</key>
+		<integer>-1</integer>
+		<key>fileName</key>
+		<string>c6.mp3</string>
+		<key>key</key>
+		<string>タイトル画面</string>
+	</dict>
+	<dict>
+		<key>loop</key>
+		<integer>-1</integer>
+		<key>fileName</key>
+		<string>カジノ4.mp3</string>
+		<key>key</key>
+		<string>ゲーム中</string>
+	</dict>
+	<dict>
+		<key>loop</key>
+		<integer>0</integer>
+		<key>fileName</key>
+		<string>correct2.mp3</string>
+		<key>key</key>
+		<string>正解</string>
+	</dict>
+	<dict>
+		<key>loop</key>
+		<integer>0</integer>
+		<key>fileName</key>
+		<string>d6.mp3</string>
+		<key>key</key>
+		<string>失敗</string>
+	</dict>
+	<dict>
+		<key>loop</key>
+		<integer>0</integer>
+		<key>fileName</key>
+		<string>se9.wav</string>
+		<key>key</key>
+		<string>ゲームモード選択</string>
+	</dict>
+	<dict>
+		<key>loop</key>
+		<integer>0</integer>
+		<key>fileName</key>
+		<string>decision23.mp3</string>
+		<key>key</key>
+		<string>ルール説明ボタン</string>
+	</dict>
+</array>
+</plist>

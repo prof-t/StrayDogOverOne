@@ -66,16 +66,25 @@
 #pragma mark - Private Methods
 
 //初期化
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    
+    if (self) {
+        
+        self.currentScore = 0;
+        self.questionClassOBJ = [[Question alloc]init];
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     //iPhone/iPadの画面サイズに合わせて背景画像を拡大・縮小する
     [self setBackGroudImageName:@"back1.jpg"];
-    
-    self.currentScore = 0;
-    self.questionClassOBJ = [[Question alloc]init];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -310,7 +319,6 @@
         [labelText2 appendString:@"いろだったの…"];
         [label2 setText:labelText2];
         
-        
         //⑦−2　設問パターンがNOの場合
     } else if(pattern == NO){
         
@@ -323,7 +331,6 @@
         [labelText2 appendString:wrongColorLabel];
         [labelText2 appendString:@"いろだったの…"];
         [label2 setText:labelText2];
-        
     }
 }
 
@@ -340,7 +347,7 @@
 
 -(void)timerStart
 {
-    self.timeCount = 10;
+    self.timeCount = 60;
     if(![self.timer isValid]){
         self.timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(timer:) userInfo:nil repeats:YES];
     }
@@ -349,7 +356,6 @@
 //残り時間０以下でゲームを終了させる
 -(void)stopTimerForTimeOut:(CGFloat)count
 {
-    NSLog(@"countは%f",count);
     if (count <= 0) {
         [self.timer invalidate];
         [self clearGame:nil];
@@ -404,8 +410,6 @@
     //ボタンの円半径の設定を、画面変化に対応させる
     //        sender.layer.cornerRadius = (self.view.bounds.size.width / 2) * 1.0f;
     //            sender.layer.masksToBounds = YES;
-    
-
 }
 
 @end

@@ -120,7 +120,7 @@
             [self.timer invalidate];//Timerを止める
             TitleScreenViewController *titleVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"TitleScreen"];//title画面に遷移する
             [self presentViewController:titleVC animated:YES completion:nil];//YESならModal,Noなら何もなし
-            [AudioSingleton stopAudioWithKey:@"ゲーム中"];//音楽も止める
+            [AudioSingleton stopAudioWithKey:SDAudioFileName_BGMGameScreen];//音楽も止める
             [weakAlert dismissViewControllerAnimated:YES completion:nil];
             
         }];
@@ -160,7 +160,7 @@
     [self decidedQuestion:self.isCompletelyMatchingPattern label1:self.questionColorLabel label2:self.questionActionLabel];
     
     //音楽START！
-    [AudioSingleton playAudioWithKey:@"ゲーム中"];
+    [AudioSingleton playAudioWithKey:SDAudioFileName_BGMGameScreen];
     
     //timer起動
 //    TimerClass *timerTest = [TimerClass alloc];
@@ -367,7 +367,7 @@
 {
     //タイマーと音楽のストップ
     [self.timer invalidate];
-    [AudioSingleton stopAudioWithKey:@"ゲーム中"];
+    [AudioSingleton stopAudioWithKey:SDAudioFileName_BGMGameScreen];
     
     //ゲームクリアー画面のviewを表示させる
     self.clearView.hidden = NO;
@@ -376,7 +376,7 @@
     //効果音、得点の増減、正解か不正解の値渡しを行う
     if(button.tag == self.correctButtonTag + 1){
         
-        [AudioSingleton playAudioWithKey:@"正解"];
+        [AudioSingleton playAudioWithKey:SDAudioFileName_SECorrect];
         self.currentScore = [self.questionClassOBJ evaluateScoreWithIsCorrect:YES remainTime:self.timeCount completion:^(NSInteger score) {
             
         }] + self.currentScore;
@@ -389,7 +389,7 @@
             
         }] + self.currentScore;
         
-        [AudioSingleton playAudioWithKey:@"失敗"];
+        [AudioSingleton playAudioWithKey:SDAudioFileName_SEWrong];
         self.isCorrect = NO;
         self.clearViewImage.image =[UIImage imageNamed:@"girl1.jpg"];
         self.navBar.topItem.title = @"残念!!";

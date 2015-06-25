@@ -140,6 +140,7 @@
 		32826A657BA732C87BD4625E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8F8819315EF35BDF02837D81 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1D1FB1281A73EBF680B898D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B800604F1B3BEA4000142706 /* SDDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDDefine.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +248,7 @@
 				2ACC45A41B38F5690064E416 /* Categories */,
 				2ACC45A31B38F5590064E416 /* Utility */,
 				2ACC45A11B38F5230064E416 /* Singleton */,
+				B800604F1B3BEA4000142706 /* SDDefine.h */,
 			);
 			path = Commons;
 			sourceTree = "<group>";

@@ -56,7 +56,7 @@
 - (IBAction)pushedTitleButton:(UIButton*)button
 {
     //効果音を鳴らす
-    [AudioSingleton playAudioWithKey:@"ルール説明ボタン"];
+    [AudioSingleton playAudioWithKey:SDAudioFileName_SETutorial001];
 }
 
 //遷移時の処理

@@ -35,7 +35,7 @@
 //    [self.buttonNormal setClipsToBounds:YES];
 
     //音楽の生成と再生
-    [AudioSingleton playAudioWithKey:@"タイトル画面"];
+    [AudioSingleton playAudioWithKey:SDAudioFileName_BGMTitleScreen];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,14 +47,14 @@
 - (IBAction)pushedGameStartButton:(UIButton*)button
 {
     //効果音再生
-    [AudioSingleton playAudioWithKey:@"ゲームモード選択"];
+    [AudioSingleton playAudioWithKey:SDAudioFileName_SETutorial002];
 }
 
 //ルール説明ボタンtap時のイベント
 - (IBAction)pushedTutorialButton:(UIButton*)button
 {
     //効果音再生
-    [AudioSingleton playAudioWithKey:@"ルール説明ボタン"];
+    [AudioSingleton playAudioWithKey:SDAudioFileName_SETutorial001];
 }
 
 //遷移時の処理
@@ -66,7 +66,7 @@
         gvsc.questionNumber = 0;
         
         //遷移時に音楽をフェードアウトする
-        [AudioSingleton fadeOutAudioWithKey:@"タイトル画面"];
+        [AudioSingleton fadeOutAudioWithKey:SDAudioFileName_BGMTitleScreen];
     }
     
     //TutorialScreenViewControllerに遷移する際の処理

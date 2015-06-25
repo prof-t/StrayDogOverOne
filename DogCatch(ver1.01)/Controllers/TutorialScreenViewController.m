@@ -18,15 +18,26 @@
 //説明画面内で使用するImageView
 @property (nonatomic,weak) IBOutlet UIImageView *dogall;
 
+//説明画面のviewの現在のページを表す
+@property (nonatomic,assign) NSInteger currentPageNumber;
+
 @end
 
 @implementation TutorialScreenViewController
-{
-    NSInteger pageNumber;
-}
 
 #pragma mark - Public Methods
 #pragma mark - Private Methods
+
+//初期化
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    
+    if (self) {
+        self.currentPageNumber = 1;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,13 +45,6 @@
     
     //iPhone/iPadの画面サイズに合わせて背景画像を拡大・縮小する
     [self setBackGroudImageName:@"back1.jpg"];
-    
-    pageNumber = 1;
-    self.page1.hidden = NO;
-    self.page2.hidden = YES;
-    self.page3.hidden=YES;
-    self.dogall.hidden = NO;
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,38 +63,37 @@
 -(void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
 {
     if([segue.identifier isEqualToString:@"returnTitleScreen"]){
-
     }
 }
 
 - (IBAction)pushedNextTutorialButton:(UIButton*)button
 {
-    if(pageNumber == 1){
+    if(self.currentPageNumber == 1){
         
         self.page1.hidden = YES;
         self.page2.hidden = NO;
         self.page3.hidden=YES;
-           self.dogall.hidden = YES;
+        self.dogall.hidden = YES;
         
-        pageNumber = pageNumber + 1;
+        self.currentPageNumber = self.currentPageNumber + 1;
         
-    } else if(pageNumber == 2){
+    } else if(self.currentPageNumber == 2){
         
         self.page1.hidden = YES;
-           self.dogall.hidden = YES;
+        self.dogall.hidden = YES;
         self.page2.hidden = YES;
         self.page3.hidden=NO;
         
-           pageNumber = pageNumber + 1;
+        self.currentPageNumber = self.currentPageNumber + 1;
         
-    } else if(pageNumber == 3){
+    } else if(self.currentPageNumber == 3){
         
         self.page1.hidden = NO;
-           self.dogall.hidden = NO;
+        self.dogall.hidden = NO;
         self.page2.hidden = YES;
         self.page3.hidden=YES;
         
-        pageNumber = 1;
+        self.currentPageNumber = 1;
         
     }else {
         

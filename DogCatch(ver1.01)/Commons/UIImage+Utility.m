@@ -16,7 +16,7 @@
     NSData *data = UIImagePNGRepresentation(self);
    
     //imageのパスを生成
-    NSString *filePath = [NSString stringWithFormat:@"%@/%@" , [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"],fileName];
+    NSString *filePath = [NSString stringWithFormat:@"%@/%@.png" , [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"],fileName];
 
     return [data writeToFile:filePath atomically:YES];
 }

@@ -15,4 +15,8 @@
 #pragma mark - shingleton
 #import "SDAudioPlayerManager.h"
 
+#pragma mark - categorys
+#import "UIView+Utility.h"
+#import "UIImage+Utility.h"
+
 #endif

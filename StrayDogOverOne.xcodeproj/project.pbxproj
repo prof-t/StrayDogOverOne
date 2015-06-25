@@ -15,6 +15,8 @@
 		2A3A3F1A1AD2376600F09768 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3A3F191AD2376600F09768 /* CoreAudio.framework */; };
 		2A3A3F321AD2549900F09768 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3A3F311AD2549900F09768 /* QuartzCore.framework */; };
 		2A9320311B3B9F9B005039C7 /* PlistLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9320301B3B9F9B005039C7 /* PlistLoad.m */; };
+		2A9320341B3BC459005039C7 /* UIView+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9320331B3BC459005039C7 /* UIView+Utility.m */; };
+		2A9320371B3BC714005039C7 /* UIImage+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9320361B3BC714005039C7 /* UIImage+Utility.m */; };
 		2ACC45851B38F0700064E416 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC45841B38F0700064E416 /* BaseViewController.m */; };
 		2ACC45891B38F23A0064E416 /* TitleScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC45881B38F23A0064E416 /* TitleScreenViewController.m */; };
 		2ACC458E1B38F2F20064E416 /* EasyModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC458D1B38F2F20064E416 /* EasyModeViewController.m */; };
@@ -82,6 +84,10 @@
 		2A93202E1B3B99FD005039C7 /* StrayDogOverOne-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StrayDogOverOne-Prefix.pch"; sourceTree = "<group>"; };
 		2A93202F1B3B9F9B005039C7 /* PlistLoad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlistLoad.h; sourceTree = "<group>"; };
 		2A9320301B3B9F9B005039C7 /* PlistLoad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistLoad.m; sourceTree = "<group>"; };
+		2A9320321B3BC459005039C7 /* UIView+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Utility.h"; sourceTree = "<group>"; };
+		2A9320331B3BC459005039C7 /* UIView+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utility.m"; sourceTree = "<group>"; };
+		2A9320351B3BC714005039C7 /* UIImage+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Utility.h"; sourceTree = "<group>"; };
+		2A9320361B3BC714005039C7 /* UIImage+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utility.m"; sourceTree = "<group>"; };
 		2ACC45831B38F0700064E416 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		2ACC45841B38F0700064E416 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		2ACC45871B38F23A0064E416 /* TitleScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleScreenViewController.h; sourceTree = "<group>"; };
@@ -363,6 +369,10 @@
 		2ACC45A41B38F5690064E416 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				2A9320321B3BC459005039C7 /* UIView+Utility.h */,
+				2A9320331B3BC459005039C7 /* UIView+Utility.m */,
+				2A9320351B3BC714005039C7 /* UIImage+Utility.h */,
+				2A9320361B3BC714005039C7 /* UIImage+Utility.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -623,10 +633,12 @@
 				2ACC45AA1B38F5F70064E416 /* SDAudioPlayerManager.m in Sources */,
 				2ACC458E1B38F2F20064E416 /* EasyModeViewController.m in Sources */,
 				2ACC45911B38F2FF0064E416 /* NormalScreenViewController.m in Sources */,
+				2A9320341B3BC459005039C7 /* UIView+Utility.m in Sources */,
 				2ACC45851B38F0700064E416 /* BaseViewController.m in Sources */,
 				2A3A3EF41AD2373400F09768 /* AppDelegate.m in Sources */,
 				2ACC45A71B38F5E80064E416 /* TimerClass.m in Sources */,
 				2A3A3EF11AD2373400F09768 /* main.m in Sources */,
+				2A9320371B3BC714005039C7 /* UIImage+Utility.m in Sources */,
 				2ACC45A01B38F5100064E416 /* Question.m in Sources */,
 				2ACC45951B38F32F0064E416 /* TutorialScreenViewController.m in Sources */,
 				2ACC45891B38F23A0064E416 /* TitleScreenViewController.m in Sources */,

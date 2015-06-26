@@ -96,14 +96,14 @@
 - (IBAction)pushedCancelButton:(UIBarButtonItem*)button
 {
     //アラートの表示（iOS8か否かで処理が分岐する）
-//    if( [[UIDevice currentDevice].systemVersion floatValue] < 8) {
+    //    if( [[UIDevice currentDevice].systemVersion floatValue] < 8) {
     if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
-    
-    UIActionSheet *as = [[UIActionSheet alloc]initWithTitle:@"ゲームを終了しますか？" delegate:self cancelButtonTitle:@"ゲームを終了しない" destructiveButtonTitle:@"ゲームを終了してタイトル画面に戻る" otherButtonTitles:nil];
-    [as showInView:self.view];
-    
+        
+        UIActionSheet *as = [[UIActionSheet alloc]initWithTitle:@"ゲームを終了しますか？" delegate:self cancelButtonTitle:@"ゲームを終了しない" destructiveButtonTitle:@"ゲームを終了してタイトル画面に戻る" otherButtonTitles:nil];
+        [as showInView:self.view];
+        
     } else {
-
+        
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"ゲームをやめますか？" message:@"" preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertController *__weak weakAlert = alert;
@@ -163,8 +163,8 @@
     [AudioSingleton playAudioWithKey:SDAudioFileName_BGMGameScreen];
     
     //timer起動
-//    TimerClass *timerTest = [TimerClass alloc];
-//    [timerTest startTimer:60];
+    //    TimerClass *timerTest = [TimerClass alloc];
+    //    [timerTest startTimer:60];
     [self timerStart];
     
     //labelテキストを随時変更
@@ -235,7 +235,7 @@
     NSNumber* tag1 = @1;
     NSNumber* tag2 = @2;
     NSNumber* tag3 = @3;
-
+    
     NSMutableArray *allTag = [NSMutableArray array];
     [allTag addObject:tag1];
     [allTag addObject:tag2];
@@ -284,7 +284,7 @@
         //⑥−1　不正解ボタンを1〜３のどれにするかを決める
         NSInteger wrongButtonTag = arc4random() % [allTag count];
         NSInteger wrongButtonTagNumber = [[allTag objectAtIndex:wrongButtonTag]intValue];
-
+        
         //⑥−2　不正解ボタンのアクションと色を設定し、更に設問ラベル用に変数に格納しておく（周回によってどれにいれるか決める）
         [self setButtonActionAndColor:wrongActionStr color:wrongColorStr tag:wrongButtonTagNumber];
         

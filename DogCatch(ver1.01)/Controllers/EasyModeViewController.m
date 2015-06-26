@@ -75,7 +75,6 @@
         self.currentScore = 0;
         self.questionClassOBJ = [[ScoreModelManager alloc]init];
     }
-    
     return self;
 }
 

@@ -95,47 +95,28 @@
 //キャンセルボタン押下時のイベント処理
 - (IBAction)pushedCancelButton:(UIBarButtonItem*)button
 {
-    //アラートの表示（iOS8か否かで処理が分岐する）
-    //    if( [[UIDevice currentDevice].systemVersion floatValue] < 8) {
-    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
-        
-        UIActionSheet *as = [[UIActionSheet alloc]initWithTitle:@"ゲームを終了しますか？" delegate:self cancelButtonTitle:@"ゲームを終了しない" destructiveButtonTitle:@"ゲームを終了してタイトル画面に戻る" otherButtonTitles:nil];
-        [as showInView:self.view];
-        
-    } else {
-        
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"ゲームをやめますか？" message:@"" preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertController *__weak weakAlert = alert;
-        
-        //「ゲームをやめる」のをやめる際の処理
-        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"やめない" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
-            [weakAlert dismissViewControllerAnimated:YES completion:nil];
-        }];
-        [alert addAction:defaultAction];
-        
-        //「ゲームをやめる」際の処理
-        UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"やめる" style:UIAlertActionStyleCancel handler:^(UIAlertAction* action){
-            
-            [self.timer invalidate];//Timerを止める
-            TitleScreenViewController *titleVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"TitleScreen"];//title画面に遷移する
-            [self presentViewController:titleVC animated:YES completion:nil];//YESならModal,Noなら何もなし
-            [AudioSingleton stopAudioWithKey:SDAudioFileName_BGMGameScreen];//音楽も止める
-            [weakAlert dismissViewControllerAnimated:YES completion:nil];
-            
-        }];
-        [alert addAction:cancelAction];
-        
-        //    UIAlertAction *altAction = [UIAlertAction actionWithTitle:@"ルール説明を見る" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action){
-        
-        //ルール説明のmodalを表示する
-        
-        //        [weakAlert dismissViewControllerAnimated:YES completion:nil];
-        //    }];
-        //    [alert addAction:altAction];
-        
-        [self presentViewController:alert animated:YES completion:nil];
-    }
+    AlertView *av = [[AlertView alloc]initWithTitle:@"ゲームをやめますか？" message:@"" owner:self];
+    
+    __weak typeof(self) weakSelf = self;
+    __weak AlertView * weakAV = av;
+    
+    [av addLabel:@"やめない" handler:^{
+        [weakAV dismiss];
+    }];
+    
+    [av addLabel:@"やめる" handler:^{
+        [weakSelf.timer invalidate];//Timerを止める
+        TitleScreenViewController *titleVC =  [weakSelf.storyboard instantiateViewControllerWithIdentifier:@"TitleScreen"];//title画面に遷移する
+        [weakSelf presentViewController:titleVC animated:YES completion:nil];//YESならModal,Noなら何もなし
+        [AudioSingleton stopAudioWithKey:SDAudioFileName_BGMGameScreen];//音楽も止める
+        [weakAV dismiss];
+    }];
+    
+    [av addLabel:@"ルール説明" handler:^{
+        [weakAV dismiss];    
+    }];
+    
+    [av show];
 }
 
 //スタートボタン押下時のイベント処理

@@ -27,28 +27,8 @@
 - (void)show;
 
 /**
- アラートの生成
- @param title actionを引数にアラートを生成するクラス
- @param title
- @param message
- @param style
- @param firstAction
- @param secondAction
- @return 生成したUIAlertControllerを返す
- */
--(UIAlertController *)makeAlertControllerWithTitleWithAction:(NSString *)title message:(NSString *)message style:(UIAlertControllerStyle *)style firstAction:(UIAlertAction *)firstAction secondAction:(UIAlertAction *)secondAction;
-
-/**
- アラートにアクションを設定する
- @param
- @param
- */
-//-(UIAlertAction *)makeAlertActionWithTitle:(NSString *)title style:(UIAlertActionStyle *)style handler:( ? )handler;
-
-/**
- アラートアクション内のイベント処理メソッド
- @param
- @param
- */
+ Alertを閉じる
+*/
+-(void)dismiss;
 
 @end

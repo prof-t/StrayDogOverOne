@@ -42,6 +42,10 @@
 
 - (void)alertView:(SDBlockAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    if (buttonIndex < 0) {
+        return;
+    }
+    
     SDAlertInfo *alertInfo = self.alertInfoArray[buttonIndex];
     alertInfo.handler();
 }
@@ -84,14 +88,13 @@
     self.message = message;
     self.owner = owner;
     
-//    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
-    if (1) {
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
         // old
         // まだ生成できない...
     }
     else {
         // new
-        
+        self.AlertObject = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     }
 }
 
@@ -107,17 +110,6 @@
     }
     
     [self.alertInfoArray addObject:alertInfo];
-    
-//    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
-    if (1) {
-        // old
-        // まだ生成できない...
-        
-    }
-    else {
-        // new
-        
-    }
 }
 
 /**
@@ -125,14 +117,13 @@
  */
 - (void)show
 {
-//    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
-    if (1) {
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
         // old
         SDAlertInfo *firstAlertInfo = self.alertInfoArray[0];
         __block SDBlockAlertView *alertView = [[SDBlockAlertView alloc] initWithTitle:self.title message:self.message delegate:nil cancelButtonTitle:nil otherButtonTitles:firstAlertInfo.label, nil];
         alertView.delegate = alertView;
         alertView.alertInfoArray = self.alertInfoArray;
-//        self.AlertObject = alertView;
+        self.AlertObject = alertView;
         
         [self.alertInfoArray enumerateObjectsUsingBlock:^(SDAlertInfo *alertInfo, NSUInteger idx, BOOL *stop) {
             if (idx == 0) {
@@ -148,33 +139,35 @@
     }
     else {
         // new
+        UIAlertController *ac = (UIAlertController*)self.AlertObject;
+        [self.alertInfoArray enumerateObjectsUsingBlock:^(SDAlertInfo *alertInfo, NSUInteger idx, BOOL *stop) {
+            
+            UIAlertAction *aAction = [UIAlertAction actionWithTitle:alertInfo.label style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                alertInfo.handler();
+            }];
+            [ac addAction:aAction];
+        }];
+        
+        [self.owner presentViewController:ac animated:YES completion:nil];
         
     }
 }
 
--(UIAlertController *)makeAlertControllerWithTitleWithAction:(NSString *)title message:(NSString *)message style:(UIAlertControllerStyle *)style firstAction:(UIAlertAction *)firstAction secondAction:(UIAlertAction *)secondAction
+-(void)dismiss
 {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:*style];
-    
-    
-//    UIAlertController *__weak weakAlert = alert;
-    
-    [alert addAction:firstAction];
-    [alert addAction:secondAction];
-    
-    return alert;
-    
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
+        
+        // old
+        UIAlertView *av = (UIAlertView *)self.AlertObject;
+        [av dismissWithClickedButtonIndex:-1 animated:YES];
+        
+    } else {
+        
+        // new
+        UIAlertController *ac = (UIAlertController *)self.AlertObject;
+        [ac dismissViewControllerAnimated:YES completion:NULL];
+    }
 }
-
-//AlertAction生成のメソッド
-//-(UIAlertAction *)makeAlertActionWithTitle:(NSString *)title style:(UIAlertActionStyle *)style handler:( ? )handler
-//{
-//    return [UIAlertAction actionWithTitle:title style:style handler:handler];
-//}
-
-//AlertActionのイベント処理
-
-
 
 
 @end

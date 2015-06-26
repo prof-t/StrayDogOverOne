@@ -59,7 +59,7 @@
 @property (nonatomic,assign) CGFloat timeCount;
 
 //Questionクラスのインスタンス
-@property (nonatomic,strong) Question *questionClassOBJ;
+@property (nonatomic,strong) ScoreModelManager *questionClassOBJ;
 
 @end
 
@@ -69,15 +69,26 @@
 #pragma mark - Private Methods
 
 //初期化
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    
+    if (self) {
+        
+        self.currentScore = 0;
+        self.questionClassOBJ = [[ScoreModelManager alloc]init];
+    }
+    return self;
+}
+
+
+//初期化
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     //iPhone/iPadの画面サイズに合わせて背景画像を拡大・縮小する
     [self setBackGroudImageName:@"back1.jpg"];
-    
-    self.currentScore = 0;
-    self.questionClassOBJ = [Question alloc];
 }
 
 - (void)didReceiveMemoryWarning {

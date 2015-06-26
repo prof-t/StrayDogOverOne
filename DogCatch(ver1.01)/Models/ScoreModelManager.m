@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 RYO. All rights reserved.
 //
 
-#import "Question.h"
+#import "ScoreModelManager.h"
 
-@implementation Question
+@implementation ScoreModelManager
 
 #pragma mark - public methods
 //得点加算メソッド

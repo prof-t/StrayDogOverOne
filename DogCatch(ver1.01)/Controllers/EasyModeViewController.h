@@ -8,7 +8,7 @@
 //ゲーム画面(easyモード)のviewController
 
 #import <UIKit/UIKit.h>
-#import "Question.h"
+#import "ScoreModelManager.h"
 #import<AVFoundation/AVFoundation.h>
 #import"TimerClass.h"
 #import"TitleScreenViewController.h"

@@ -10,7 +10,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface Question : NSObject
+@interface ScoreModelManager : NSObject
 
 /**
 　isCorrect変数を指定し、クイズが正解か失敗かを判断する。その際、指定したremainTimeに応じた得点を返す。

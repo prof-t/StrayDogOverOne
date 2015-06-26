@@ -24,7 +24,7 @@
 		2ACC45951B38F32F0064E416 /* TutorialScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC45941B38F32F0064E416 /* TutorialScreenViewController.m */; };
 		2ACC45981B38F35A0064E416 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC45971B38F35A0064E416 /* CustomButton.m */; };
 		2ACC459C1B38F4720064E416 /* ScoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC459B1B38F4720064E416 /* ScoreModel.m */; };
-		2ACC45A01B38F5100064E416 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC459F1B38F5100064E416 /* Question.m */; };
+		2ACC45A01B38F5100064E416 /* ScoreModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC459F1B38F5100064E416 /* ScoreModelManager.m */; };
 		2ACC45A71B38F5E80064E416 /* TimerClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC45A61B38F5E80064E416 /* TimerClass.m */; };
 		2ACC45AA1B38F5F70064E416 /* SDAudioPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC45A91B38F5F70064E416 /* SDAudioPlayerManager.m */; };
 		2ACC45C41B38F6B40064E416 /* back1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2ACC45AC1B38F6B40064E416 /* back1.jpg */; };
@@ -103,8 +103,8 @@
 		2ACC45971B38F35A0064E416 /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
 		2ACC459A1B38F4720064E416 /* ScoreModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreModel.h; sourceTree = "<group>"; };
 		2ACC459B1B38F4720064E416 /* ScoreModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreModel.m; sourceTree = "<group>"; };
-		2ACC459E1B38F5100064E416 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
-		2ACC459F1B38F5100064E416 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		2ACC459E1B38F5100064E416 /* ScoreModelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreModelManager.h; sourceTree = "<group>"; };
+		2ACC459F1B38F5100064E416 /* ScoreModelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreModelManager.m; sourceTree = "<group>"; };
 		2ACC45A51B38F5E80064E416 /* TimerClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerClass.h; sourceTree = "<group>"; };
 		2ACC45A61B38F5E80064E416 /* TimerClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerClass.m; sourceTree = "<group>"; };
 		2ACC45A81B38F5F70064E416 /* SDAudioPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDAudioPlayerManager.h; sourceTree = "<group>"; };
@@ -348,8 +348,8 @@
 		2ACC459D1B38F4B30064E416 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				2ACC459E1B38F5100064E416 /* Question.h */,
-				2ACC459F1B38F5100064E416 /* Question.m */,
+				2ACC459E1B38F5100064E416 /* ScoreModelManager.h */,
+				2ACC459F1B38F5100064E416 /* ScoreModelManager.m */,
 			);
 			name = Manager;
 			sourceTree = "<group>";
@@ -654,7 +654,7 @@
 				2ACC45A71B38F5E80064E416 /* TimerClass.m in Sources */,
 				2A3A3EF11AD2373400F09768 /* main.m in Sources */,
 				2A9320371B3BC714005039C7 /* UIImage+Utility.m in Sources */,
-				2ACC45A01B38F5100064E416 /* Question.m in Sources */,
+				2ACC45A01B38F5100064E416 /* ScoreModelManager.m in Sources */,
 				2ACC45951B38F32F0064E416 /* TutorialScreenViewController.m in Sources */,
 				2ACC45891B38F23A0064E416 /* TitleScreenViewController.m in Sources */,
 				B858B31F1B3CCF27001C57BA /* ResultScreenViewController.m in Sources */,

@@ -56,7 +56,7 @@
 @property (nonatomic,assign) CGFloat timeCount;
 
 //Questionクラスのインスタンス
-@property (nonatomic,strong) Question *questionClassOBJ;
+@property (nonatomic,strong) ScoreModelManager *questionClassOBJ;
 
 @end
 
@@ -73,7 +73,7 @@
     if (self) {
         
         self.currentScore = 0;
-        self.questionClassOBJ = [[Question alloc]init];
+        self.questionClassOBJ = [[ScoreModelManager alloc]init];
     }
     
     return self;

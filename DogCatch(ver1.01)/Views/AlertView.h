@@ -9,7 +9,22 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AlertView : UIAlertView<UIActionSheetDelegate>
+@interface AlertView : NSObject
+
+/**
+ 初期化する
+ */
+- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message owner:(UIViewController *)owner;
+
+/**
+ add
+ */
+- (void)addLabel:(NSString *)label handler:(void (^)(void))handler;
+
+/**
+ show
+ */
+- (void)show;
 
 /**
  アラートの生成

@@ -56,6 +56,7 @@
 		2AF2C6F81B3A44180046BAD3 /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF2C6F71B3A44180046BAD3 /* AlertView.m */; };
 		2AF2FDEA1AD60F0800E71856 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF2FDE91AD60F0800E71856 /* AVFoundation.framework */; };
 		B66DB53DA80980756F3518CA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8819315EF35BDF02837D81 /* libPods.a */; };
+		B858B31F1B3CCF27001C57BA /* ResultScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B858B31E1B3CCF27001C57BA /* ResultScreenViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +142,8 @@
 		8F8819315EF35BDF02837D81 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1D1FB1281A73EBF680B898D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B800604F1B3BEA4000142706 /* SDDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDDefine.h; sourceTree = "<group>"; };
+		B858B31D1B3CCF27001C57BA /* ResultScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultScreenViewController.h; sourceTree = "<group>"; };
+		B858B31E1B3CCF27001C57BA /* ResultScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultScreenViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +259,7 @@
 		2ACC457F1B38F0330064E416 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B858B3201B3CCF31001C57BA /* Result */,
 				2ACC45921B38F3100064E416 /* Tutoral */,
 				2ACC458B1B38F2AE0064E416 /* NormalScreen */,
 				2ACC458A1B38F2430064E416 /* EasyScreen */,
@@ -467,6 +471,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B858B3201B3CCF31001C57BA /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				B858B31E1B3CCF27001C57BA /* ResultScreenViewController.m */,
+				B858B31D1B3CCF27001C57BA /* ResultScreenViewController.h */,
+			);
+			name = Result;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -644,6 +657,7 @@
 				2ACC45A01B38F5100064E416 /* Question.m in Sources */,
 				2ACC45951B38F32F0064E416 /* TutorialScreenViewController.m in Sources */,
 				2ACC45891B38F23A0064E416 /* TitleScreenViewController.m in Sources */,
+				B858B31F1B3CCF27001C57BA /* ResultScreenViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

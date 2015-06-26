@@ -293,6 +293,7 @@
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="pushedCancelButton:" destination="mER-Xr-FoX" id="Prt-uY-ZOF"/>
+                                                <segue destination="PgQ-Ny-vKM" kind="presentation" id="XYg-0U-gC4"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -777,4 +778,7 @@
         <image name="girl1.jpg" width="823" height="823"/>
         <image name="title_ver2.png" width="552" height="184"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="XYg-0U-gC4"/>
+    </inferredMetricsTieBreakers>
 </document>

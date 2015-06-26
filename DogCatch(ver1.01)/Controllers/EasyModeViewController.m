@@ -113,6 +113,8 @@
     }];
     
     [av addLabel:@"ルール説明" handler:^{
+        TutorialScreenViewController *tutorialVC = [weakSelf.storyboard instantiateViewControllerWithIdentifier:@""];//ルール説明画面に遷移する
+        [weakSelf presentViewController:tutorialVC animated:YES completion:nil];
         [weakAV dismiss];    
     }];
     

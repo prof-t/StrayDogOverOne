@@ -82,6 +82,8 @@
     AVAudioPlayer *player = self.players[key];
     if ([player isPlaying]) {
         [player stop];
+        //再生位置を頭から
+        player.currentTime = 0;
     }
     
     [self.players removeObjectForKey:key];
@@ -93,6 +95,8 @@
     for (AVAudioPlayer *player in self.players) {
         if ([player isPlaying]) {
             [player stop];
+            //再生位置を頭から
+            player.currentTime = 0;
         }
     }
     [self.players removeAllObjects];
@@ -107,6 +111,8 @@
 -(void)stopAudioWithKey:(NSString *)key{
     AVAudioPlayer *player = [self playerWithKey:key];
     [player stop];
+    //再生位置を頭から
+    player.currentTime = 0;
 }
 
 -(void)fadeOutAudioWithKey:(NSString *)key
@@ -119,6 +125,8 @@
         
     }else{
         [player stop];
+        //再生位置を頭から
+        player.currentTime = 0;
     }
 }
 

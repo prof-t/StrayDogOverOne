@@ -113,7 +113,7 @@
     }];
     
     [av addLabel:@"ルール説明" handler:^{
-        TutorialScreenViewController *tutorialVC = [weakSelf.storyboard instantiateViewControllerWithIdentifier:@""];//ルール説明画面に遷移する
+        TutorialScreenViewController *tutorialVC = [weakSelf.storyboard instantiateViewControllerWithIdentifier:@"TutorialScreen"];//ルール説明画面に遷移する
         [weakSelf presentViewController:tutorialVC animated:YES completion:nil];
         [weakAV dismiss];    
     }];
@@ -393,6 +393,12 @@
     //ボタンの円半径の設定を、画面変化に対応させる
     //        sender.layer.cornerRadius = (self.view.bounds.size.width / 2) * 1.0f;
     //            sender.layer.masksToBounds = YES;
+}
+
+//Tutorial画面から戻るためのunwindセグエ
+-(IBAction)unwindToTutorialMode:(UIStoryboardSegue *)segue
+{
+    
 }
 
 @end

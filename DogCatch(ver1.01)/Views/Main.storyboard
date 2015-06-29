@@ -83,7 +83,7 @@
         <!--Normal Screen View Controller-->
         <scene sceneID="NiO-XV-I8u">
             <objects>
-                <viewController id="mER-Xr-FoX" customClass="NormalScreenViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NormalModeScreen" id="mER-Xr-FoX" customClass="NormalScreenViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="80d-ah-Wax"/>
                         <viewControllerLayoutGuide type="bottom" id="B9a-3f-dEC"/>
@@ -282,7 +282,6 @@
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="pushedCancelButton:" destination="mER-Xr-FoX" id="Prt-uY-ZOF"/>
-                                                <segue destination="PgQ-Ny-vKM" kind="presentation" id="XYg-0U-gC4"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -318,7 +317,7 @@
         <!--Tutorial Screen View Controller-->
         <scene sceneID="ycE-RU-sqG">
             <objects>
-                <viewController id="PgQ-Ny-vKM" customClass="TutorialScreenViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialScreen" id="PgQ-Ny-vKM" customClass="TutorialScreenViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ux3-9b-gNn"/>
                         <viewControllerLayoutGuide type="bottom" id="n7n-7R-w9s"/>
@@ -396,23 +395,16 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGa-wU-p7m">
-                                <rect key="frame" x="170" y="662" width="296" height="65"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="タイトル画面に戻る">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pushedTitleButton:" destination="PgQ-Ny-vKM" eventType="touchUpInside" id="mFK-td-Fm8"/>
-                                    <segue destination="CqQ-oD-Iui" kind="presentation" identifier="returnTitleScreen" id="M8b-Wb-Orb"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWG-AT-lgO">
-                                <rect key="frame" x="565" y="662" width="296" height="65"/>
+                                <rect key="frame" x="371" y="634" width="296" height="65"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="前の画面に戻る">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pushedBackScreenButton:" destination="PgQ-Ny-vKM" eventType="touchUpInside" id="IPH-oC-1oG"/>
+                                    <segue destination="bzZ-BA-hbm" kind="unwind" unwindAction="unwindToTutorialMode:" id="N7Y-JV-aWu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -427,13 +419,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Td-en-cfY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bzZ-BA-hbm" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1378" y="881"/>
         </scene>
         <!--Easy Mode View Controller-->
         <scene sceneID="3fr-zO-lLQ">
             <objects>
-                <viewController id="qkR-G2-7Zf" customClass="EasyModeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EasyModeScreen" id="qkR-G2-7Zf" customClass="EasyModeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Kcd-Tq-ZuS"/>
                         <viewControllerLayoutGuide type="bottom" id="3SG-f3-qJV"/>
@@ -734,7 +727,4 @@
         <image name="girl1.jpg" width="823" height="823"/>
         <image name="title_ver2.png" width="552" height="184"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="XYg-0U-gC4"/>
-    </inferredMetricsTieBreakers>
 </document>

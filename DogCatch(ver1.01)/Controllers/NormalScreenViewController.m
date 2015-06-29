@@ -463,4 +463,10 @@
     //            sender.layer.masksToBounds = YES;
 }
 
+//Tutorial画面から戻るためのunwindセグエ
+-(IBAction)unwindToTutorialMode:(UIStoryboardSegue *)segue
+{
+    
+}
+
 @end

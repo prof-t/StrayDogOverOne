@@ -53,7 +53,7 @@
 }
 
 //ボタンのイベント処理
-- (IBAction)pushedTitleButton:(UIButton*)button
+- (IBAction)pushedBackScreenButton:(UIButton*)button
 {
     //効果音を鳴らす
     [AudioSingleton playAudioWithKey:SDAudioFileName_SETutorial001];

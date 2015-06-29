@@ -13,7 +13,6 @@
 //ボタン
 @property (nonatomic,weak) IBOutlet UIButton *buttonNormal;
 @property (nonatomic,weak) IBOutlet UIButton *buttonEasy;
-@property (nonatomic,weak) IBOutlet UIButton *buttonHard;
 @property (nonatomic,weak) IBOutlet UIButton *buttonTutorial;
 
 @end
@@ -73,6 +72,12 @@
     if([segue.identifier isEqualToString:@"moveToTutorialScreen"]){
         
     }
+}
+
+//Tutorial画面から戻るためのunwindセグエ
+-(IBAction)unwindToTutorialMode:(UIStoryboardSegue *)segue
+{
+    
 }
 
 @end

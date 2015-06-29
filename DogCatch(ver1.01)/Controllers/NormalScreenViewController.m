@@ -16,6 +16,11 @@
 @property (nonatomic,weak) IBOutlet UIImageView *clearViewImage;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
 
+// ゲーム終了時に次のゲームへ誘導するガイド
+@property (weak, nonatomic) IBOutlet UIView *nextGuideView;
+@property (weak, nonatomic) IBOutlet UIImageView *nextGuideViewImage;
+@property (weak, nonatomic) IBOutlet UILabel *nextGuideLabel;
+
 // 回答ボタン
 @property (nonatomic,weak) IBOutlet UIButton *dogButton1;
 @property (nonatomic,weak) IBOutlet UIButton *dogButton2;
@@ -92,7 +97,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+<<<<<<< HEAD
 //キャンセルボタン押下時のイベント処理
+=======
+>>>>>>> feature/add_nextGameLabel
 - (IBAction)pushedCancelButton:(UIBarButtonItem*)button
 {
     AlertView *av = [[AlertView alloc]initWithTitle:@"ゲームをやめますか？" message:@"" owner:self];
@@ -126,7 +134,7 @@
 {
     button.enabled = NO;
     self.clearView.hidden =YES;
-    self.clearView.hidden =YES;
+    self.nextGuideView.hidden =YES;
     
     //女の子の顔画像を変更
     self.girlImage.image = [UIImage imageNamed:@"girl3.jpg"];
@@ -389,6 +397,9 @@
     //ゲームクリアー画面のviewを表示させる
     self.clearView.hidden = NO;
     self.clearViewImage.hidden = NO;
+    self.nextGuideView.hidden = NO;
+    self.nextGuideViewImage.hidden = NO;
+    self.nextGuideLabel.hidden = NO;
     
     //効果音、得点の増減、正解か不正解の値渡しを行う
     if(button.tag == self.correctButtonTag + 1){

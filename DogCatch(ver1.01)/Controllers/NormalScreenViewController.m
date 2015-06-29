@@ -16,7 +16,10 @@
 @property (nonatomic,weak) IBOutlet UIImageView *clearViewImage;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
 
-
+// ゲーム終了時に次のゲームへ誘導するガイド
+@property (weak, nonatomic) IBOutlet UIView *nextGuideView;
+@property (weak, nonatomic) IBOutlet UIImageView *nextGuideViewImage;
+@property (weak, nonatomic) IBOutlet UILabel *nextGuideLabel;
 
 // 回答ボタン
 @property (nonatomic,weak) IBOutlet UIButton *dogButton1;
@@ -87,16 +90,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (IBAction)pushedCancelButton:(UIBarButtonItem*)button
 {
     //アラートの表示（iOS8か否かで処理が分岐する）
@@ -145,7 +138,7 @@
 {
     button.enabled = NO;
     self.clearView.hidden =YES;
-    self.clearView.hidden =YES;
+    self.nextGuideView.hidden =YES;
     
     //女の子の顔画像を変更
     self.girlImage.image = [UIImage imageNamed:@"girl3.jpg"];
@@ -328,14 +321,6 @@
         [arrayForQuestionLabel addObject:wrongColorStr];
     }
     
-    //arrayの中身を試しに取り出してみよう
-//    int j=0;
-//    for (NSString *str in arrayForQuestionLabel) {
-//        NSLog(@"%d %@",j, str);
-//        j++;
-//    }
-    
-    
     //⑦設問文の表示（パターンによって処理が分岐する）
     
     NSMutableString *labelText1 =[[NSMutableString alloc]initWithString:@"わたしのワンちゃんは…\n　"];
@@ -418,6 +403,9 @@
     //ゲームクリアー画面のviewを表示させる
     self.clearView.hidden = NO;
     self.clearViewImage.hidden = NO;
+    self.nextGuideView.hidden = NO;
+    self.nextGuideViewImage.hidden = NO;
+    self.nextGuideLabel.hidden = NO;
     
     //効果音、得点の増減、正解か不正解の値渡しを行う
     if(button.tag == self.correctButtonTag + 1){

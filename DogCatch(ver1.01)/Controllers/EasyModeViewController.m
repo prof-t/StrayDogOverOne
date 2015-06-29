@@ -71,17 +71,14 @@
     self = [super initWithCoder:aDecoder];
     
     if (self) {
-        
         self.currentScore = 0;
         self.questionClassOBJ = [[Question alloc]init];
     }
-    
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
     //iPhone/iPadの画面サイズに合わせて背景画像を拡大・縮小する
     [self setBackGroudImageName:@"back1.jpg"];
@@ -162,7 +159,6 @@
     [self clearGame:button];
 }
 
-
 //ハズレボタンの色とアクションを設定
 -(void)setButtonActionAndColor:(NSString*)action color:(NSString*)colorStr tag:(NSInteger)tag
 {
@@ -181,7 +177,6 @@
     } else {
     }
     
-    
     if([colorStr isEqualToString:@"赤"]){
         button.backgroundColor = [UIColor redColor];
     } else if([colorStr isEqualToString:@"青"]){
@@ -193,13 +188,11 @@
     } else if([colorStr isEqualToString:@"茶"]){
         button.backgroundColor = [UIColor brownColor];
     }
-    
 }
 
 /*　★☆★　各ボタンの種類と色を決定し、設問文を表示するメソッド　★☆★　*/
 -(void)decidedQuestion:(BOOL)pattern label1:(UILabel*)label1 label2:(UILabel*)label2
 {
-    
     //材料としてアクションと色の配列を用意する
     NSMutableArray* allAction = [NSMutableArray array];
     [allAction addObject:@"ハスキー"];
@@ -226,7 +219,6 @@
     
     NSString* wrongActionLabel;
     NSString* wrongColorLabel;
-    
     
     //①まず、今回の正解のアクションと色をランダムに決める
     NSInteger correctAction = arc4random() % 5;

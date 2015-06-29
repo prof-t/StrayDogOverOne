@@ -16,6 +16,8 @@
 @property (nonatomic,weak) IBOutlet UIImageView *clearViewImage;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
 
+
+
 // 回答ボタン
 @property (nonatomic,weak) IBOutlet UIButton *dogButton1;
 @property (nonatomic,weak) IBOutlet UIButton *dogButton2;

@@ -56,6 +56,7 @@
 		2AF2C6F81B3A44180046BAD3 /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF2C6F71B3A44180046BAD3 /* AlertView.m */; };
 		2AF2FDEA1AD60F0800E71856 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF2FDE91AD60F0800E71856 /* AVFoundation.framework */; };
 		B66DB53DA80980756F3518CA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8819315EF35BDF02837D81 /* libPods.a */; };
+		B8226A341B40EF9500E47721 /* finger.png in Resources */ = {isa = PBXBuildFile; fileRef = B8226A331B40EF9500E47721 /* finger.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +142,7 @@
 		8F8819315EF35BDF02837D81 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1D1FB1281A73EBF680B898D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B800604F1B3BEA4000142706 /* SDDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDDefine.h; sourceTree = "<group>"; };
+		B8226A331B40EF9500E47721 /* finger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finger.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -387,6 +389,7 @@
 				2ACC45AE1B38F6B40064E416 /* balloon_up.png */,
 				2ACC45AF1B38F6B40064E416 /* dogall.png */,
 				2ACC45B01B38F6B40064E416 /* frame.gif */,
+				B8226A331B40EF9500E47721 /* finger.png */,
 				2ACC45B11B38F6B40064E416 /* frame_2.png */,
 				2ACC45B21B38F6B40064E416 /* girl1.jpg */,
 				2ACC45B31B38F6B40064E416 /* girl2.jpg */,
@@ -562,6 +565,7 @@
 				2ACC45CD1B38F6B40064E416 /* girl4.jpg in Resources */,
 				2ACC45D31B38F6B40064E416 /* title_ver2.png in Resources */,
 				2ACC45D11B38F6B40064E416 /* shiba.png in Resources */,
+				B8226A341B40EF9500E47721 /* finger.png in Resources */,
 				2ACC45CC1B38F6B40064E416 /* girl3.jpg in Resources */,
 				2ACC45CB1B38F6B40064E416 /* girl2.jpg in Resources */,
 				2ACC45CF1B38F6B40064E416 /* koly.png in Resources */,

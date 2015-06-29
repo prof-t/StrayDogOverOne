@@ -97,10 +97,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-<<<<<<< HEAD
 //キャンセルボタン押下時のイベント処理
-=======
->>>>>>> feature/add_nextGameLabel
 - (IBAction)pushedCancelButton:(UIBarButtonItem*)button
 {
     AlertView *av = [[AlertView alloc]initWithTitle:@"ゲームをやめますか？" message:@"" owner:self];

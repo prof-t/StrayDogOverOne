@@ -6,6 +6,11 @@
 //  Copyright (c) 2015年 RYO. All rights reserved.
 //
 
+/*
+ サウンドファイルに対応するkey（NSString）を定義するクラス
+ **/
+
+//重複includeを回避するための疑似命令
 #ifndef StrayDogOverOne_SDDefine_h
 #define StrayDogOverOne_SDDefine_h
 
